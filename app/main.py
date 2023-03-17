@@ -5,6 +5,12 @@ import os
 import uvicorn
 from app.routes.routes import routes
 from app.gradio.interface import create_interface
+from ivychat.app.logging_config import setup_logging
+
+logger = setup_logging()
+
+# Now, you can use the logger object to log messages in your application.
+logger.info("You found the secret message. Also, logger works!")
 
 # Load environment variables from the .env file
 load_dotenv()

@@ -6,7 +6,8 @@ ML: Gradio
 Custom html/css/js: Flask
 Integrations: OpenAI
 Testing: pytest
-Logging: Python's built-in logging module
+Logging: logger
+CI: Github Actions
 Documentation: Ivychat & ChatGPT
 
 Notes: Focus on readability, simplicity, and consistent naming conventions. 
@@ -15,10 +16,17 @@ Adhere to Python best practices and coding standards.
 Ensure proper error handling and use meaningful error messages. 
 Provide well-commented code and maintain documentation-ready styling. 
 Assume the latest code version is in use, and check for bugs and errors.
+Adhere to Python's PEP 8 style guide.
+Consistent naming conventions for variables, functions, and classes.
+Proper error handling and meaningful error messages.
+DRY (Don't Repeat Yourself) principles for writing modular and reusable code.
+Adequate documentation through docstrings and inline comments.
 
 Condensed Directory Info:
 ivychat/trawler.py: Utility script for reading functions and comments from a codebase.
+ivychat/.github/workflow/flow.yaml:Github Action CI info
 ivychat/app/main.py: Application entry point.
+ivychat/app/logging_config.py:
 ivychat/app/utils/utils.py: Configuration loading and response generation functions.
 ivychat/app/interface/gradio.py: Gradio interface for the chatbot.
 ivychat/app/test/test_chatbot.py: Test suite for chatbot functionality.
@@ -28,9 +36,10 @@ ivychat/app/chatbot/response.py: Function for generating responses using the Ope
 ivychat/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
 ivychat/app/routes/routes.py: Route for handling chatbot requests.
 ivychat/app/static/: reserved for future custom css
+ivychat/docs/README.md
 ivychat/app/templates/index.html
 ivychat/requirements.txt
 
-Last Goal: Directory Structure
-Next Goal: Website formatting, Livechat, Database, User Login, , Documentation
+Last Goals: Directory Structure, Logging
+Next Goals: Website formatting, Livechat, Database, User Login, , Documentation
 Current Goal: Code Review before Testing Suite
