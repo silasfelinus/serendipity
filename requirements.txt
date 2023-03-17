@@ -1,5 +1,10 @@
+#testing
+pytest
+pytest-flask
+pytest-mock
+
 openai
 Flask
 gradio
-pytest
 tensorflow
+python-dotenv

@@ -1,5 +1,8 @@
-conda create -n serendipity python=3.8
-conda activate serendipity
+python3.8 -m venv venv
+
+#Activate the virtual environment:
+source ./venv/Scripts/activate
+
 pip install -r requirements.txt
 source ./.env
 cd app

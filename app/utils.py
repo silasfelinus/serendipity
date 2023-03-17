@@ -1,14 +1,20 @@
 import json
 import openai
+import os
 
 # Load configurations from global_config_file and bot_presets_file
 def load_config(global_config_file, bot_presets_file):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    global_config_path = os.path.join(base_dir, '..', '..', global_config_file)
+    bot_presets_path = os.path.join(base_dir, '..', '..', bot_presets_file)
+    
     # Read global_config_file and load its content as JSON
-    with open(global_config_file) as f:
+    with open(global_config_path) as f:
         global_config = json.load(f)
 
     # Read bot_presets_file and load its content as JSON
-    with open(bot_presets_file) as f:
+    with open(bot_presets_path) as f:
         bot_presets = json.load(f)
 
     # Merge the two JSON objects and return the result
