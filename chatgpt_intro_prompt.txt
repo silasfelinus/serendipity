@@ -1,6 +1,6 @@
 Intro: Serendipity is an AI chatbot and digital-assistant app in Python using Gradio and Flask
 Goal: A modular, user-friendly, and well-coded AI chatbot/digital assistant showcasing impeccable organization and elegant programming skills.
-Repo: https://github.com/silasfelinus/serendipity
+Repo: https://github.com/silasfelinus/serendipity/tree/main
 Language: Python 3.8
 ML: Gradio
 Custom html/css/js: Flask
