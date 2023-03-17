@@ -1,0 +1,30 @@
+name: Python application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        miniforge-variant: Mambaforge
+        activate-environment: ivychat
+        environment-file: environment.yml
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        mamba env update --file environment.yml
+    - name: Run pytest
+      run: |
+        pytest

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+</head>
+<body>
+    <h1>AI Chatbot</h1>
+    <textarea id="user-input" rows="2" cols="50"></textarea><br>
+    <select id="chatbot-id">
+        <option value="serendipity-fairy">Serendipity Fairy</option>
+        <option value="serendipity-assistant">Serendipity Assistant</option>
+    </select><br>
+    <button onclick="submitMessage()">Submit</button>
+    <h2>Chatbot's response:</h2>
+    <textarea id="chatbot-response" rows="5" cols="50" readonly></textarea>
+    <script>
+        async function submitMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const chatbotId = document.getElementById('chatbot-id').value;
+
+            const response = await fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    user_input: userInput,
+                    chatbot_id: chatbotId
+                })
+            });
+
+            const data = await response.json();
+            document.getElementById('chatbot-response').value = data.response;
+        }
+    </script>
+</body>
+</html>
