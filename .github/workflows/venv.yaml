@@ -20,7 +20,6 @@ jobs:
       with:
         node-version: '16'
 
-    steps:
     - uses: actions/checkout@v2
 
     - name: Set up Python ${{ matrix.python-version }}
@@ -31,7 +30,7 @@ jobs:
     - name: Create and activate virtual environment
       run: |
         python -m venv venv
-        . venv/bin/activate
+        source venv/bin/activate
 
     - name: Install dependencies
       run: |
