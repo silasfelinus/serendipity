@@ -18,7 +18,7 @@ jobs:
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          activate-environment: visgpt
+          activate-environment: serendipity
           environment-file: environment.yml
           python-version: 3.8
           auto-activate-base: false
