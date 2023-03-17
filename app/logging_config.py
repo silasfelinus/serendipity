@@ -3,7 +3,7 @@ import sys
 
 def setup_logging():
     # Create a logger object
-    logger = logging.getLogger("ivychat")
+    logger = logging.getLogger("serendipity")
     logger.setLevel(logging.DEBUG)
 
     # Create a console handler
@@ -11,7 +11,7 @@ def setup_logging():
     console_handler.setLevel(logging.DEBUG)
 
     # Create a file handler for logging to a file
-    file_handler = logging.FileHandler("ivychat.log")
+    file_handler = logging.FileHandler("serendipity.log")
     file_handler.setLevel(logging.DEBUG)
 
     # Create a formatter and add it to the handlers

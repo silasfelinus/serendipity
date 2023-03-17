@@ -6,48 +6,48 @@ File: ./trawler.py
     def traverse_directory(gitignore_set, output_file, dir_path="."):
     def main():
 
-File: ./ivychat/trawler.py
+File: ./serendipity/trawler.py
     def read_gitignore():
     def print_functions(gitignore_set, file_path, output_file):
     def print_comment(file_path, output_file):
     def traverse_directory(gitignore_set, output_file, dir_path="."):
     def main():
 
-File: ./ivychat/app/main.py
+File: ./serendipity/app/main.py
     # Import the required libraries
 
-File: ./ivychat/app/__init__.py
+File: ./serendipity/app/__init__.py
 
-File: ./ivychat/app/utils/utils.py
+File: ./serendipity/app/utils/utils.py
     # Load configurations from global_config_file and bot_presets_file
     def load_config(global_config_file, bot_presets_file):
     def generate_response(prompt, config):
 
-File: ./ivychat/app/utils/__init__.py
+File: ./serendipity/app/utils/__init__.py
 
-File: ./ivychat/app/config/__init__.py
+File: ./serendipity/app/config/__init__.py
 
-File: ./ivychat/app/interface/gradio.py
+File: ./serendipity/app/interface/gradio.py
     # Initialize the Chatbot instance with a configuration file
     def chatbot_response(user_input, chatbot_id="serendipity-fairy", conversation_history=None):
     def create_interface():
 
-File: ./ivychat/app/interface/__init__.py
+File: ./serendipity/app/interface/__init__.py
 
-File: ./ivychat/app/test/test_chatbot.py
+File: ./serendipity/app/test/test_chatbot.py
     def test_load_config():
     def test_generate_response():
     def test_build_prompt():
     def test_chatbot_response():
     def test_get_chatbot_by_id():
 
-File: ./ivychat/app/test/__init__.py
+File: ./serendipity/app/test/__init__.py
 
-File: ./ivychat/app/chatbot/conversation.py
+File: ./serendipity/app/chatbot/conversation.py
     # Function to build a prompt using the PromptBuilder class
     def build_prompt(chatbot, user_input, conversation_history=None):
 
-File: ./ivychat/app/chatbot/chatbot.py
+File: ./serendipity/app/chatbot/chatbot.py
     # Import the generate_response function from the response module
     def __init__(self, config_file, chatbot_id="default"):
     def load_config(self):
@@ -55,13 +55,13 @@ File: ./ivychat/app/chatbot/chatbot.py
     def build_prompt(self, user_input, conversation_history=None):
     default_keys = set([
 
-File: ./ivychat/app/chatbot/response.py
+File: ./serendipity/app/chatbot/response.py
     # Set the OpenAI API key
     def generate_response(prompt):
 
-File: ./ivychat/app/chatbot/__init__.py
+File: ./serendipity/app/chatbot/__init__.py
 
-File: ./ivychat/app/chatbot/prompt_builder.py
+File: ./serendipity/app/chatbot/prompt_builder.py
     # Define the PromptBuilder class for constructing conversation prompts
     def __init__(self, chatbot, user_input, conversation_history=None):
     def get_chatbot_by_id(chatbot_id, config):
@@ -70,11 +70,11 @@ File: ./ivychat/app/chatbot/prompt_builder.py
     def build_prompt(self):
     default_keys = set([
 
-File: ./ivychat/app/routes/routes.py
+File: ./serendipity/app/routes/routes.py
     # Initialize the Chatbot instance with a configuration file
     def chatbot_route():
 
-File: ./ivychat/app/routes/__init__.py
+File: ./serendipity/app/routes/__init__.py
 
 File: ./app/utils.py
     # Load configurations from global_config_file and bot_presets_file

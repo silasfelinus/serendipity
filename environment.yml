@@ -1,4 +1,4 @@
-name: ivychat
+name: serendipity
 channels:
   - defaults
 dependencies:

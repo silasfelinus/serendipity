@@ -1,6 +1,6 @@
-# IvyChat
+# serendipity
 
-IvyChat is a simple and user-friendly chatbot application built using Python, Flask, and Gradio. This project aims to provide a seamless and engaging conversational experience for users.
+serendipity is a simple and user-friendly chatbot application built using Python, Flask, and Gradio. This project aims to provide a seamless and engaging conversational experience for users.
 
 ## Table of Contents
 
@@ -16,14 +16,14 @@ Before you start, make sure you have Python 3.8 and Conda installed on your syst
 
 1. Clone the repository:
 
-git clone https://github.com/silasfelinus/ivychat.git
-cd ivychat
+git clone https://github.com/silasfelinus/serendipity.git
+cd serendipity
 
 
 2. Set up the Conda environment:
 
 conda env create -f environment.yml
-conda activate ivychat
+conda activate serendipity
 
 3. Install the required dependencies:
 
@@ -38,7 +38,7 @@ python app/main.py
 
 2. Visit the chatbot web interface:
 
-Open your browser and navigate to `http://127.0.0.1:5000`. You'll see the chatbot interface where you can start a conversation with IvyChat.
+Open your browser and navigate to `http://127.0.0.1:5000`. You'll see the chatbot interface where you can start a conversation with serendipity.
 
 ## Testing
 
@@ -49,7 +49,7 @@ pytest
 
 ## Contributing
 
-Contributions to the IvyChat project are welcome! If you'd like to contribute, please follow these steps:
+Contributions to the serendipity project are welcome! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository
 2. Create a new branch with a descriptive name (e.g., `feature/new-feature` or `bugfix/issue-description`)

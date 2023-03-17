@@ -1,6 +1,6 @@
 Intro: Serendipity is an AI chatbot and digital-assistant app in Python using Gradio and Flask
 Goal: A modular, user-friendly, and well-coded AI chatbot/digital assistant showcasing impeccable organization and elegant programming skills.
-Repo: https://github.com/silasfelinus/ivychat
+Repo: https://github.com/silasfelinus/serendipity
 Language: Python 3.8
 ML: Gradio
 Custom html/css/js: Flask
@@ -8,7 +8,7 @@ Integrations: OpenAI
 Testing: pytest
 Logging: logger
 CI: Github Actions
-Documentation: Ivychat & ChatGPT
+Documentation: serendipity & ChatGPT
 Inspiration: welcoming, elegant, kaizen
 
 Notes: Focus on readability, simplicity, and consistent naming conventions. 
@@ -24,23 +24,23 @@ DRY (Don't Repeat Yourself) principles for writing modular and reusable code.
 Adequate documentation through docstrings and inline comments.
 
 Condensed Directory Info:
-ivychat/trawler.py: Utility script for reading functions and comments from a codebase.
-ivychat/.github/workflows/flow.yaml:Github Action CI info
-ivychat/app/main.py: Application entry point.
-ivychat/app/logging_config.py:
-ivychat/app/utils/utils.py: Configuration loading and response generation functions.
-ivychat/app/interface/gradio.py: Gradio interface for the chatbot.
-ivychat/app/test/test_chatbot.py: Test suite for chatbot functionality.
-ivychat/app/chatbot/conversation.py: Function for building conversation prompts.
-ivychat/app/chatbot/chatbot.py: Chatbot class with initialization, config loading, response, and prompt building functions.
-ivychat/app/chatbot/response.py: Function for generating responses using the OpenAI API.
-ivychat/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
-ivychat/app/routes/routes.py: Route for handling chatbot requests.
-ivychat/app/static/: reserved for future custom css
-ivychat/docs/README.md
-ivychat/app/templates/index.html
-ivychat/requirements.txt
-ivychat/.gitignore: wait, you can see that too? <jk>
+serendipity/trawler.py: Utility script for reading functions and comments from a codebase.
+serendipity/.github/workflows/flow.yaml:Github Action CI info
+serendipity/app/main.py: Application entry point.
+serendipity/app/logging_config.py:
+serendipity/app/utils/utils.py: Configuration loading and response generation functions.
+serendipity/app/interface/gradio.py: Gradio interface for the chatbot.
+serendipity/app/test/test_chatbot.py: Test suite for chatbot functionality.
+serendipity/app/chatbot/conversation.py: Function for building conversation prompts.
+serendipity/app/chatbot/chatbot.py: Chatbot class with initialization, config loading, response, and prompt building functions.
+serendipity/app/chatbot/response.py: Function for generating responses using the OpenAI API.
+serendipity/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
+serendipity/app/routes/routes.py: Route for handling chatbot requests.
+serendipity/app/static/: reserved for future custom css
+serendipity/docs/README.md
+serendipity/app/templates/index.html
+serendipity/requirements.txt
+serendipity/.gitignore: wait, you can see that too? <jk>
 
 Last Goals: Directory Structure, Logging
 Next Goals: Website formatting, Livechat, Database, User Login, , Documentation

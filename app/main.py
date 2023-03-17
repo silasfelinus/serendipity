@@ -5,7 +5,7 @@ import os
 import uvicorn
 from app.routes.routes import routes
 from app.gradio.interface import create_interface
-from ivychat.app.logging_config import setup_logging
+from serendipity.app.logging_config import setup_logging
 
 logger = setup_logging()
 
