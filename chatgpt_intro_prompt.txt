@@ -9,8 +9,6 @@ Testing: pytest
 Logging: Python's built-in logging module
 Documentation: Ivychat & ChatGPT
 
-
-
 Notes: Focus on readability, simplicity, and consistent naming conventions. 
 Write modular and reusable functions or classes. 
 Adhere to Python best practices and coding standards. 
@@ -30,7 +28,7 @@ ivychat/app/chatbot/response.py: Function for generating responses using the Ope
 ivychat/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
 ivychat/app/routes/routes.py: Route for handling chatbot requests.
 ivychat/app/static/: reserved for future custom css
-ivychat/app/templates/dex.html
+ivychat/app/templates/index.html
 ivychat/dependencies.txt
 ivychat/requirements.txt
 
