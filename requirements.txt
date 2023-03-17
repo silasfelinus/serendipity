@@ -3,6 +3,7 @@ pytest
 pytest-flask
 pytest-mock
 
+asgiref
 openai
 Flask
 gradio

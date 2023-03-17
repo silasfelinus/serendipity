@@ -28,5 +28,8 @@ else
     echo "No .env file found, skipping sourcing environment variables."
 fi
 
+export PYTHONPATH=app
+#DEVOPTION-comment to turn off testing before launch
+pytest
 # Run the application
 python app/main.py

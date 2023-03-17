@@ -1,11 +1,11 @@
-# app/main.py
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
 import uvicorn
-from app.routes.routes import api
-from app.interface.gradio import create_interface
-from app.logging_config import setup_logging
+from asgiref.wsgi import WsgiToAsgi
+from routes.routes import api
+from interface.gradio import create_interface
+from logging_config import setup_logging
 
 logger = setup_logging()
 
@@ -29,4 +29,5 @@ if __name__ == "__main__":
     interface = create_interface()
     
     # Run the application using the Uvicorn ASGI server
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
+

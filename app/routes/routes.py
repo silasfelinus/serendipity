@@ -1,6 +1,6 @@
 # app/routes/routes.py
 from flask import Blueprint, jsonify, request, render_template
-from app.chatbot.chatbot import Chatbot
+from chatbot.chatbot import Chatbot
 
 # Initialize the Chatbot instance with global_config_file and bot_presets_file
 chatbot = Chatbot("config.json", "bot_presets.json")
