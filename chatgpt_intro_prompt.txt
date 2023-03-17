@@ -9,6 +9,7 @@ Testing: pytest
 Logging: logger
 CI: Github Actions
 Documentation: Ivychat & ChatGPT
+Inspiration: welcoming, elegant, kaizen
 
 Notes: Focus on readability, simplicity, and consistent naming conventions. 
 Write modular and reusable functions or classes. 
@@ -24,7 +25,7 @@ Adequate documentation through docstrings and inline comments.
 
 Condensed Directory Info:
 ivychat/trawler.py: Utility script for reading functions and comments from a codebase.
-ivychat/.github/workflow/flow.yaml:Github Action CI info
+ivychat/.github/workflows/flow.yaml:Github Action CI info
 ivychat/app/main.py: Application entry point.
 ivychat/app/logging_config.py:
 ivychat/app/utils/utils.py: Configuration loading and response generation functions.
@@ -39,7 +40,9 @@ ivychat/app/static/: reserved for future custom css
 ivychat/docs/README.md
 ivychat/app/templates/index.html
 ivychat/requirements.txt
+ivychat/.gitignore: wait, you can see that too? <jk>
 
 Last Goals: Directory Structure, Logging
 Next Goals: Website formatting, Livechat, Database, User Login, , Documentation
-Current Goal: Code Review before Testing Suite
+Permanent Goals: Code Review, optimized for clarity, consistency, and elegance.  
+Current Goal: Testing Suite
