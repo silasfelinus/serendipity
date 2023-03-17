@@ -13,7 +13,7 @@ def client():
 def test_main_route(client):
     response = client.get('/')
     assert response.status_code == 200
-    assert b"Welcome to Serendipity" in response.data
+    assert b"Serendipity - Digital AI Assistant" in response.data
 
 def test_logger():
     from app.logging_config import setup_logging
@@ -22,7 +22,7 @@ def test_logger():
 
 def test_create_interface(mocker):
     # Mock Gradio's Library
-    mocker.patch('app.interface.gradio.gr.Interface')
+    mocker.patch('gradio.Interface')
 
     # Call the create_interface function
     interface = create_interface()

@@ -1,8 +1,8 @@
-import gradio
+import gradio as gr
 from app.chatbot.chatbot import Chatbot
 
 # Initialize the Chatbot instance with a configuration file
-chatbot = Chatbot("config.json", "config.json")
+chatbot = Chatbot("config.json", "bot_presets.json")
 
 # Function to get a chatbot response based on user input, chatbot_id, and conversation history
 def chatbot_response(user_input, chatbot_id="serendipity-fairy", conversation_history=None):
@@ -13,13 +13,13 @@ def chatbot_response(user_input, chatbot_id="serendipity-fairy", conversation_hi
 # Function to create a Gradio interface for the chatbot
 def create_interface():
     # Define the Gradio interface with input, output, title, and other information
-    iface = gradio.Interface(
+    iface = gr.Interface(
         fn=chatbot_response,  # Function to call for generating chatbot responses
         inputs=[
-            gradio.inputs.Textbox(lines=2, label="Your message"),  # User input textbox
-            gradio.inputs.Radio(["serendipity-fairy", "serendipity-assistant"], label="Chatbot")  # Chatbot selection radio
-        ],
-        outputs=gradio.outputs.Textbox(label="Chatbot's response"),  # Output textbox to display chatbot's response
+        gr.components.Textbox(lines=2, label="Your message"),
+        gr.components.Radio(choices=["serendipity-fairy", "serendipity-assistant"], label="Chatbot")
+         ],
+        outputs=gr.components.Textbox(label="Chatbot's response"),
         title="AI Chatbot",  # Title of the interface
         description="A chatbot with different personalities.",  # Description of the interface
         examples=[  # Example inputs and responses for users
