@@ -29,7 +29,6 @@ ivychat/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conv
 ivychat/app/routes/routes.py: Route for handling chatbot requests.
 ivychat/app/static/: reserved for future custom css
 ivychat/app/templates/index.html
-ivychat/dependencies.txt
 ivychat/requirements.txt
 
 Last Goal: Directory Structure
