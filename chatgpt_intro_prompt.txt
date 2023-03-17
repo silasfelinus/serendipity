@@ -7,7 +7,7 @@ Custom html/css/js: Flask
 Integrations: OpenAI
 Testing: pytest
 Logging: logger
-CI: Github Actions
+CI: Github Actions - Passed
 Documentation: serendipity & ChatGPT
 Inspiration: welcoming, elegant, kaizen
 
@@ -22,6 +22,14 @@ Consistent naming conventions for variables, functions, and classes.
 Proper error handling and meaningful error messages.
 DRY (Don't Repeat Yourself) principles for writing modular and reusable code.
 Adequate documentation through docstrings and inline comments.
+
+Start each sample code file with two lines of comments in the format
+#[filepath]
+#[Summary]
+E.G.: 
+#./trawler.py
+#Utility script for reading functions and comments from a codebase.
+
 
 Condensed Directory Info:
 serendipity/trawler.py: Utility script for reading functions and comments from a codebase.
