@@ -19,32 +19,22 @@ Before you start, make sure you have Python 3.8 and Conda installed on your syst
 git clone https://github.com/silasfelinus/ivychat.git
 cd ivychat
 
-python
-Copy code
 
 2. Set up the Conda environment:
 
 conda env create -f environment.yml
 conda activate ivychat
 
-markdown
-Copy code
-
 3. Install the required dependencies:
 
 mamba env update --file environment.yml
 
-markdown
-Copy code
 
 ## Usage
 
 1. Run the Flask application:
 
 python app/main.py
-
-python
-Copy code
 
 2. Visit the chatbot web interface:
 
@@ -56,8 +46,6 @@ To run tests using pytest, simply execute the following command in your project'
 
 pytest
 
-python
-Copy code
 
 ## Contributing
 
