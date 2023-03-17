@@ -61,4 +61,3 @@ Contributions to the serendipity project are welcome! If you'd like to contribut
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-Now you can copy the content within the code block (excluding the triple backticks) and paste it into your GitHub README.md file.
