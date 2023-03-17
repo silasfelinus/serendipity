@@ -1,14 +1,15 @@
+# app/routes/routes.py
 from flask import Blueprint, jsonify, request
 from app.chatbot.chatbot import Chatbot
 
-# Initialize the Chatbot instance with a configuration file
-chatbot = Chatbot("config.json", "config.json")
+# Initialize the Chatbot instance with global_config_file and bot_presets_file
+chatbot = Chatbot("config.json", "bot_presets.json")
 
 # Create a Blueprint object for route handling
-bp = Blueprint("routes", __name__, url_prefix="/")
+api = Blueprint("routes", __name__, url_prefix="/")
 
 # Route for handling chatbot requests
-@bp.route("/chatbot", methods=["POST"])
+@api.route("/chatbot", methods=["POST"])
 def chatbot_route():
     # Extract user input and chatbot_id from the incoming JSON request
     user_input = request.json['user_input']

@@ -2,7 +2,7 @@
 import os
 import pytest
 from app.main import app
-from app.gradio.interface import create_interface
+from app.interface.gradio import create_interface
 
 @pytest.fixture
 def client():
@@ -22,7 +22,7 @@ def test_logger():
 
 def test_create_interface(mocker):
     # Mock Gradio's Library
-    mocker.patch('app.gradio.interface.gr.Interface')
+    mocker.patch('app.interface.gradio.gr.Interface')
 
     # Call the create_interface function
     interface = create_interface()

@@ -1,3 +1,5 @@
+import json
+
 # Import the generate_response function from the response module
 from .response import generate_response
 

@@ -1,11 +1,11 @@
-# Import the required libraries
+# app/main.py
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
 import uvicorn
-from app.routes.routes import routes
-from app.gradio.interface import create_interface
-from serendipity.app.logging_config import setup_logging
+from app.routes.routes import api
+from app.interface.gradio import create_interface
+from app.logging_config import setup_logging
 
 logger = setup_logging()
 
@@ -18,7 +18,7 @@ load_dotenv()
 # Create a Flask application instance
 app = Flask(__name__)
 # Register the routes blueprint
-app.register_blueprint(routes)
+app.register_blueprint(api)
 
 # Main entry point of the application
 if __name__ == "__main__":
