@@ -54,5 +54,5 @@ fi
 echo "python -m pytest"
 
 # Run the application
-python app/main.py
+echo "python app/main.py"
 
