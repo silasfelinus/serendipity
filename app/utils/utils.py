@@ -15,7 +15,7 @@ def load_config(global_config_file, bot_presets_file):
     return {**global_config, **bot_presets}
 
 # Generate a response using OpenAI's API based on the given prompt and configuration
-def generate_response(prompt, config):
+def generate_response(prompt, config, stop=["Human:", "AI:"]):
     response = openai.Completion.create(
         model=config["model"],
         prompt=prompt,
@@ -24,7 +24,7 @@ def generate_response(prompt, config):
         top_p=config["top_p"],
         frequency_penalty=config["frequency_penalty"],
         presence_penalty=config["presence_penalty"],
-        stop=["Human:", "AI:"]
+        stop=stop
     )
     # Return the generated response text, stripped of any leading/trailing whitespace
     return response.choices[0].text.strip()

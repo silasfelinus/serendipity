@@ -18,7 +18,7 @@ class Chatbot:
         return config
 
     # Generate a chatbot response based on the user input and conversation history
-    def response(self, user_input, chatbot_id):
+    def response(self, user_input, chatbot_id, conversation_history):
         prompt = build_prompt(self, user_input, conversation_history)
         response = generate_response(prompt)
         return response
