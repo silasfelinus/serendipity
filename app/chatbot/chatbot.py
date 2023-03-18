@@ -1,32 +1,22 @@
-import yaml
-import os
-from .conversation import build_prompt
-from pathlib import Path
+#./app/chatbot/chatbot.py
+from .bot_config import BotConfig
+from .conversation_handler import ConversationHandler
+from .messaging_manager import MessagingManager
+from .prompt_builder import PromptBuilder
+from .response_handler import ResponseHandler
 
-# Import the generate_response function from the response module
-from .response import generate_response
-
-# Define the Chatbot class
 class Chatbot:
-    def __init__(self, config_file, chatbot_id="default"):
-        self.config_file = config_file
-        self.chatbot_id = chatbot_id
-        self.config = self.load_config()
+    def __init__(self, config_file_path):
+        bot_config = BotConfig(config_file_path)
+        self.conversation_handler = ConversationHandler(bot_config)
+        self.messaging_manager = MessagingManager(bot_config)
+        self.prompt_builder = PromptBuilder(bot_config)
+        self.response_handler = ResponseHandler(bot_config)
 
-    # Load chatbot configuration from the given config file
-    def load_config(self):
-        file_path = Path(self.config_file)
-        try:
-            with file_path.open('r') as f:
-                config = yaml.safe_load(f)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Config file {file_path} not found.")
-        except yaml.YAMLError as e:
-            raise ValueError(f"Error parsing config file {file_path}: {str(e)}")
-        return config
-
-    # Generate a chatbot response based on the user input and conversation history
     def response(self, user_input, chatbot_id, conversation_history):
-        prompt = build_prompt(self, user_input, conversation_history)
-        response = generate_response(prompt)
-        return response
+        conversation = self.conversation_handler.get_conversation(chatbot_id, conversation_history)
+        prompt = self.prompt_builder.build_prompt(conversation, user_input)
+        response = self.messaging_manager.send_message(prompt)
+        processed_response = self.response_handler.process_response(response)
+        self.conversation_handler.update_conversation(chatbot_id, user_input, processed_response)
+        return processed_response

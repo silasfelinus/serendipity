@@ -1,31 +1,31 @@
-from flask import Flask, render_template, request, jsonify
-from dotenv import load_dotenv
+#./app/main.py
 import os
+from dotenv import load_dotenv
+# Load environment variables from the .env file
+load_dotenv()
+config_path = os.environ.get('GLOBAL_CONFIG_FILE')
+
+from flask import Flask, render_template, request, jsonify
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
-from routes.routes import api
-from interface.gradio import create_interface
+from app.routes.routes import api
+from app.interface.gradio import create_interface
 from logging_config import logger
+from app.livechat import livechat_bp, socketio
+from app.chatbot.routes.chatbot_routes import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")
 
-# Log a warning message
-logger.warning("Something's not right here...")
-
-# Log an error message with an exception
-try:
-    1 / 0
-except Exception as e:
-    logger.error("Error dividing by zero", exc_info=e)
-
-# Load environment variables from the .env file
-load_dotenv()
 
 # Create a Flask application instance
 app = Flask(__name__)
-# Register the routes blueprint
+# Register the routes blueprints
 app.register_blueprint(api)
+app.register_blueprint(livechat_bp, url_prefix='/livechat')
+app.register_blueprint(chatbot_bp, url_prefix='/chatbot')
+
+socketio.init_app(app)
 
 # Create the Gradio interface for the chatbot
 interface = create_interface()

@@ -59,8 +59,8 @@ fi
 
 
 #comment to turn off testing
-echo "python -m pytest"
+python -m pytest
 
 # Run the application
-echo "python app/main.py"
+python app/main.py
 

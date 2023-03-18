@@ -6,7 +6,9 @@ pytest-mock
 asgiref
 openai
 Flask
+flask_socketio
 gradio
 tensorflow
 python-dotenv
 pyyaml
+sphinx

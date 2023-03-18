@@ -10,8 +10,8 @@ root directory == serendipity
     environment.yml
     config.yaml
     trawler.py
+    launcher.sh
     .env
-    launch.sh
     .gitignore
     venv/
     docs/
@@ -26,19 +26,54 @@ root directory == serendipity
         interface/
             gradio.py
             __init__.py
+        livechat/
+            events.py
+            livechat.py
+            routes.py
+            __init__.py
         templates/
             index.html
+            livechat.html
         static/
+            livechat.js
             styles.css
         test/
             test_main.py
             __init__.py
         chatbot/
-            conversation.py
             chatbot.py
-            response.py
+            conversation_handler.py
+            bot_config.py
+            response_handler.py
+            messaging_manager.py
             __init__.py
             prompt_builder.py
+            routes/
+                chatbot_routes.py
         routes/
             routes.py
             __init__.py
+
+
+            
+The top-level directory contains files such as .env.example, requirements.txt, prompts.yaml, config.yaml, setup.sh, launcher.sh, and .gitignore, which are all standard files that are commonly used in Python projects.
+
+The venv/ directory contains the Python virtual environment, which is used to isolate the project dependencies from the system dependencies.
+
+The app/ directory contains the main application code and is structured into several subdirectories for different functionality such as interface/, livechat/, templates/, static/, test/, and chatbot/.
+
+The logging_config.py file in the app/ directory is used to configure the logging for the application, which is a good practice for managing application logs.
+
+The main.py file in the app/ directory is the entry point for the application and is responsible for initializing the Flask app, registering the routes blueprints, and launching the app.
+
+The interface/ directory contains files related to the Gradio interface for the chatbot.
+
+The livechat/ directory contains files related to the live chat functionality, including event handlers and routes.
+
+The templates/ directory contains the HTML templates for the app, including the index and live chat pages.
+
+The static/ directory contains the CSS and JavaScript files for the app, including the live chat functionality.
+
+The test/ directory contains the unit tests for the app, including the test_main.py file.
+
+The chatbot/ directory contains files related to the chatbot functionality, including the main chatbot.py file, conversation_handler.py, bot_config.py, response_handler.py, messaging_manager.py, prompt_builder.py, and chatbot_routes.py.
