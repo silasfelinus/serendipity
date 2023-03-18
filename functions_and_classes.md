@@ -9,21 +9,29 @@ app/
         gradio.py
         __init__.py
     livechat/
+        events.py
         livechat.py
+        routes.py
         __init__.py
     templates/
         index.html
+        livechat.html
     static/
+        livechat.js
         styles.css
     test/
         test_main.py
         __init__.py
     chatbot/
-        conversation.py
         chatbot.py
-        response.py
+        conversation_handler.py
+        bot_config.py
+        response_handler.py
+        messaging_manager.py
         __init__.py
         prompt_builder.py
+        routes/
+            chatbot_routes.py
     routes/
         routes.py
         __init__.py
@@ -39,6 +47,14 @@ app/
 ### Classes
 
 
+## /home/silasfelinus/code/serendipity/app/routes/routes.py
+
+### Functions
+
+
+### Classes
+
+
 ## app = Flask(__name__)
 
 ### Functions
@@ -47,7 +63,7 @@ app/
 ### Classes
 
 
-## /home/silasfelinus/code/serendipity/app/test/test_main.py
+## from dotenv import load_dotenv
 
 ### Functions
 
@@ -63,7 +79,7 @@ app/
 ### Classes
 
 
-## /home/silasfelinus/code/serendipity/app/routes/routes.py
+## /home/silasfelinus/code/serendipity/app/test/test_main.py
 
 ### Functions
 
@@ -71,7 +87,7 @@ app/
 ### Classes
 
 
-## /home/silasfelinus/code/serendipity/app/chatbot/conversation.py
+## /home/silasfelinus/code/serendipity/app/chatbot/__init__.py
 
 ### Functions
 

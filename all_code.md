@@ -17,34 +17,33 @@ logger = setup_logging()
 
 -
 /home/silasfelinus/code/serendipity/app/main.py
-from flask import Flask, render_template, request, jsonify
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+# Load environment variables from the .env file
+load_dotenv()
+config_path = os.environ.get('GLOBAL_CONFIG_FILE')
+
+from flask import Flask, render_template, request, jsonify
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
-from routes.routes import api
-from interface.gradio import create_interface
+from app.routes.routes import api
+from app.interface.gradio import create_interface
 from logging_config import logger
+from app.livechat import livechat_bp, socketio
+from app.chatbot import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")
 
-# Log a warning message
-logger.warning("Something's not right here...")
-
-# Log an error message with an exception
-try:
-    1 / 0
-except Exception as e:
-    logger.error("Error dividing by zero", exc_info=e)
-
-# Load environment variables from the .env file
-load_dotenv()
 
 # Create a Flask application instance
 app = Flask(__name__)
-# Register the routes blueprint
+# Register the routes blueprints
 app.register_blueprint(api)
+app.register_blueprint(livechat_bp, url_prefix='/livechat')
+app.register_blueprint(chatbot_bp, url_prefix='/chatbot')
+
+socketio.init_app(app)
 
 # Create the Gradio interface for the chatbot
 interface = create_interface()
@@ -66,7 +65,7 @@ if __name__ == "__main__":
 -
 /home/silasfelinus/code/serendipity/app/interface/gradio.py
 import gradio as gr
-from chatbot.chatbot import Chatbot
+from app.chatbot.routes.chatbot_routes import Chatbot
 
 # Initialize the Chatbot instance with a configuration file
 chatbot = Chatbot('config.yaml')
@@ -100,10 +99,47 @@ def create_interface():
 /home/silasfelinus/code/serendipity/app/interface/__init__.py
 
 -
+/home/silasfelinus/code/serendipity/app/livechat/events.py
+from flask_socketio import join_room, leave_room, send
+from . import socketio
+
+@socketio.on('join')
+def on_join(data):
+    username = data['username']
+    room = data['room']
+    join_room(room)
+    send(username + ' has entered the room.', room=room)
+
+@socketio.on('leave')
+def on_leave(data):
+    username = data['username']
+    room = data['room']
+    leave_room(room)
+    send(username + ' has left the room.', room=room)
+
+@socketio.on('message')
+def on_message(data):
+    send(data['message'], room=data['room'])
+-
 /home/silasfelinus/code/serendipity/app/livechat/livechat.py
 
 -
+/home/silasfelinus/code/serendipity/app/livechat/routes.py
+from flask import render_template
+from . import livechat_bp
+
+@livechat_bp.route('/')
+def livechat():
+    return render_template('livechat.html')
+-
 /home/silasfelinus/code/serendipity/app/livechat/__init__.py
+from flask import Blueprint
+from flask_socketio import SocketIO
+
+livechat_bp = Blueprint('livechat', __name__)
+socketio = SocketIO()
+
+from . import routes, events
 
 -
 /home/silasfelinus/code/serendipity/app/test/test_main.py
@@ -142,102 +178,131 @@ def test_create_interface(mocker):
 /home/silasfelinus/code/serendipity/app/test/__init__.py
 
 -
-/home/silasfelinus/code/serendipity/app/chatbot/conversation.py
-# Import the PromptBuilder class
-from .prompt_builder import PromptBuilder
-
-def build_prompt(chatbot, user_input, conversation_history=None):
-    """
-    Function to build a prompt using the PromptBuilder class.
-
-    Args:
-        chatbot: A Chatbot instance containing the chatbot's configuration.
-        user_input: A string containing the user's input.
-        conversation_history: A list of dictionaries representing the conversation history (optional).
-
-    Returns:
-        A string representing the built prompt for the chatbot.
-    """
-    # Create a PromptBuilder instance with the chatbot, user input, and conversation history
-    prompt_builder = PromptBuilder(chatbot, user_input, conversation_history)
-    
-    # Return the built prompt using the PromptBuilder instance
-    return prompt_builder.build_prompt()
--
 /home/silasfelinus/code/serendipity/app/chatbot/chatbot.py
-import yaml
-import os
-from .conversation import build_prompt
-from pathlib import Path
+from .bot_config import BotConfig
+from .conversation_handler import ConversationHandler
+from .messaging_manager import MessagingManager
+from .prompt_builder import PromptBuilder
+from .response_handler import ResponseHandler
 
-# Import the generate_response function from the response module
-from .response import generate_response
-
-# Define the Chatbot class
 class Chatbot:
-    def __init__(self, config_file, chatbot_id="default"):
-        self.config_file = config_file
-        self.chatbot_id = chatbot_id
-        self.config = self.load_config()
+    def __init__(self, config_file_path):
+        conversation_handler = ConversationHandler()
+        self.conversation_handler = ConversationHandler()
+        self.messaging_manager = MessagingManager(bot_config)
+        self.prompt_builder = PromptBuilder(bot_config)
+        self.response_handler = ResponseHandler(bot_config)
 
-    # Load chatbot configuration from the given config file
-    def load_config(self):
-        file_path = Path(self.config_file)
-        try:
-            with file_path.open('r') as f:
-                config = yaml.safe_load(f)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Config file {file_path} not found.")
-        except yaml.YAMLError as e:
-            raise ValueError(f"Error parsing config file {file_path}: {str(e)}")
-        return config
-
-    # Generate a chatbot response based on the user input and conversation history
     def response(self, user_input, chatbot_id, conversation_history):
-        prompt = build_prompt(self, user_input, conversation_history)
-        response = generate_response(prompt)
-        return response
+        conversation = self.conversation_handler.get_conversation(chatbot_id, conversation_history)
+        prompt = self.prompt_builder.build_prompt(conversation, user_input)
+        response = self.messaging_manager.send_message(prompt)
+        processed_response = self.response_handler.process_response(response)
+        self.conversation_handler.update_conversation(chatbot_id, user_input, processed_response)
+        return processed_response
+
 -
-/home/silasfelinus/code/serendipity/app/chatbot/response.py
-import openai
+/home/silasfelinus/code/serendipity/app/chatbot/conversation_handler.py
+from app.chatbot.bot_config import BotConfig
+from .messaging_manager import MessagingManager
+
+class ConversationHandler:
+    def __init__(self, bot_config):
+        self.bot_config = BotConfig()
+        self.messaging_manager = MessagingManager()
+
+        # Define conversation history as a list
+        self.conversation_history = []
+
+    def start_conversation(self, user_input):
+        # Add the user's input to the conversation history
+        self.conversation_history.append({
+            "user": self.bot_config.get_config("user_name"),
+            "input": user_input,
+            "chatbot": self.bot_config.get_config("chatbot_name"),
+            "response": "",
+        })
+
+        # Build the conversation prompt
+        prompt = self.messaging_manager.build_prompt(user_input, self.conversation_history)
+
+        # Get the chatbot's response
+        chatbot_response = self.messaging_manager.get_chatbot_response(prompt, self.bot_config.get_config("chatbot_id"))
+
+        # Add the chatbot's response to the conversation history
+        self.conversation_history[-1]["response"] = chatbot_response
+
+        return chatbot_response
+
+-
+/home/silasfelinus/code/serendipity/app/chatbot/bot_config.py
 import os
-from logging_config import logger
+import yaml
 
-# Set the OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+class BotConfig:
+    def __init__(self):
+        config_file_path = os.environ.get('GLOBAL_CONFIG_FILE')
+        if config_file_path is None:
+            raise ValueError("GLOBAL_CONFIG_FILE environment variable not found.")
+        
+        with open(config_file_path, 'r') as config_file:
+            self.config = yaml.safe_load(config_file) or {}
 
-# Function to generate a response from OpenAI's GPT model based on the given prompt
-def generate_response(prompt):
-    # Call the OpenAI API to generate a completion with the provided prompt
-    try:
-        response = openai.Completion.create(
-        engine="davinci",  # Use the "davinci" engine for generating responses
-        prompt=prompt,  # Pass in the conversation prompt
-        max_tokens=1024,  # Set the maximum number of tokens for the generated response
-        n=1,  # Number of responses to generate
-        stop=None,  # Stop token for truncating the response
-        temperature=0.5,  # Sampling temperature to control randomness
-    )
+    def get_config(self, key):
+        return self.config.get(key)
+
+    def get_api_key(self):
+        return os.environ.get("OPEN_AI_API_KEY")
+-
+/home/silasfelinus/code/serendipity/app/chatbot/response_handler.py
+class ResponseHandler:
+    def __init__(self, bot_config):
+        self.bot_name = bot_config["bot_name"]
+
+    def process_response(self, response):
+        # Remove the chatbot's name from the response, if it is present
+        if response.startswith(self.bot_name + ":"):
+            response = response[len(self.bot_name) + 1:].strip()
+
+        return response
+
+-
+/home/silasfelinus/code/serendipity/app/chatbot/messaging_manager.py
+from app.chatbot.prompt_builder import PromptBuilder
+import openai
+
+class MessagingManager:
+    def __init__(self, bot_config):
+        self.prompt_builder = PromptBuilder(bot_config)
+        self.openai = openai(api_key=bot_config['api_key'])
+
+    def build_prompt(self, user_input, conversation_history):
+        return self.prompt_builder.build_prompt(user_input, conversation_history)
+
+    def get_chatbot_response(self, prompt, chatbot_id):
+        response = self.openai.Completion.create(
+            engine=chatbot_id,
+            prompt=prompt,
+            max_tokens=150,
+            n=1,
+            stop=None,
+            temperature=0.5,
+        )
         return response.choices[0].text.strip()
-    except Exception as e:
-        # Log the exception and return an error message
-        logger.error(f"Error generating response from OpenAI: {e}")
-        return "An error occurred while generating a response. Please try again."
 
-    # Return the generated response text, stripping any leading/trailing whitespace
-    return response.choices[0].text.strip()
 -
 /home/silasfelinus/code/serendipity/app/chatbot/__init__.py
+# app/chatbot/__init__.py
 
-
+from .routes.chatbot_routes import chatbot_bp
 -
 /home/silasfelinus/code/serendipity/app/chatbot/prompt_builder.py
 # Define the PromptBuilder class for constructing conversation prompts
 class PromptBuilder:
-    def __init__(self, chatbot, user_input, conversation_history=None):
-        self.chatbot = chatbot
+    def __init__(self, bot_config, user_input=None):
+        self.bot_config = bot_config
         self.user_input = user_input
-        self.conversation_history = conversation_history or []
+        self.conversation_history = []
 
     # Function to get chatbot configuration by ID, merging with the default chatbot if available
     def get_chatbot_by_id(chatbot_id, config):
@@ -292,11 +357,37 @@ class PromptBuilder:
         return prompt
 
 -
+/home/silasfelinus/code/serendipity/app/chatbot/routes/chatbot_routes.py
+from flask import Blueprint, jsonify, request, render_template
+from app.chatbot.conversation_handler import ConversationHandler
+from app.chatbot.bot_config import BotConfig
+import os
+
+# Initialize the BotConfig instance with the config file
+bot_config = BotConfig()
+
+# Initialize the ConversationHandler instance with the bot configuration
+conversation_handler = ConversationHandler()
+
+# Create a Blueprint object for route handling
+chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
+
+# Route for handling chatbot requests
+@chatbot_bp.route('/chatbot', methods=['POST'])
+def chatbot_route():
+    request_data = request.json
+    user_input = request_data['user_input']
+    chatbot_id = request_data['chatbot_id']
+    conversation_history = request_data['conversation_history']
+    response = conversation_handler.handle_conversation(user_input, chatbot_id, conversation_history)
+    return jsonify({'response': response})
+
+-
 /home/silasfelinus/code/serendipity/app/routes/routes.py
 # app/routes/routes.py
 import os
 from flask import Blueprint, jsonify, request, render_template
-from chatbot.chatbot import Chatbot
+from app.chatbot.chatbot import Chatbot
 
 # Get the path to the config file
 config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')
