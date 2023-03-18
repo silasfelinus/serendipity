@@ -1,17 +1,69 @@
 Intro: Serendipity is an AI chatbot and digital-assistant app in Python using Gradio and Flask
-Goal: A modular, user-friendly, and well-coded AI chatbot/digital assistant showcasing impeccable organization and elegant programming skills.
+Goal: A modular, user-friendly, and well-coded gradio/flask website app showcasing impeccable organization and elegant programming skills.
 Repo: https://github.com/silasfelinus/serendipity/tree/main
 Language: Python 3.8
-ML: Gradio
+Interface: Gradio
 Custom html/css/js: Flask
 Integrations: OpenAI
 Testing: pytest
 Logging: logger
-CI: Github Actions - Passed
-Documentation: serendipity & ChatGPT
-Inspiration: welcoming, elegant, kaizen
+CI: Github Actions
+Directory:
+./
+    .env.example
+    requirements.txt
+    prompts.yaml
+    all_code.md
+    directory_tree.txt
+    environment.yml
+    chatgpt_intro_prompt.txt
+    config.yaml
+    functions_and_classes.md
+    trawler.py
+    .env
+    launch.sh
+    .gitignore
+    venv/
+    docs/
+        roadmap.txt
+        README.md
+        textdumps/
+            2022
+            serendipity_history.txt
+            silas_quests
+            quests.yaml
+            openai.txt
+    .git/
 
-Notes: Focus on readability, simplicity, and consistent naming conventions. 
+        hooks/
+        logs/
+        info/
+    app/
+        logging_config.py
+        main.py
+        __init__.py
+        interface/
+            gradio.py
+            __init__.py
+        templates/
+            index.html
+        static/
+            styles.css
+        test/
+            test_main.py
+            __init__.py
+        chatbot/
+            conversation.py
+            chatbot.py
+            response.py
+            __init__.py
+            prompt_builder.py
+        routes/
+            routes.py
+            __init__.py
+
+Instructions:
+Focus on readability, simplicity, and consistent naming conventions. 
 Write modular and reusable functions or classes. 
 Adhere to Python best practices and coding standards. 
 Ensure proper error handling and use meaningful error messages. 
@@ -23,37 +75,20 @@ Proper error handling and meaningful error messages.
 DRY (Don't Repeat Yourself) principles for writing modular and reusable code.
 Adequate documentation through docstrings and inline comments.
 
-Start each sample code file with two lines of comments in the format
+Start sample code with commented filepath and single line summary
 #[filepath]
 #[Summary]
+
 E.G.: 
 #./trawler.py
 #Utility script for reading functions and comments from a codebase.
 
-
-Condensed Directory Info:
-./trawler.py: Utility script for reading functions and comments from a codebase.
-./.github/workflows/flow.yaml: Github Action CI info
-./app/__init__.py: Application initialization.
-./app/logging_config.py: Logging configuration setup.
-./app/utils.py: Configuration loading and response generation functions.
-./app/interface/gradio.py: Gradio interface for the chatbot.
-./app/test/test_main.py: Test suite for application entry point, logger, and Gradio interface.
-./app/chatbot/conversation.py: Function for building conversation prompts.
-./app/chatbot/chatbot.py: Chatbot class with initialization, config loading, and response functions.
-./app/chatbot/response.py: Function for generating responses using the OpenAI API.
-./app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
-./app/routes/routes.py: Route for handling chatbot requests.
-./app/static/: Reserved for future custom CSS.
-./docs/README.md
-./app/templates/index.html
-./requirements.txt
-./.gitignore: Wait, you can see that too? <jk>
-
-Last Goals: Directory Structure, Logging
-Next Goals: Website formatting, Livechat, Database, User Login, , Documentation
+Last Goals: Directory Structure, Logging, CI, pytest
 Permanent Goals: Code Review, optimized for clarity, consistency, and elegance.  
-Current Goal: Add pytest functions
+Next Goals: Livechat, Website formatting, Database Intgration, User Login
 
-do: 
-Write a pytest suite for bug testing the functions of the AI chatbot and digital assistant app, Serendipity, written in Python 3.8 using Gradio and Flask. The suite should test the functions of the application as they are currently, without adding more features. Focus on readability, simplicity, and consistent naming conventions. Ensure proper error handling and use meaningful error messages. The suite should use pytest and follow Python's PEP 8 style guide.
+Project: Livechat
+Minimum viable product: a livechat window on the website that will accept and display text inputs. (I have a nodejs livechat project we can start from, or recreate code for this project)
+Full concept: User login portal, chatroom selection, internet connected, conversations and user logins are stored in a database (mongo or mariadb)
+
+With that setup and my goal of making a functional livechat window on the website, can you give me an outline of steps we can go through to meet this goal today?
