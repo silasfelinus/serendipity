@@ -12,14 +12,6 @@ from app.livechat import livechat_bp, socketio
 # Log an informational message
 logger.info("Hello, world!")
 
-# Log a warning message
-logger.warning("Something's not right here...")
-
-# Log an error message with an exception
-try:
-    1 / 0
-except Exception as e:
-    logger.error("Error dividing by zero", exc_info=e)
 
 # Load environment variables from the .env file
 load_dotenv()
