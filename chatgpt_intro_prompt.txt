@@ -60,6 +60,8 @@ Directory:
             prompt_builder.py
         livechat/
             livechat.py
+            events.py
+            routes.py
             __init__.py
         routes/
             routes.py
