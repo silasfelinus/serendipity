@@ -4,7 +4,7 @@ import os
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
 from .routes.routes import api
-from interface.gradio import create_interface
+from .interface.gradio import create_interface
 from logging_config import setup_logging
 
 logger = setup_logging()
@@ -20,16 +20,16 @@ app = Flask(__name__)
 # Register the routes blueprint
 app.register_blueprint(api)
 
+# Create the Gradio interface for the chatbot
+interface = create_interface()
+
 # Main entry point of the application
 if __name__ == "__main__":
     # Get the port number from the environment variable or use the default value
     port = int(os.environ.get("PORT", 7860))
-    
-    # Create the Gradio interface for the chatbot
-    interface = create_interface()
-    interface.launch()  # Launch the Gradio interface
-    
-if os.environ.get("FLASK_ENV") == "development":
+
+    if os.environ.get("FLASK_ENV") == "development":
         app.run(host="0.0.0.0", port=port)
-else:
+    else:
+        interface.launch()  # Launch the Gradio interface
         uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")

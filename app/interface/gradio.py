@@ -1,8 +1,8 @@
 import gradio as gr
-from chatbot.chatbot import Chatbot
+from ..chatbot.chatbot import Chatbot
 
 # Initialize the Chatbot instance with a configuration file
-chatbot = Chatbot("config.json", "bot_presets.json")
+chatbot = Chatbot('config.yaml')
 
 # Function to get a chatbot response based on user input, chatbot_id, and conversation history
 def chatbot_response(user_input, chatbot_id="serendipity-fairy", conversation_history=None):
