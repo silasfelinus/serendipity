@@ -1,5 +1,6 @@
 import yaml
 from .conversation import build_prompt
+from pathlib import Path
 
 # Import the generate_response function from the response module
 from .response import generate_response
@@ -13,9 +14,9 @@ class Chatbot:
 
     # Load chatbot configuration from the given config file
     def load_config(self):
-        file_path = self.config_file
+        file_path = Path(self.config_file)
         try:
-            with open(file_path, 'r') as f:
+            with file_path.open('r') as f:
                 config = yaml.safe_load(f)
         except FileNotFoundError:
             raise FileNotFoundError(f"Config file {file_path} not found.")
