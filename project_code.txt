@@ -1,22 +1,4 @@
-C:\Users\silas\code\serendipity\app\logging_config.py
-import logging
-import sys
-
-def setup_logging():
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.StreamHandler(sys.stdout),
-            logging.FileHandler("serendipity.log")
-        ]
-    )
-    return logging.getLogger("serendipity")
-
-logger = setup_logging()
-
--
-C:\Users\silas\code\serendipity\app\main.py
+app/main.py
 #./app/main.py
 import os
 from dotenv import load_dotenv
@@ -61,10 +43,64 @@ if __name__ == "__main__":
         uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
 
 -
-C:\Users\silas\code\serendipity\app\__init__.py
+app/chatbot/routes/chatbot_routes.py
+#./app/chatbot/routes/chatbot_routes.py
+from flask import Blueprint, jsonify, request, render_template
+from app.chatbot.conversation_handler import ConversationHandler
+from app.chatbot.bot_config import BotConfig
+from app.chatbot.messaging_manager import MessagingManager
+
+# Initialize the BotConfig instance with the config file
+bot_config = BotConfig()
+
+# Initialize the ConversationHandler instance with the bot configuration
+conversation_handler = ConversationHandler(bot_config)
+
+# Create a Blueprint object for route handling
+chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
+
+# Route for handling chatbot requests
+@chatbot_bp.route('/chatbot', methods=['POST'])
+def chatbot_route():
+    request_data = request.json
+    user_input = request_data['user_input']
+    chatbot_id = request_data['chatbot_id']
+    conversation_history = request_data['conversation_history']
+    response = conversation_handler.handle_conversation(user_input, chatbot_id, conversation_history)
+    return jsonify({'response': response})
 
 -
-C:\Users\silas\code\serendipity\app\chatbot\bot_config.py
+app/chatbot/routes/chatbot_routes.py
+#./app/chatbot/routes/chatbot_routes.py
+from flask import Blueprint, jsonify, request, render_template
+from app.chatbot.conversation_handler import ConversationHandler
+from app.chatbot.bot_config import BotConfig
+from app.chatbot.messaging_manager import MessagingManager
+
+# Initialize the BotConfig instance with the config file
+bot_config = BotConfig()
+
+# Initialize the ConversationHandler instance with the bot configuration
+conversation_handler = ConversationHandler(bot_config)
+
+# Create a Blueprint object for route handling
+chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
+
+# Route for handling chatbot requests
+@chatbot_bp.route('/chatbot', methods=['POST'])
+def chatbot_route():
+    request_data = request.json
+    user_input = request_data['user_input']
+    chatbot_id = request_data['chatbot_id']
+    conversation_history = request_data['conversation_history']
+    response = conversation_handler.handle_conversation(user_input, chatbot_id, conversation_history)
+    return jsonify({'response': response})
+
+-
+app/chatbot/__init__.py
+
+-
+app/chatbot/bot_config.py
 #./app/chatbot/bot_config.py
 
 import os
@@ -87,7 +123,7 @@ class BotConfig:
     def get_api_key(self):
         return os.environ.get('OPEN_AI_API_KEY')
 -
-C:\Users\silas\code\serendipity\app\chatbot\chatbot.py
+app/chatbot/chatbot.py
 #./app/chatbot/chatbot.py
 from .bot_config import BotConfig
 from .conversation_handler import ConversationHandler
@@ -112,7 +148,7 @@ class Chatbot:
         return processed_response
 
 -
-C:\Users\silas\code\serendipity\app\chatbot\conversation_handler.py
+app/chatbot/conversation_handler.py
 #./app/chatbot/conversation_handler.py
 from app.chatbot.bot_config import BotConfig
 from .messaging_manager import MessagingManager
@@ -145,7 +181,7 @@ class ConversationHandler:
         return chatbot_response
 
 -
-C:\Users\silas\code\serendipity\app\chatbot\messaging_manager.py
+app/chatbot/messaging_manager.py
 #./app/chatbot/messaging_manager.py
 from app.chatbot.prompt_builder import PromptBuilder
 import openai
@@ -181,7 +217,7 @@ class MessagingManager:
             raise ValueError(f'Failed to send message to chatbot: {error_message}')
         return response_data['choices'][0]['text']
 -
-C:\Users\silas\code\serendipity\app\chatbot\prompt_builder.py
+app/chatbot/prompt_builder.py
 # Define the PromptBuilder class for constructing conversation prompts
 class PromptBuilder:
     def __init__(self, bot_config, user_input=None):
@@ -242,7 +278,7 @@ class PromptBuilder:
         return prompt
 
 -
-C:\Users\silas\code\serendipity\app\chatbot\response_handler.py
+app/chatbot/response_handler.py
 #./app/chatbot/response_handler.py
 class ResponseHandler:
     def __init__(self, bot_config):
@@ -257,37 +293,7 @@ class ResponseHandler:
         return response
 
 -
-C:\Users\silas\code\serendipity\app\chatbot\__init__.py
-
--
-C:\Users\silas\code\serendipity\app\chatbot\routes\chatbot_routes.py
-#./app/chatbot/routes/chatbot_routes.py
-from flask import Blueprint, jsonify, request, render_template
-from app.chatbot.conversation_handler import ConversationHandler
-from app.chatbot.bot_config import BotConfig
-from app.chatbot.messaging_manager import MessagingManager
-
-# Initialize the BotConfig instance with the config file
-bot_config = BotConfig()
-
-# Initialize the ConversationHandler instance with the bot configuration
-conversation_handler = ConversationHandler(bot_config)
-
-# Create a Blueprint object for route handling
-chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
-
-# Route for handling chatbot requests
-@chatbot_bp.route('/chatbot', methods=['POST'])
-def chatbot_route():
-    request_data = request.json
-    user_input = request_data['user_input']
-    chatbot_id = request_data['chatbot_id']
-    conversation_history = request_data['conversation_history']
-    response = conversation_handler.handle_conversation(user_input, chatbot_id, conversation_history)
-    return jsonify({'response': response})
-
--
-C:\Users\silas\code\serendipity\app\interface\gradio.py
+app/interface/gradio.py
 import gradio as gr
 from app.chatbot.routes.chatbot_routes import Chatbot
 
@@ -320,10 +326,17 @@ def create_interface():
     return iface
 
 -
-C:\Users\silas\code\serendipity\app\interface\__init__.py
+app/livechat/__init__.py
+from flask import Blueprint
+from flask_socketio import SocketIO
+
+livechat_bp = Blueprint('livechat', __name__)
+socketio = SocketIO()
+
+from . import routes, events
 
 -
-C:\Users\silas\code\serendipity\app\livechat\events.py
+app/livechat/events.py
 from flask_socketio import join_room, leave_room, send
 from . import socketio
 
@@ -345,95 +358,14 @@ def on_leave(data):
 def on_message(data):
     send(data['message'], room=data['room'])
 -
-C:\Users\silas\code\serendipity\app\livechat\livechat.py
+app/livechat/livechat.py
 
 -
-C:\Users\silas\code\serendipity\app\livechat\routes.py
+app/livechat/routes.py
 from flask import render_template
 from . import livechat_bp
 
 @livechat_bp.route('/')
 def livechat():
     return render_template('livechat.html')
--
-C:\Users\silas\code\serendipity\app\livechat\__init__.py
-from flask import Blueprint
-from flask_socketio import SocketIO
-
-livechat_bp = Blueprint('livechat', __name__)
-socketio = SocketIO()
-
-from . import routes, events
-
--
-C:\Users\silas\code\serendipity\app\routes\routes.py
-# app/routes/routes.py
-import os
-from flask import Blueprint, jsonify, request, render_template
-from app.chatbot.chatbot import Chatbot
-
-# Get the path to the config file
-config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')
-
-# Initialize the Chatbot instance with the config file
-chatbot = Chatbot(config_file_path)
-
-# Create a Blueprint object for route handling
-api = Blueprint("routes", __name__, url_prefix="/")
-
-# Route for the main page
-@api.route("/", methods=["GET"])
-def main_page():
-    return render_template("index.html")
-
-# Route for handling chatbot requests
-@api.route('/chatbot', methods=['POST'])
-def chatbot_route():
-    request_data = request.json
-    user_input = request_data['user_input']
-    chatbot_id = request_data['chatbot_id']
-    conversation_history = request_data['conversation_history']
-    response = chatbot.response(user_input, chatbot_id, conversation_history)
-    return jsonify({'response': response})
-
--
-C:\Users\silas\code\serendipity\app\routes\__init__.py
-
-
--
-C:\Users\silas\code\serendipity\app\test\test_main.py
-# app/test/test_main.py
-import os
-import pytest
-from app.main import app
-from app.interface.gradio import create_interface
-
-@pytest.fixture
-def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
-        yield client
-
-def test_main_route(client):
-    response = client.get('/')
-    assert response.status_code == 200
-    assert b"Serendipity - Digital AI Assistant" in response.data
-
-def test_logger():
-    from app.logging_config import setup_logging
-    logger = setup_logging()
-    assert logger is not None
-
-def test_create_interface(mocker):
-    # Mock Gradio's Library
-    mocker.patch('gradio.Interface')
-
-    # Call the create_interface function
-    interface = create_interface()
-
-    # Check if the interface is not None
-    assert interface is not None
--
-C:\Users\silas\code\serendipity\app\test\__init__.py
-
 -
