@@ -1,10 +1,10 @@
 from app.chatbot.prompt_builder import PromptBuilder
-from openai import OpenAI
+import openai
 
 class MessagingManager:
     def __init__(self, bot_config):
         self.prompt_builder = PromptBuilder(bot_config)
-        self.openai = OpenAI(api_key=bot_config['api_key'])
+        self.openai = openai(api_key=bot_config['api_key'])
 
     def build_prompt(self, user_input, conversation_history):
         return self.prompt_builder.build_prompt(user_input, conversation_history)

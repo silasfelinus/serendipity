@@ -3,11 +3,8 @@ from app.chatbot.conversation_handler import ConversationHandler
 from app.chatbot.bot_config import BotConfig
 import os
 
-# Get the path to the config file
-config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')
-
 # Initialize the BotConfig instance with the config file
-bot_config = BotConfig(config_file_path)
+bot_config = BotConfig()
 
 # Initialize the ConversationHandler instance with the bot configuration
 conversation_handler = ConversationHandler(bot_config)

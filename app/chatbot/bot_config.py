@@ -1,16 +1,14 @@
-import yaml
 import os
-
+import yaml
 
 class BotConfig:
-    def __init__(self, config_file_path):
-        self.config_file_path = config_file_path
-        self.config_data = None
-        self.load_config()
-
-    def load_config(self):
-        with open(self.config_file_path, "r") as config_file:
-            self.config_data = yaml.safe_load(config_file)
+    def __init__(self):
+        # Get the path to the config file from the environment variable
+        config_file_path = os.environ.get('GLOBAL_CONFIG_FILE')
+        
+        # Load the configuration
+        with open(config_file_path, 'r') as config_file:
+            self.config = yaml.safe_load(config_file)
 
     def get_chatbot_config(self):
         return self.config_data["chatbot"]
