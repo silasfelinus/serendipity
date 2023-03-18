@@ -29,5 +29,7 @@ if __name__ == "__main__":
     interface = create_interface()
     interface.launch()  # Launch the Gradio interface
     
-    # Run the application using the Uvicorn ASGI server
-    uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
+if os.environ.get("FLASK_ENV") == "development":
+        app.run(host="0.0.0.0", port=port)
+else:
+        uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")

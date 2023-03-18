@@ -57,9 +57,12 @@ if __name__ == "__main__":
     
     # Create the Gradio interface for the chatbot
     interface = create_interface()
+    interface.launch()  # Launch the Gradio interface
     
-    # Run the application using the Uvicorn ASGI server
-    uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
+ if os.environ.get("FLASK_ENV") == "development":
+        app.run(host="0.0.0.0", port=port)
+    else:
+        uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
 -
 /home/silasfelinus/code/serendipity/app/__init__.py
 
@@ -96,9 +99,6 @@ def create_interface():
     )
     return iface
 
-if __name__ == "__main__":
-    iface = create_interface()
-    iface.launch()  # Launch the Gradio interface
 -
 /home/silasfelinus/code/serendipity/app/interface/__init__.py
 
@@ -188,7 +188,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # Function to generate a response from OpenAI's GPT model based on the given prompt
 def generate_response(prompt):
     # Call the OpenAI API to generate a completion with the provided prompt
-    response = openai.Completion.create(
+    try:
+        response = openai.Completion.create(
         engine="davinci",  # Use the "davinci" engine for generating responses
         prompt=prompt,  # Pass in the conversation prompt
         max_tokens=1024,  # Set the maximum number of tokens for the generated response
@@ -196,6 +197,11 @@ def generate_response(prompt):
         stop=None,  # Stop token for truncating the response
         temperature=0.5,  # Sampling temperature to control randomness
     )
+        return response.choices[0].text.strip()
+    except Exception as e:
+        # Log the exception and return an error message
+        logger.error(f"Error generating response from OpenAI: {e}")
+        return "An error occurred while generating a response. Please try again."
 
     # Return the generated response text, stripping any leading/trailing whitespace
     return response.choices[0].text.strip()
@@ -271,7 +277,8 @@ from flask import Blueprint, jsonify, request, render_template
 from chatbot.chatbot import Chatbot
 
 # Initialize the Chatbot instance with global_config_file and bot_presets_file
-chatbot = Chatbot("config.json", "bot_presets.json")
+chatbot = Chatbot(os.environ["GLOBAL_CONFIG_FILE"])
+
 
 # Create a Blueprint object for route handling
 api = Blueprint("routes", __name__, url_prefix="/")
