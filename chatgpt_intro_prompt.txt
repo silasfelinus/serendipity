@@ -32,60 +32,28 @@ E.G.:
 
 
 Condensed Directory Info:
-serendipity/trawler.py: Utility script for reading functions and comments from a codebase.
-serendipity/.github/workflows/flow.yaml:Github Action CI info
-serendipity/app/main.py: Application entry point.
-serendipity/app/logging_config.py:
-serendipity/app/utils/utils.py: Configuration loading and response generation functions.
-serendipity/app/interface/gradio.py: Gradio interface for the chatbot.
-serendipity/app/test/test_serendipity.py: [Test suite bei9ng built for chatbot functionality.]
-serendipity/app/chatbot/conversation.py: Function for building conversation prompts.
-serendipity/app/chatbot/chatbot.py: Chatbot class with initialization, config loading, response, and prompt building functions.
-serendipity/app/chatbot/response.py: Function for generating responses using the OpenAI API.
-serendipity/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
-serendipity/app/routes/routes.py: Route for handling chatbot requests.
-serendipity/app/static/: reserved for future custom css
-serendipity/docs/README.md
-serendipity/app/templates/index.html
-serendipity/requirements.txt
-serendipity/.gitignore: wait, you can see that too? <jk>
+./trawler.py: Utility script for reading functions and comments from a codebase.
+./.github/workflows/flow.yaml: Github Action CI info
+./app/__init__.py: Application initialization.
+./app/logging_config.py: Logging configuration setup.
+./app/utils.py: Configuration loading and response generation functions.
+./app/interface/gradio.py: Gradio interface for the chatbot.
+./app/test/test_main.py: Test suite for application entry point, logger, and Gradio interface.
+./app/chatbot/conversation.py: Function for building conversation prompts.
+./app/chatbot/chatbot.py: Chatbot class with initialization, config loading, and response functions.
+./app/chatbot/response.py: Function for generating responses using the OpenAI API.
+./app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
+./app/routes/routes.py: Route for handling chatbot requests.
+./app/static/: Reserved for future custom CSS.
+./docs/README.md
+./app/templates/index.html
+./requirements.txt
+./.gitignore: Wait, you can see that too? <jk>
 
 Last Goals: Directory Structure, Logging
 Next Goals: Website formatting, Livechat, Database, User Login, , Documentation
 Permanent Goals: Code Review, optimized for clarity, consistency, and elegance.  
 Current Goal: Add pytest functions
-----
-my test files will start in [root]/app/test/serendipity_test.py. Feel free to make as many files as needed for optimal best practices, I want code that is clear, readable, and elegant. Please give me optimal tests for my [root]/app/main.py:
 
-# Import the required libraries
-from flask import Flask, render_template, request, jsonify
-from dotenv import load_dotenv
-import os
-import uvicorn
-from app.routes.routes import routes
-from app.gradio.interface import create_interface
-from serendipity.app.logging_config import setup_logging
-
-logger = setup_logging()
-
-# Now, you can use the logger object to log messages in your application.
-logger.info("You found the secret message. Also, logger works!")
-
-# Load environment variables from the .env file
-load_dotenv()
-
-# Create a Flask application instance
-app = Flask(__name__)
-# Register the routes blueprint
-app.register_blueprint(routes)
-
-# Main entry point of the application
-if __name__ == "__main__":
-    # Get the port number from the environment variable or use the default value
-    port = int(os.environ.get("PORT", 7860))
-    
-    # Create the Gradio interface for the chatbot
-    interface = create_interface()
-    
-    # Run the application using the Uvicorn ASGI server
-    uvicorn.run(app, host="0.0.0.0", port=port)
+do: 
+Write a pytest suite for bug testing the functions of the AI chatbot and digital assistant app, Serendipity, written in Python 3.8 using Gradio and Flask. The suite should test the functions of the application as they are currently, without adding more features. Focus on readability, simplicity, and consistent naming conventions. Ensure proper error handling and use meaningful error messages. The suite should use pytest and follow Python's PEP 8 style guide.
