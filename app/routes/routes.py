@@ -1,11 +1,13 @@
 # app/routes/routes.py
 import os
 from flask import Blueprint, jsonify, request, render_template
-from chatbot.chatbot import Chatbot
+from ..chatbot.chatbot import Chatbot
 
-# Initialize the Chatbot instance with global_config_file and bot_presets_file
-chatbot = Chatbot(os.environ["GLOBAL_CONFIG_FILE"])
+# Get the path to the config file
+config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')
 
+# Initialize the Chatbot instance with the config file
+chatbot = Chatbot(config_file_path)
 
 # Create a Blueprint object for route handling
 api = Blueprint("routes", __name__, url_prefix="/")
@@ -24,5 +26,3 @@ def chatbot_route():
     conversation_history = request_data['conversation_history']
     response = chatbot.response(user_input, chatbot_id, conversation_history)
     return jsonify({'response': response})
-
-

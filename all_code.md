@@ -1,4 +1,4 @@
-/home/silasfelinus/code/serendipity/app/logging_config.py
+C:\Users\silas\code\serendipity\app\logging_config.py
 import logging
 import sys
 
@@ -27,14 +27,14 @@ def setup_logging():
     return logger
 
 -
-/home/silasfelinus/code/serendipity/app/main.py
+C:\Users\silas\code\serendipity\app\main.py
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
-from routes.routes import api
-from interface.gradio import create_interface
+from .routes.routes import api
+from .interface.gradio import create_interface
 from logging_config import setup_logging
 
 logger = setup_logging()
@@ -50,6 +50,9 @@ app = Flask(__name__)
 # Register the routes blueprint
 app.register_blueprint(api)
 
+# Create the Gradio interface for the chatbot
+interface = create_interface()
+
 # Main entry point of the application
 if __name__ == "__main__":
     # Get the port number from the environment variable or use the default value
@@ -59,45 +62,13 @@ if __name__ == "__main__":
     interface = create_interface()
     interface.launch()  # Launch the Gradio interface
     
-if os.environ.get("FLASK_ENV") == "development":
+ if os.environ.get("FLASK_ENV") == "development":
         app.run(host="0.0.0.0", port=port)
-else:
+    else:
         uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
--
-/home/silasfelinus/code/serendipity/app/__init__.py
 
 -
-/home/silasfelinus/code/serendipity/app/interface/gradio.py
-import gradio as gr
-from chatbot.chatbot import Chatbot
-
-# Initialize the Chatbot instance with a configuration file
-chatbot = Chatbot("config.json", "bot_presets.json")
-
-# Function to get a chatbot response based on user input, chatbot_id, and conversation history
-def chatbot_response(user_input, chatbot_id="serendipity-fairy", conversation_history=None):
-    # Generate a response using the Chatbot instance
-    response = chatbot.response(user_input, chatbot_id, conversation_history)
-    return response
-
-# Function to create a Gradio interface for the chatbot
-def create_interface():
-    # Define the Gradio interface with input, output, title, and other information
-    iface = gr.Interface(
-        fn=chatbot_response,  # Function to call for generating chatbot responses
-        inputs=[
-        gr.components.Textbox(lines=2, label="Your message"),
-        gr.components.Radio(choices=["serendipity-fairy", "serendipity-assistant"], label="Chatbot")
-         ],
-        outputs=gr.components.Textbox(label="Chatbot's response"),
-        title="AI Chatbot",  # Title of the interface
-        description="A chatbot with different personalities.",  # Description of the interface
-        examples=[  # Example inputs and responses for users
-            ["Can you tell me a joke?", "Sure, why did the tomato turn red? Because it saw the salad dressing!"],
-            ["What's your favorite color?", "I don't have eyes, so I don't have a favorite color."]
-        ]
-    )
-    return iface
+C:\Users\silas\code\serendipity\app\__init__.py
 
 -
 /home/silasfelinus/code/serendipity/app/interface/__init__.py
@@ -153,7 +124,7 @@ def build_prompt(chatbot, user_input, conversation_history=None):
 
 -
 /home/silasfelinus/code/serendipity/app/chatbot/chatbot.py
-import yaml
+import json
 from .conversation import build_prompt
 
 # Import the generate_response function from the response module
@@ -184,39 +155,20 @@ class Chatbot:
         response = generate_response(prompt)
         return response
 -
-/home/silasfelinus/code/serendipity/app/chatbot/response.py
-import openai
-import os
+C:\Users\silas\code\serendipity\app\chatbot\conversation.py
+# Import the PromptBuilder class
+from .prompt_builder import PromptBuilder
 
-# Set the OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-# Function to generate a response from OpenAI's GPT model based on the given prompt
-def generate_response(prompt):
-    # Call the OpenAI API to generate a completion with the provided prompt
-    try:
-        response = openai.Completion.create(
-        engine="davinci",  # Use the "davinci" engine for generating responses
-        prompt=prompt,  # Pass in the conversation prompt
-        max_tokens=1024,  # Set the maximum number of tokens for the generated response
-        n=1,  # Number of responses to generate
-        stop=None,  # Stop token for truncating the response
-        temperature=0.5,  # Sampling temperature to control randomness
-    )
-        return response.choices[0].text.strip()
-    except Exception as e:
-        # Log the exception and return an error message
-        logger.error(f"Error generating response from OpenAI: {e}")
-        return "An error occurred while generating a response. Please try again."
-
-    # Return the generated response text, stripping any leading/trailing whitespace
-    return response.choices[0].text.strip()
--
-/home/silasfelinus/code/serendipity/app/chatbot/__init__.py
-
+# Function to build a prompt using the PromptBuilder class
+def build_prompt(chatbot, user_input, conversation_history=None):
+    # Create a PromptBuilder instance with the chatbot, user input, and conversation history
+    prompt_builder = PromptBuilder(chatbot, user_input, conversation_history)
+    
+    # Return the built prompt using the PromptBuilder instance
+    return prompt_builder.build_prompt()
 
 -
-/home/silasfelinus/code/serendipity/app/chatbot/prompt_builder.py
+C:\Users\silas\code\serendipity\app\chatbot\prompt_builder.py
 # Define the PromptBuilder class for constructing conversation prompts
 class PromptBuilder:
     def __init__(self, chatbot, user_input, conversation_history=None):
@@ -277,15 +229,85 @@ class PromptBuilder:
         return prompt
 
 -
-/home/silasfelinus/code/serendipity/app/routes/routes.py
+C:\Users\silas\code\serendipity\app\chatbot\response.py
+import openai
+import os
+
+# Set the OpenAI API key
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Function to generate a response from OpenAI's GPT model based on the given prompt
+def generate_response(prompt):
+    # Call the OpenAI API to generate a completion with the provided prompt
+    try:
+        response = openai.Completion.create(
+        engine="davinci",  # Use the "davinci" engine for generating responses
+        prompt=prompt,  # Pass in the conversation prompt
+        max_tokens=1024,  # Set the maximum number of tokens for the generated response
+        n=1,  # Number of responses to generate
+        stop=None,  # Stop token for truncating the response
+        temperature=0.5,  # Sampling temperature to control randomness
+    )
+        return response.choices[0].text.strip()
+    except Exception as e:
+        # Log the exception and return an error message
+        logger.error(f"Error generating response from OpenAI: {e}")
+        return "An error occurred while generating a response. Please try again."
+
+    # Return the generated response text, stripping any leading/trailing whitespace
+    return response.choices[0].text.strip()
+-
+C:\Users\silas\code\serendipity\app\chatbot\__init__.py
+
+
+-
+C:\Users\silas\code\serendipity\app\interface\gradio.py
+import gradio as gr
+from ..chatbot.chatbot import Chatbot
+
+# Initialize the Chatbot instance with a configuration file
+chatbot = Chatbot('config.yaml')
+
+# Function to get a chatbot response based on user input, chatbot_id, and conversation history
+def chatbot_response(user_input, chatbot_id="serendipity-fairy", conversation_history=None):
+    # Generate a response using the Chatbot instance
+    response = chatbot.response(user_input, chatbot_id, conversation_history)
+    return response
+
+# Function to create a Gradio interface for the chatbot
+def create_interface():
+    # Define the Gradio interface with input, output, title, and other information
+    iface = gr.Interface(
+        fn=chatbot_response,  # Function to call for generating chatbot responses
+        inputs=[
+        gr.components.Textbox(lines=2, label="Your message"),
+        gr.components.Radio(choices=["serendipity-fairy", "serendipity-assistant"], label="Chatbot")
+         ],
+        outputs=gr.components.Textbox(label="Chatbot's response"),
+        title="AI Chatbot",  # Title of the interface
+        description="A chatbot with different personalities.",  # Description of the interface
+        examples=[  # Example inputs and responses for users
+            ["Can you tell me a joke?", "Sure, why did the tomato turn red? Because it saw the salad dressing!"],
+            ["What's your favorite color?", "I don't have eyes, so I don't have a favorite color."]
+        ]
+    )
+    return iface
+
+-
+C:\Users\silas\code\serendipity\app\interface\__init__.py
+
+-
+C:\Users\silas\code\serendipity\app\routes\routes.py
 # app/routes/routes.py
 import os
 from flask import Blueprint, jsonify, request, render_template
-from chatbot.chatbot import Chatbot
+from ..chatbot.chatbot import Chatbot
 
-# Initialize the Chatbot instance with global_config_file and bot_presets_file
-chatbot = Chatbot(os.environ["GLOBAL_CONFIG_FILE"])
+# Get the path to the config file
+config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')
 
+# Initialize the Chatbot instance with the config file
+chatbot = Chatbot(config_file_path)
 
 # Create a Blueprint object for route handling
 api = Blueprint("routes", __name__, url_prefix="/")
@@ -305,10 +327,44 @@ def chatbot_route():
     response = chatbot.response(user_input, chatbot_id, conversation_history)
     return jsonify({'response': response})
 
+-
+C:\Users\silas\code\serendipity\app\routes\__init__.py
 
 
 -
-/home/silasfelinus/code/serendipity/app/routes/__init__.py
+C:\Users\silas\code\serendipity\app\test\test_main.py
+# app/test/test_main.py
+import os
+import pytest
+from app.main import app
+from app.interface.gradio import create_interface
 
+@pytest.fixture
+def client():
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+
+def test_main_route(client):
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b"Serendipity - Digital AI Assistant" in response.data
+
+def test_logger():
+    from app.logging_config import setup_logging
+    logger = setup_logging()
+    assert logger is not None
+
+def test_create_interface(mocker):
+    # Mock Gradio's Library
+    mocker.patch('gradio.Interface')
+
+    # Call the create_interface function
+    interface = create_interface()
+
+    # Check if the interface is not None
+    assert interface is not None
+-
+C:\Users\silas\code\serendipity\app\test\__init__.py
 
 -
