@@ -1,13 +1,13 @@
+#./app/chatbot/conversation_handler.py
 from app.chatbot.bot_config import BotConfig
 from .messaging_manager import MessagingManager
 
 class ConversationHandler:
     def __init__(self, bot_config):
-        self.bot_config = BotConfig()
-        self.messaging_manager = MessagingManager()
+        self.messaging_manager = MessagingManager(bot_config)
 
-        # Define conversation history as a list
-        self.conversation_history = []
+    def handle_conversation(self, user_input, chatbot_id, conversation_history):
+        return self.messaging_manager.generate_response(user_input, chatbot_id, conversation_history)
 
     def start_conversation(self, user_input):
         # Add the user's input to the conversation history

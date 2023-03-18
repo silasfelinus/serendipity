@@ -1,13 +1,15 @@
+#./app/chatbot/routes/chatbot_routes.py
 from flask import Blueprint, jsonify, request, render_template
 from app.chatbot.conversation_handler import ConversationHandler
 from app.chatbot.bot_config import BotConfig
+from app.chatbot.messaging_manager import MessagingManager
 import os
 
 # Initialize the BotConfig instance with the config file
 bot_config = BotConfig()
 
 # Initialize the ConversationHandler instance with the bot configuration
-conversation_handler = ConversationHandler()
+conversation_handler = ConversationHandler(bot_config)
 
 # Create a Blueprint object for route handling
 chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
