@@ -32,23 +32,23 @@ E.G.:
 
 
 Condensed Directory Info:
-serendipity/trawler.py: Utility script for reading functions and comments from a codebase.
-serendipity/.github/workflows/flow.yaml:Github Action CI info
-serendipity/app/main.py: Application entry point.
-serendipity/app/logging_config.py:
-serendipity/app/utils/utils.py: Configuration loading and response generation functions.
-serendipity/app/interface/gradio.py: Gradio interface for the chatbot.
-serendipity/app/test/test_serendipity.py: [Test suite bei9ng built for chatbot functionality.]
-serendipity/app/chatbot/conversation.py: Function for building conversation prompts.
-serendipity/app/chatbot/chatbot.py: Chatbot class with initialization, config loading, response, and prompt building functions.
-serendipity/app/chatbot/response.py: Function for generating responses using the OpenAI API.
-serendipity/app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
-serendipity/app/routes/routes.py: Route for handling chatbot requests.
-serendipity/app/static/: reserved for future custom css
-serendipity/docs/README.md
-serendipity/app/templates/index.html
-serendipity/requirements.txt
-serendipity/.gitignore: wait, you can see that too? <jk>
+./trawler.py: Utility script for reading functions and comments from a codebase.
+./.github/workflows/flow.yaml: Github Action CI info
+./app/__init__.py: Application initialization.
+./app/logging_config.py: Logging configuration setup.
+./app/utils.py: Configuration loading and response generation functions.
+./app/interface/gradio.py: Gradio interface for the chatbot.
+./app/test/test_main.py: Test suite for application entry point, logger, and Gradio interface.
+./app/chatbot/conversation.py: Function for building conversation prompts.
+./app/chatbot/chatbot.py: Chatbot class with initialization, config loading, and response functions.
+./app/chatbot/response.py: Function for generating responses using the OpenAI API.
+./app/chatbot/prompt_builder.py: PromptBuilder class for constructing conversation prompts and chatbot retrieval function.
+./app/routes/routes.py: Route for handling chatbot requests.
+./app/static/: Reserved for future custom CSS.
+./docs/README.md
+./app/templates/index.html
+./requirements.txt
+./.gitignore: Wait, you can see that too? <jk>
 
 Last Goals: Directory Structure, Logging
 Next Goals: Website formatting, Livechat, Database, User Login, , Documentation
