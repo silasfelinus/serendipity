@@ -32,11 +32,11 @@ def traverse_directory(dir_path="."):
 
     return code_string
 
-# Write the Python code to all_code.md
+#  Write the Python code to all_code.md
 with open(all_code_file, "w") as f:
     f.write(traverse_directory(app_dir))
 
-# Extract relevant functions and classes from all_code.md and write them to functions_and_classes.md
+#  Extract relevant functions and classes from all_code.md and write them to functions_and_classes.md
 def generate_functions_and_classes(input_file, output_file):
     with open(input_file, "r") as f:
         code_string = f.read()
@@ -64,5 +64,5 @@ def generate_functions_and_classes(input_file, output_file):
 
     with open(output_file, "w") as f:
         f.write(output_string)
-
+ 
 generate_functions_and_classes(all_code_file, functions_file)
