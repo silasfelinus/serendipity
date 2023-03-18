@@ -22,7 +22,7 @@ fi
 
 # Create the virtual environment if it doesn't exist
 if [ ! -d "venv" ]; then
-    sudo apt-get install python3.8-venv
+    sudo apt-get install python3.8-venv -y
     python3.8 -m venv venv
 fi
 
@@ -49,10 +49,10 @@ else
     echo "No .env file found, skipping sourcing environment variables."
 fi
 
-export PYTHONPATH=app
 
 #comment to turn off testing
 python -m pytest
 
 # Run the application
 python app/main.py
+
