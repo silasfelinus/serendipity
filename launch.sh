@@ -52,7 +52,7 @@ fi
 export PYTHONPATH=app
 
 #comment to turn off testing
-pytest
+python -m pytest
 
 # Run the application
 python app/main.py
