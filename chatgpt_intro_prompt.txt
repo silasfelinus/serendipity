@@ -54,3 +54,6 @@ Last Goals: Directory Structure, Logging
 Next Goals: Website formatting, Livechat, Database, User Login, , Documentation
 Permanent Goals: Code Review, optimized for clarity, consistency, and elegance.  
 Current Goal: Add pytest functions
+
+do: 
+Write a pytest suite for bug testing the functions of the AI chatbot and digital assistant app, Serendipity, written in Python 3.8 using Gradio and Flask. The suite should test the functions of the application as they are currently, without adding more features. Focus on readability, simplicity, and consistent naming conventions. Ensure proper error handling and use meaningful error messages. The suite should use pytest and follow Python's PEP 8 style guide.
