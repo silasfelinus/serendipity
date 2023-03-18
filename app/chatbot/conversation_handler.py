@@ -1,18 +1,27 @@
-from app.chatbot.messaging_manager import MessagingManager
-
 class ConversationHandler:
-    def __init__(self, bot_config):
-        self.messaging_manager = MessagingManager(bot_config)
+    def __init__(self):
+        self.bot_config = BotConfig()
+        self.messaging_manager = MessagingManager(self.bot_config)
 
-    def handle_conversation(self, user_input, chatbot_id, conversation_history):
-        # Generate a prompt based on the user's input and conversation history
-        prompt = self.messaging_manager.build_prompt(user_input, conversation_history)
+        # Define conversation history as a list
+        self.conversation_history = []
 
-        # Send the prompt to the chatbot API and get the response
-        response = self.messaging_manager.get_chatbot_response(prompt, chatbot_id)
+    def start_conversation(self, user_input):
+        # Add the user's input to the conversation history
+        self.conversation_history.append({
+            "user": self.bot_config.get_config("user_name"),
+            "input": user_input,
+            "chatbot": self.bot_config.get_config("chatbot_name"),
+            "response": "",
+        })
 
-        # Update the conversation history with the user's input and chatbot's response
-        conversation_history.append({'role': 'user', 'content': user_input})
-        conversation_history.append({'role': 'assistant', 'content': response})
+        # Build the conversation prompt
+        prompt = self.messaging_manager.build_prompt(user_input, self.conversation_history)
 
-        return response
+        # Get the chatbot's response
+        chatbot_response = self.messaging_manager.get_chatbot_response(prompt, self.bot_config.get_config("chatbot_id"))
+
+        # Add the chatbot's response to the conversation history
+        self.conversation_history[-1]["response"] = chatbot_response
+
+        return chatbot_response

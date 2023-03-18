@@ -1,6 +1,10 @@
-from flask import Flask, render_template, request, jsonify
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+# Load environment variables from the .env file
+load_dotenv()
+config_path = os.environ.get('GLOBAL_CONFIG_FILE')
+
+from flask import Flask, render_template, request, jsonify
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
 from app.routes.routes import api
@@ -12,9 +16,6 @@ from app.chatbot import chatbot_bp
 # Log an informational message
 logger.info("Hello, world!")
 
-
-# Load environment variables from the .env file
-load_dotenv()
 
 # Create a Flask application instance
 app = Flask(__name__)

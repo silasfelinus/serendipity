@@ -1,9 +1,9 @@
 # Define the PromptBuilder class for constructing conversation prompts
 class PromptBuilder:
-    def __init__(self, chatbot, user_input, conversation_history=None):
-        self.chatbot = chatbot
+    def __init__(self, bot_config, user_input=None):
+        self.bot_config = bot_config
         self.user_input = user_input
-        self.conversation_history = conversation_history or []
+        self.conversation_history = []
 
     # Function to get chatbot configuration by ID, merging with the default chatbot if available
     def get_chatbot_by_id(chatbot_id, config):
