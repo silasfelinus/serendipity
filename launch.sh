@@ -1,14 +1,22 @@
 #!/bin/bash
+#currently broken
+
+#Manual Install For Windows:
+# python3.8 -m venv venv
+# source venv/Scripts/activate
+# pip install -r requirements.txt
+# source ./.env
+
 
 # Check if Python 3.8 is installed
 if ! command -v python3.8 &> /dev/null; then
     # Python 3.8 is not installed, so install it
     if [ "$(uname)" == "Darwin" ] || [ "$(uname)" == "Linux" ]; then
         # macOS or Linux
-        sudo add-apt-repository ppa:deadsnakes/ppa
-        sudo apt-get update
-        sudo apt-get install python3.8
-        sudo apt-get install python3.8-venv
+        echo 'sudo add-apt-repository ppa:deadsnakes/ppa'
+        echo 'sudo apt-get update'
+        echo 'sudo apt-get install python3.8'
+        echo 'sudo apt-get install python3.8-venv'
     elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ] || [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
         # Windows (Git Bash)
         echo "Python 3.8 is not installed. Please install it manually."
@@ -22,8 +30,8 @@ fi
 
 # Create the virtual environment if it doesn't exist
 if [ ! -d "venv" ]; then
-    sudo apt-get install python3.8-venv -y
-    python3.8 -m venv venv
+    echo 'sudo apt-get install python3.8-venv -y'
+    echo 'python3.8 -m venv venv'
 fi
 
 # Activate the virtual environment
@@ -40,7 +48,7 @@ else
 fi
 
 # Install the required packages
-pip install -r requirements.txt
+echo "pip install -r requirements.txt"
 
 # Source environment variables
 if [ -f .env ]; then

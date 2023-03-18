@@ -1,13 +1,14 @@
+Current OS: Windows 11
+IDE: Visual Studio Code
+Windows directory: c:\code\serendipity\
+VSC directory: ~/code/serendipity
+root directory == serendipity
+
 ./
     .env.example
     requirements.txt
-    prompts.yaml
-    all_code.md
-    directory_tree.txt
     environment.yml
-    chatgpt_intro_prompt.txt
     config.yaml
-    functions_and_classes.md
     trawler.py
     .env
     launch.sh
@@ -16,17 +17,8 @@
     docs/
         roadmap.txt
         README.md
-        textdumps/
-            2022
-            serendipity_history.txt
-            silas_quests
-            quests.yaml
-            openai.txt
+        
     .git/
-
-        hooks/
-        logs/
-        info/
     app/
         logging_config.py
         main.py
