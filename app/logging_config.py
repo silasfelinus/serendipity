@@ -11,3 +11,5 @@ def setup_logging():
         ]
     )
     return logging.getLogger("serendipity")
+
+logger = setup_logging()
