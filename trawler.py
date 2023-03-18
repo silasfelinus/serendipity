@@ -12,10 +12,7 @@ functions_file = os.path.join(root_dir, "functions_and_classes.md")
 ignored_patterns = set()
 if os.path.isfile(gitignore_file):
     with open(gitignore_file, "r") as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#"):
-                ignored_patterns.add(line)
+        ignored_patterns = set(line.strip() for line in f if line.strip() and not line.startswith("#"))
 
 # Generate a string containing all the Python code in the app directory and its subdirectories
 def traverse_directory(dir_path="."):
@@ -39,8 +36,11 @@ def traverse_directory(dir_path="."):
 with open(all_code_file, "w") as f:
     f.write(traverse_directory(app_dir))
 
-# Extract relevant functions and classes from code_string and write them to functions_and_classes.md
-def generate_functions_and_classes(code_string, output_file):
+# Extract relevant functions and classes from all_code.md and write them to functions_and_classes.md
+def generate_functions_and_classes(input_file, output_file):
+    with open(input_file, "r") as f:
+        code_string = f.read()
+
     lines = code_string.split("\n")
     relevant_lines = []
     relevant_files = set()
@@ -48,22 +48,21 @@ def generate_functions_and_classes(code_string, output_file):
     for i, line in enumerate(lines):
         if line.startswith("# "):
             relevant_files.add(lines[i - 1])
-            relevant_lines.append(line)
         elif (line.startswith("- def ") and "(" in line) or (line.startswith("- class ") and ":" in line):
             relevant_lines.append(line)
+
+    if not relevant_files:
+        print("Warning: no relevant files found.")
 
     output_string = "# Serendipity Functions and Classes\n\n"
     for file_path in relevant_files:
         output_string += f"**{file_path}**\n\n"
         for line in relevant_lines:
-            if line.startswith("#") or line.startswith(f"- {file_path}"):
+            if line.startswith("-") and file_path in lines[i-1]:
                 output_string += f"{line}\n"
         output_string += "\n"
 
     with open(output_file, "w") as f:
         f.write(output_string)
 
-# Generate the functions_and_classes.md file using all_code.md
-with open(all_code_file, "r") as f:
-    code_string = f.read()
-generate_functions_and_classes(code_string, functions_file)
+generate_functions_and_classes(all_code_file, functions_file)
