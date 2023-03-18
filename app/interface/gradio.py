@@ -28,7 +28,3 @@ def create_interface():
         ]
     )
     return iface
-
-if __name__ == "__main__":
-    iface = create_interface()
-    iface.launch()  # Launch the Gradio interface

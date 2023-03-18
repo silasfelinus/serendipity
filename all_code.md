@@ -1,42 +1,3 @@
-/home/silasfelinus/code/serendipity/app/utils.py
-import json
-import openai
-import os
-
-# Load configurations from global_config_file and bot_presets_file
-def load_config(global_config_file, bot_presets_file):
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    global_config_path = os.path.join(base_dir, '..', '..', global_config_file)
-    bot_presets_path = os.path.join(base_dir, '..', '..', bot_presets_file)
-    
-    # Read global_config_file and load its content as JSON
-    with open(global_config_path) as f:
-        global_config = json.load(f)
-
-    # Read bot_presets_file and load its content as JSON
-    with open(bot_presets_path) as f:
-        bot_presets = json.load(f)
-
-    # Merge the two JSON objects and return the result
-    return {**global_config, **bot_presets}
-
-# Generate a response using OpenAI's API based on the given prompt and configuration
-def generate_response(prompt, config):
-    response = openai.Completion.create(
-        model=config["model"],
-        prompt=prompt,
-        temperature=config["temperature"],
-        max_tokens=config["max_tokens"],
-        top_p=config["top_p"],
-        frequency_penalty=config["frequency_penalty"],
-        presence_penalty=config["presence_penalty"],
-        stop=["Human:", "AI:"]
-    )
-    # Return the generated response text, stripped of any leading/trailing whitespace
-    return response.choices[0].text.strip()
-
--
 /home/silasfelinus/code/serendipity/app/logging_config.py
 import logging
 import sys
@@ -101,41 +62,6 @@ if __name__ == "__main__":
     uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
 -
 /home/silasfelinus/code/serendipity/app/__init__.py
-
--
-/home/silasfelinus/code/serendipity/app/utils/utils.py
-import json
-import openai
-
-# Load configurations from global_config_file and bot_presets_file
-def load_config(global_config_file, bot_presets_file):
-    # Read global_config_file and load its content as JSON
-    with open(global_config_file) as f:
-        global_config = json.load(f)
-
-    # Read bot_presets_file and load its content as JSON
-    with open(bot_presets_file) as f:
-        bot_presets = json.load(f)
-
-    # Merge the two JSON objects and return the result
-    return {**global_config, **bot_presets}
-
-# Generate a response using OpenAI's API based on the given prompt and configuration
-def generate_response(prompt, config, stop=["Human:", "AI:"]):
-    response = openai.Completion.create(
-        model=config["model"],
-        prompt=prompt,
-        temperature=config["temperature"],
-        max_tokens=config["max_tokens"],
-        top_p=config["top_p"],
-        frequency_penalty=config["frequency_penalty"],
-        presence_penalty=config["presence_penalty"],
-        stop=stop
-    )
-    # Return the generated response text, stripped of any leading/trailing whitespace
-    return response.choices[0].text.strip()
--
-/home/silasfelinus/code/serendipity/app/utils/__init__.py
 
 -
 /home/silasfelinus/code/serendipity/app/interface/gradio.py
