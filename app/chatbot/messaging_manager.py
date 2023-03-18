@@ -1,6 +1,7 @@
 #./app/chatbot/messaging_manager.py
 from app.chatbot.prompt_builder import PromptBuilder
 import openai
+import requests
 
 class MessagingManager:
     def __init__(self, bot_config):

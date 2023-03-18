@@ -1,3 +1,4 @@
+#./app/main.py
 import os
 from dotenv import load_dotenv
 # Load environment variables from the .env file
@@ -11,7 +12,7 @@ from app.routes.routes import api
 from app.interface.gradio import create_interface
 from logging_config import logger
 from app.livechat import livechat_bp, socketio
-from app.chatbot import chatbot_bp
+from app.chatbot.routes.chatbot_routes import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")

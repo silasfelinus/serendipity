@@ -3,7 +3,6 @@ from flask import Blueprint, jsonify, request, render_template
 from app.chatbot.conversation_handler import ConversationHandler
 from app.chatbot.bot_config import BotConfig
 from app.chatbot.messaging_manager import MessagingManager
-import os
 
 # Initialize the BotConfig instance with the config file
 bot_config = BotConfig()

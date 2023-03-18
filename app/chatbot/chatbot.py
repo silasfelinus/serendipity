@@ -1,3 +1,4 @@
+#./app/chatbot/chatbot.py
 from .bot_config import BotConfig
 from .conversation_handler import ConversationHandler
 from .messaging_manager import MessagingManager
@@ -6,8 +7,8 @@ from .response_handler import ResponseHandler
 
 class Chatbot:
     def __init__(self, config_file_path):
-        conversation_handler = ConversationHandler()
-        self.conversation_handler = ConversationHandler()
+        bot_config = BotConfig(config_file_path)
+        self.conversation_handler = ConversationHandler(bot_config)
         self.messaging_manager = MessagingManager(bot_config)
         self.prompt_builder = PromptBuilder(bot_config)
         self.response_handler = ResponseHandler(bot_config)
