@@ -66,7 +66,7 @@ if __name__ == "__main__":
 -
 /home/silasfelinus/code/serendipity/app/interface/gradio.py
 import gradio as gr
-from app.chatbot.chatbot import Chatbot
+from chatbot.chatbot import Chatbot
 
 # Initialize the Chatbot instance with a configuration file
 chatbot = Chatbot('config.yaml')
@@ -98,6 +98,12 @@ def create_interface():
 
 -
 /home/silasfelinus/code/serendipity/app/interface/__init__.py
+
+-
+/home/silasfelinus/code/serendipity/app/livechat/livechat.py
+
+-
+/home/silasfelinus/code/serendipity/app/livechat/__init__.py
 
 -
 /home/silasfelinus/code/serendipity/app/test/test_main.py
@@ -290,7 +296,7 @@ class PromptBuilder:
 # app/routes/routes.py
 import os
 from flask import Blueprint, jsonify, request, render_template
-from app.chatbot.chatbot import Chatbot
+from chatbot.chatbot import Chatbot
 
 # Get the path to the config file
 config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')

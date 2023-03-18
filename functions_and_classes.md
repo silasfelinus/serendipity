@@ -8,6 +8,9 @@ app/
     interface/
         gradio.py
         __init__.py
+    livechat/
+        livechat.py
+        __init__.py
     templates/
         index.html
     static/
@@ -36,7 +39,7 @@ app/
 ### Classes
 
 
-## /home/silasfelinus/code/serendipity/app/chatbot/prompt_builder.py
+## app = Flask(__name__)
 
 ### Functions
 
@@ -44,7 +47,15 @@ app/
 ### Classes
 
 
-## /home/silasfelinus/code/serendipity/app/chatbot/conversation.py
+## /home/silasfelinus/code/serendipity/app/test/test_main.py
+
+### Functions
+
+
+### Classes
+
+
+## /home/silasfelinus/code/serendipity/app/chatbot/prompt_builder.py
 
 ### Functions
 
@@ -60,15 +71,7 @@ app/
 ### Classes
 
 
-## app = Flask(__name__)
-
-### Functions
-
-
-### Classes
-
-
-## /home/silasfelinus/code/serendipity/app/test/test_main.py
+## /home/silasfelinus/code/serendipity/app/chatbot/conversation.py
 
 ### Functions
 
