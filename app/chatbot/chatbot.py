@@ -1,4 +1,5 @@
 import yaml
+import os
 from .conversation import build_prompt
 
 # Import the generate_response function from the response module
