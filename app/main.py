@@ -3,14 +3,21 @@ from dotenv import load_dotenv
 import os
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
-from .routes.routes import api
-from .interface.gradio import create_interface
-from logging_config import setup_logging
+from routes.routes import api
+from interface.gradio import create_interface
+from logging_config import logger
 
-logger = setup_logging()
+# Log an informational message
+logger.info("Hello, world!")
 
-# Now, you can use the logger object to log messages in your application.
-logger.info("You found the secret message. Also, logger works!")
+# Log a warning message
+logger.warning("Something's not right here...")
+
+# Log an error message with an exception
+try:
+    1 / 0
+except Exception as e:
+    logger.error("Error dividing by zero", exc_info=e)
 
 # Load environment variables from the .env file
 load_dotenv()
