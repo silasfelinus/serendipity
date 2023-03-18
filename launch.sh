@@ -50,7 +50,9 @@ else
 fi
 
 export PYTHONPATH=app
-#DEVOPTION-comment to turn off testing before launch
+
+#comment to turn off testing
 pytest
+
 # Run the application
 python app/main.py
