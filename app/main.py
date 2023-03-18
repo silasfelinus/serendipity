@@ -3,8 +3,8 @@ from dotenv import load_dotenv
 import os
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
-from app.routes.routes import api
-from app.interface.gradio import create_interface
+from routes.routes import api
+from interface.gradio import create_interface
 from logging_config import logger
 
 # Log an informational message
