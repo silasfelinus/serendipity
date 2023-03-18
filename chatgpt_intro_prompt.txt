@@ -58,6 +58,9 @@ Directory:
             response.py
             __init__.py
             prompt_builder.py
+                routes/
+                routes_chatbot.py
+              
         livechat/
             livechat.py
             events.py

@@ -7,7 +7,7 @@ from app.routes.routes import api
 from app.interface.gradio import create_interface
 from logging_config import logger
 from app.livechat import livechat_bp, socketio
-
+from app.chatbot import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")
@@ -21,6 +21,7 @@ app = Flask(__name__)
 # Register the routes blueprints
 app.register_blueprint(api)
 app.register_blueprint(livechat_bp, url_prefix='/livechat')
+app.register_blueprint(chatbot_bp, url_prefix='/chatbot')
 
 socketio.init_app(app)
 

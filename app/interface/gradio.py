@@ -1,5 +1,5 @@
 import gradio as gr
-from chatbot.chatbot import Chatbot
+from app.chatbot.routes.chatbot_routes import Chatbot
 
 # Initialize the Chatbot instance with a configuration file
 chatbot = Chatbot('config.yaml')

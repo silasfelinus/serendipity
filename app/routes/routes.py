@@ -1,7 +1,7 @@
 # app/routes/routes.py
 import os
 from flask import Blueprint, jsonify, request, render_template
-from chatbot.chatbot import Chatbot
+from app.chatbot.routes.chatbot_routes import Chatbot
 
 # Get the path to the config file
 config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')

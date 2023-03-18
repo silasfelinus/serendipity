@@ -1,4 +1,4 @@
 source venv/bin/activate
 source ./.env
 python -m pytest
-python -m main.py
+python -m app.main
