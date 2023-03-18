@@ -3,9 +3,11 @@ from dotenv import load_dotenv
 import os
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
-from routes.routes import api
-from interface.gradio import create_interface
+from app.routes.routes import api
+from app.interface.gradio import create_interface
 from logging_config import logger
+from app.livechat import livechat_bp, socketio
+
 
 # Log an informational message
 logger.info("Hello, world!")
@@ -24,8 +26,11 @@ load_dotenv()
 
 # Create a Flask application instance
 app = Flask(__name__)
-# Register the routes blueprint
+# Register the routes blueprints
 app.register_blueprint(api)
+app.register_blueprint(livechat_bp, url_prefix='/livechat')
+
+socketio.init_app(app)
 
 # Create the Gradio interface for the chatbot
 interface = create_interface()
