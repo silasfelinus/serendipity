@@ -6,7 +6,7 @@ from .response_handler import ResponseHandler
 
 class Chatbot:
     def __init__(self, config_file_path):
-        bot_config = BotConfig(config_file_path)
+        conversation_handler = ConversationHandler()
         self.conversation_handler = ConversationHandler()
         self.messaging_manager = MessagingManager(bot_config)
         self.prompt_builder = PromptBuilder(bot_config)

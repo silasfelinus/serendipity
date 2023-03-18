@@ -1,7 +1,7 @@
 class ConversationHandler:
     def __init__(self):
         self.bot_config = BotConfig()
-        self.messaging_manager = MessagingManager(self.bot_config)
+        self.messaging_manager = MessagingManager()
 
         # Define conversation history as a list
         self.conversation_history = []
