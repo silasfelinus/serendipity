@@ -7,7 +7,7 @@ import os
 bot_config = BotConfig()
 
 # Initialize the ConversationHandler instance with the bot configuration
-conversation_handler = ConversationHandler(bot_config)
+conversation_handler = ConversationHandler()
 
 # Create a Blueprint object for route handling
 chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")

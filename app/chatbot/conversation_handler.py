@@ -1,5 +1,8 @@
+from app.chatbot.bot_config import BotConfig
+from .messaging_manager import MessagingManager
+
 class ConversationHandler:
-    def __init__(self):
+    def __init__(self, bot_config):
         self.bot_config = BotConfig()
         self.messaging_manager = MessagingManager()
 
