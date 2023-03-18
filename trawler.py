@@ -14,7 +14,10 @@ def read_gitignore():
 
 def traverse_directory(gitignore_set, output_file, dir_path="."):
     for root, dirs, files in os.walk(dir_path):
-        if any(root.startswith(f"./{ignored}") for ignored in gitignore_set):
+        root = os.path.normpath(root)  # Normalize the root path
+        root_parts = root.split(os.path.sep)
+
+        if any(ignored in root_parts for ignored in gitignore_set):
             dirs[:] = []  # Skip traversal of ignored directories
             continue
 
@@ -23,9 +26,10 @@ def traverse_directory(gitignore_set, output_file, dir_path="."):
         for file in files:
             if file.endswith(".py"):
                 file_path = os.path.join(root, file)
-                output_file.write(f"## {file_path}\n")
 
+                contents = []
                 comment_printed = False  # Track if comment has been printed
+
                 with open(file_path) as f:
                     lines = f.readlines()
 
@@ -33,18 +37,17 @@ def traverse_directory(gitignore_set, output_file, dir_path="."):
                 while i < len(lines):
                     line = lines[i].strip()
 
-                    if line.startswith('#'):
-                        if not comment_printed:  # Print comment only once
-                            output_file.write(f"### {line}\n")
-                            comment_printed = True
-                        i += 1
+                    if line.startswith('#') and not comment_printed:
+                        contents.append(f"# {line[1:].strip()}")
+                        comment_printed = True
                     elif line.startswith('def') or line.startswith('class'):
-                        output_file.write(f"\n{line}\n")
-                        i += 1
-                    else:
-                        i += 1
+                        contents.append(f"- {line}")
+                    i += 1
 
-                output_file.write('\n')
+                if len(contents) > 1:  # Only print if there are notable functions or classes
+                    output_file.write(f"{file_path}\n")
+                    output_file.write("\n".join(contents))
+                    output_file.write("\n\n")
 
 def main():
     try:
