@@ -7,6 +7,8 @@ asgiref
 openai
 Flask
 flask_socketio
+Flask-PyMongo
+Flask-Bcrypt
 gradio
 tensorflow
 python-dotenv
