@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serendipity - Digital AI Assistant</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Serendipity</h1>
@@ -17,6 +18,7 @@
     <button onclick="submitMessage()">Submit</button>
     <h2>Chatbot's response:</h2>
     <textarea id="chatbot-response" rows="5" cols="50" readonly></textarea>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
         async function submitMessage() {
             const userInput = document.getElementById('user-input').value;

@@ -8,24 +8,27 @@ def is_ignored(path, ignored_patterns):
 
 
 def get_ignored_patterns(gitignore_file):
-    ignored_patterns = {'.git','site-packages'}
+    ignored_patterns = {'.git','pycache'}
     if os.path.isfile(gitignore_file):
         with open(gitignore_file, "r") as f:
             ignored_patterns.update(line.strip() for line in f if line.strip() and not line.startswith("#"))
     return ignored_patterns
 
 
-def traverse_directory(dir_path, ignored_patterns):
+def traverse_directory(code_string, ignored_patterns):
+    code_list = code_string.split("\n-\n")
     code_string = ""
-    for root, dirs, files in os.walk(dir_path):
-        dirs[:] = [d for d in dirs if not is_ignored(d, ignored_patterns)]
-        for file_name in files:
-            if file_name.endswith(".py"):
-                file_path = os.path.join(root, file_name)
-                with open(file_path, "r") as f:
-                    code = f.read()
-                    code_string += f"{file_path}\n{code}\n-\n"
+    for code_block in code_list:
+        if code_block.strip() == "":
+            continue
+        code_lines = code_block.strip().split("\n")
+        file_path = code_lines[0]
+        if any(is_ignored(file_path, ignored_patterns) for ignored_pattern in ignored_patterns):
+            continue
+        code = "\n".join(code_lines[1:])
+        code_string += f"{file_path}\n{code}\n-\n"
     return code_string
+
 
 
 def generate_directory_tree(start_path, ignored_patterns):
@@ -90,6 +93,7 @@ def generate_functions_and_classes(input_file, output_file, app_dir, ignored_pat
             relevant_files.append(line.strip())
 
     directory_tree = generate_directory_tree(app_dir, ignored_patterns)
+    output_string += f"#{directory}\n\n"
 
     output_string = ""
     for file_path in relevant_files:

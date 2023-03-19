@@ -1,12 +1,11 @@
 app/main.py
-#./app/main.py
 import os
 from dotenv import load_dotenv
 # Load environment variables from the .env file
 load_dotenv()
 config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
 from app.routes.routes import api
@@ -17,7 +16,6 @@ from app.chatbot.routes.chatbot_routes import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")
-
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -31,7 +29,8 @@ socketio.init_app(app)
 # Create the Gradio interface for the chatbot
 interface = create_interface()
 
-# Main entry point of the application
+# Define routes and view functions here
+
 if __name__ == "__main__":
     # Get the port number from the environment variable or use the default value
     port = int(os.environ.get("PORT", 7860))
@@ -41,14 +40,12 @@ if __name__ == "__main__":
     else:
         interface.launch()  # Launch the Gradio interface
         uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
-
 -
 app/chatbot/routes/chatbot_routes.py
 #./app/chatbot/routes/chatbot_routes.py
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, jsonify, request
 from app.chatbot.conversation_handler import ConversationHandler
 from app.chatbot.bot_config import BotConfig
-from app.chatbot.messaging_manager import MessagingManager
 
 # Initialize the BotConfig instance with the config file
 bot_config = BotConfig()
@@ -57,7 +54,7 @@ bot_config = BotConfig()
 conversation_handler = ConversationHandler(bot_config)
 
 # Create a Blueprint object for route handling
-chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
+chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/chatbot")
 
 # Route for handling chatbot requests
 @chatbot_bp.route('/chatbot', methods=['POST'])
@@ -72,10 +69,9 @@ def chatbot_route():
 -
 app/chatbot/routes/chatbot_routes.py
 #./app/chatbot/routes/chatbot_routes.py
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, jsonify, request
 from app.chatbot.conversation_handler import ConversationHandler
 from app.chatbot.bot_config import BotConfig
-from app.chatbot.messaging_manager import MessagingManager
 
 # Initialize the BotConfig instance with the config file
 bot_config = BotConfig()
@@ -84,7 +80,7 @@ bot_config = BotConfig()
 conversation_handler = ConversationHandler(bot_config)
 
 # Create a Blueprint object for route handling
-chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/")
+chatbot_bp = Blueprint("chatbot_routes", __name__, url_prefix="/chatbot")
 
 # Route for handling chatbot requests
 @chatbot_bp.route('/chatbot', methods=['POST'])

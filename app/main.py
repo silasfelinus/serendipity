@@ -1,11 +1,10 @@
-#./app/main.py
 import os
 from dotenv import load_dotenv
 # Load environment variables from the .env file
 load_dotenv()
 config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
 from app.routes.routes import api
@@ -16,7 +15,6 @@ from app.chatbot.routes.chatbot_routes import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")
-
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -30,7 +28,8 @@ socketio.init_app(app)
 # Create the Gradio interface for the chatbot
 interface = create_interface()
 
-# Main entry point of the application
+# Define routes and view functions here
+
 if __name__ == "__main__":
     # Get the port number from the environment variable or use the default value
     port = int(os.environ.get("PORT", 7860))
