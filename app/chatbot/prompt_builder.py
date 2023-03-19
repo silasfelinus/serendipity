@@ -1,9 +1,10 @@
+#./app/chatbot/prompt_builder.py
+
 # Define the PromptBuilder class for constructing conversation prompts
 class PromptBuilder:
-    def __init__(self, bot_config, user_input=None):
+    def __init__(self, bot_config, conversation_history):
         self.bot_config = bot_config
-        self.user_input = user_input
-        self.conversation_history = []
+        self.conversation_history = conversation_history
 
     # Function to get chatbot configuration by ID, merging with the default chatbot if available
     def get_chatbot_by_id(chatbot_id, config):
@@ -24,7 +25,7 @@ class PromptBuilder:
         return None
     
     # Function to build the conversation prompt
-    def build_prompt(self):
+    def build_prompt(self, user_input):
         # Set of default keys for chatbot configuration
         default_keys = set([
             "id", "name", "human", "pronouns", "job", "personality", "directive",
@@ -33,17 +34,17 @@ class PromptBuilder:
 
         # If there is no conversation history, use the chatbot's intro and greeting
         if not self.conversation_history:
-            prompt = self.chatbot['intro'].format(**self.chatbot)
+            prompt = self.bot_config.get_config('intro').format(**self.bot_config.config)
 
             # Add any additional chatbot traits to the prompt
-            additional_traits = {k: v for k, v in self.chatbot.items() if k not in default_keys}
+            additional_traits = {k: v for k, v in self.bot_config.config.items() if k not in default_keys}
 
             if additional_traits:
                 prompt += "\n\nExtra traits:"
                 for key, value in additional_traits.items():
                     prompt += f" - {key.capitalize()}: {value}"
 
-            prompt += f"\n\n{self.chatbot['greeting'].format(**self.chatbot)}"
+            prompt += f"\n\n{self.bot_config.get_config('greeting').format(**self.bot_config.config)}"
         else:
             prompt = ""
 
@@ -53,6 +54,6 @@ class PromptBuilder:
             prompt += f"\n\n{turn['chatbot']}: {turn['response']}"
 
         # Add the user's input to the prompt
-        prompt += f"\n\n{self.chatbot['human']}: {self.user_input}"
+        prompt += f"\n\n{self.bot_config.get_config('human')}: {user_input}"
 
         return prompt
