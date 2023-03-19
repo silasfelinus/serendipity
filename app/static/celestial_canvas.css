@@ -1,0 +1,139 @@
+/* CSS styles for the Celestial Canvas design */
+
+/* Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  p {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #0B3D91;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 20px;
+  }
+  
+  nav li:first-child {
+    margin-left: 0;
+  }
+  
+  nav a {
+    color: #E5E4E2;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  nav a:hover {
+    color: #FFD700;
+  }
+  
+  /* Hero section */
+  .hero {
+    position: relative;
+    text-align: center;
+    color: #E5E4E2;
+    background-color: #0B3D91;
+  }
+  
+  .hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #0B3D91;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #E5E4E2;
+    color: #0B3D91;
+  }
+  
+  /* Features section */
+  .features {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .features h2 {
+    margin-bottom: 50px;
+  }
+  
+  .features li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    list-style: none;
+  }
+  
+  /* Testimonial section */
+  .testimonial {
+    padding: 50px;
+    text-align: center;
+    background-color: #E5E4E2;
+  }
+  
+  .testimonial p:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial p:last-child {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+  
+  .testimonial p.author {
+    margin-top: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px 50px;
+    text-align: center;
+    background-color: #0B3D91;
+    color: #E5E4E2;
+  }
+  

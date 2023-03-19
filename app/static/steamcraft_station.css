@@ -1,0 +1,124 @@
+/* CSS for the Steamcraft Station design */
+
+body {
+    background-color: #E8E8E8;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .header {
+    background-color: #1B1B1B;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #E8E8E8;
+  }
+  
+  .logo img {
+    max-height: 3rem;
+    margin-right: 0.5rem;
+  }
+  
+  .nav-menu {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    list-style: none;
+    margin-left: 1.5rem;
+  }
+  
+  .nav-menu a {
+    color: #E8E8E8;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-menu a:hover {
+    color: #FFD700;
+  }
+  
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1487035246348-a0db6e4b7def?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fHN0ZWFtcHVuaXR5JTIwdGFza3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: #1B1B1B;
+  }
+  
+  .hero p {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1B1B1B;
+  }
+  
+  .featured-section {
+    background-color: #1B1B1B;
+    padding: 5rem 0;
+  }
+  
+  .featured-item {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .featured-item img {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-item h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #E8E8E8;
+  }
+  
+  .featured-item p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: #E8E8E8;
+  }
+  
+  .cta-section {
+    background-color: #1B1B1B;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #E8E8E8;
+  }
+  
+  .cta-section p {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #E8E8E8;
+  }
+  
+  .cta-button {
+    background-color: #FFD700;
+    color: #1B1B1B;
+  

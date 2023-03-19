@@ -4,6 +4,8 @@ from .messaging_manager import MessagingManager
 
 class ConversationHandler:
     def __init__(self, bot_config):
+        self.bot_config = bot_config
+        self.conversation_history = []
         self.messaging_manager = MessagingManager(bot_config)
 
     def handle_conversation(self, user_input, chatbot_id, conversation_history):
@@ -28,3 +30,8 @@ class ConversationHandler:
         self.conversation_history[-1]["response"] = chatbot_response
 
         return chatbot_response
+
+    def get_conversation(self, chatbot_id, conversation_history):
+        # Implement the logic to retrieve the conversation history for a specific chatbot_id
+        # You can use the chatbot_id to filter the conversation history and return only the relevant conversation
+        return conversation_history

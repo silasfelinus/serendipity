@@ -1,0 +1,103 @@
+/* CSS for the Futuristic Fusion design */
+
+body {
+    background-color: #3F3F3F;
+    color: #E0E0E0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(17,17,17,1) 100%);
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    text-align: center;
+    padding: 3rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+  
+  .hero-content p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+  
+  .featured-section {
+    background-color: #212121;
+    padding: 5rem 0;
+  }
+  
+  .featured-section h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .featured-item {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .featured-item img {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-item h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .featured-item p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-section {
+    background-color: #212121;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .cta-section p {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .cta-button {
+    background-color: #FFD700;
+    color: #000;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background-color: #FFDF6B;
+    transform: scale(1.05);
+  }
+  

@@ -1,0 +1,27 @@
+/* JS for the Skybound Spectrum design */
+
+/* Colorful JavaScript Cloud Bubbles */
+const cloudBubbles = document.querySelectorAll('.cloud-bubble');
+
+cloudBubbles.forEach(bubble => {
+  bubble.addEventListener('mouseenter', () => {
+    bubble.classList.add('active');
+  });
+
+  bubble.addEventListener('mouseleave', () => {
+    bubble.classList.remove('active');
+  });
+});
+
+/* Gradient Buttons */
+const buttons = document.querySelectorAll('.button');
+
+buttons.forEach(button => {
+  button.addEventListener('mouseenter', () => {
+    button.classList.add('gradient');
+  });
+
+  button.addEventListener('mouseleave', () => {
+    button.classList.remove('gradient');
+  });
+});

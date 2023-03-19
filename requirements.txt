@@ -13,4 +13,3 @@ gradio
 tensorflow
 python-dotenv
 pyyaml
-sphinx

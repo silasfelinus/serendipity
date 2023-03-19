@@ -10,13 +10,11 @@ class Chatbot:
         bot_config = BotConfig(config_file_path)
         self.conversation_handler = ConversationHandler(bot_config)
         self.messaging_manager = MessagingManager(bot_config)
-        self.prompt_builder = PromptBuilder(bot_config)
+        self.prompt_builder = PromptBuilder(bot_config, self.conversation_handler.conversation_history)
         self.response_handler = ResponseHandler(bot_config)
 
     def response(self, user_input, chatbot_id, conversation_history):
-        conversation = self.conversation_handler.get_conversation(chatbot_id, conversation_history)
-        prompt = self.prompt_builder.build_prompt(conversation, user_input)
-        response = self.messaging_manager.send_message(prompt)
-        processed_response = self.response_handler.process_response(response)
-        self.conversation_handler.update_conversation(chatbot_id, user_input, processed_response)
+        prompt = self.prompt_builder.build_prompt(user_input)
+        processed_response = self.messaging_manager.generate_response(user_input, chatbot_id, conversation_history, prompt)
+        self.conversation_handler.handle_conversation(user_input, chatbot_id, conversation_history)
         return processed_response
