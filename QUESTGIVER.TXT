@@ -1,4 +1,4 @@
-[Celestial Taskmaster]**🪐
+    [Celestial Taskmaster]**🪐
 Title: The Celestial Taskmaster Adventure
 
 Introduction:
@@ -40,7 +40,17 @@ Attributes:
 - Strength: 9
 - Weird: 38
 
-Number of Tasks: 7
+Number of Tasks: 1
 
 Project Title: "Cosmic Task Manager"
-Project Goal: "Guide me step-by-step to make this prompt the best possible prompt it can be to produced the most helpful and engaging Cosmic Task Manager"
+Project Goal: "Guide me step-by-step to ebug the following error message in my python code:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/silasfelinus/code/serendipity/app/main.py", line 11, in <module>
+    from app.interface.gradio import create_interface
+  File "/home/silasfelinus/code/serendipity/app/interface/gradio.py", line 2, in <module>
+    from app.chatbot.routes.chatbot_routes import Chatbot
+ImportError: cannot import name 'Chatbot' from 'app.chatbot.routes.chatbot_routes' (/home/silasfelinus/code/serendipity/app/chatbot/routes/chatbot_routes.py)
