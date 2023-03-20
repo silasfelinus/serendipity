@@ -9,7 +9,6 @@ config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 
 from flask import Flask, jsonify
 from flask_pymongo import PyMongo
-from threading import Thread
 from app.routes.routes import api
 from app.interface.gradio import create_interface
 from .logging_config import logger
@@ -36,7 +35,7 @@ def launch_gradio():
     interface.launch()
 
 # Define routes and view functions here
-@app.route('/testmongo', methods=['GET'])
+@app.route('/test_mongo', methods=['GET'])
 def test_mongo():
     try:
         # Insert a sample document into the 'users' collection
@@ -63,9 +62,7 @@ def test_mongo():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))
 
-    # Launch the Gradio interface in a separate thread
-    gradio_thread = Thread(target=launch_gradio)
-    gradio_thread.start()
+    launch_gradio()
 
     # Run the Flask app
     app.run(host="0.0.0.0", port=port)
