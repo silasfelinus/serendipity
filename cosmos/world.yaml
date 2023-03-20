@@ -1,0 +1,357 @@
+#./cosmos/world.yaml
+universe:
+  name: Cosmos
+  dimensions: 3
+  cosmic_phenomena:
+    - Wormholes
+    - Pulsars
+    - Nebulae
+    - Black Holes
+    - Quasars
+    - Gravitational Waves
+  celestial_bodies:
+    - Stars
+    - Planets
+    - Asteroids
+    - Moons
+    - Comets
+    - Space Stations
+
+planets:
+  name: Serendipity
+  biomes:
+    - Space Bar
+    - Underwater Caverns
+    - Floating Islands
+    - Desert Wasteland
+    - Lush Rainforest
+  flora:
+    - Glowing Fungus
+    - Cosmic Ferns
+    - Telekinetic Vines
+    - Gravity-Defying Flowers
+    - Hypnotic Mushrooms
+  fauna:
+    - Space Bats
+    - Nebula Drakes
+    - Void Krakens
+    - Plasma Whales
+    - Interdimensional Butterflies
+  geography:
+    - Craters
+    - Mountains
+    - Canyons
+    - Underground Cave Systems
+    - Towering Spires
+  climate:
+    - Variable
+    - Extreme
+    - Cosmic Storms
+    - Psychic Mists
+
+civilizations:
+  cultures:
+    - Zorphian
+    - Blibnarian
+    - Syrentinian
+    - Jovian
+    - Atlantean
+  languages:
+    - Galactic Common
+    - Blibnarian
+    - Syrentinian
+    - Jovian
+    - Atlantean
+  technologies:
+    - FTL Travel
+    - Teleportation
+    - Advanced Robotics
+    - Biotechnology
+    - Nanotechnology
+    - Transdimensional Technology
+  economies:
+    - Interstellar Trade
+    - Mining
+    - Barter-based Systems
+    - Resource-based Economies
+  governments:
+    - Federation
+    - Autonomous Regions
+    - Oligarchies
+    - Anarchies
+    - Theocracies
+
+factions:
+  name: Intergalactic Adventurers Guild
+  goals:
+    - Exploration
+    - Profit
+  alliances:
+    - Federation
+    - Zorphian Confederacy
+    - Atlantean League
+  rivalries:
+    - Rogue Pirates
+    - Blibnarian Separatists
+  organizations:
+    - Criminal Syndicates
+    - Religious Orders
+    - Technological Corporations
+
+characters:
+  name: Serendipity
+  role: Celestial Questmistress
+  race: Celestial Being
+  abilities:
+    - Omniscience
+    - Quest-giving
+    - Telepathy
+    - Shapeshifting
+  quirks:
+    - Fourth-wall breaking
+    - Meta-gaming
+    - Rhyming
+
+locations:
+  name: Space Bar
+  setting: Cosmic Space Saloon
+  landmarks:
+    - Zorphian Ale Booth
+    - Atlantean Crystal Bar
+  points_of_interest:
+    - Astro-Poker Table
+    - Teleportation Platform
+    - Interdimensional Portal
+
+items:
+  name: Galactic Gavel of Gab
+  type: Mystical Hammer
+  effects:
+    - +5 Charisma
+    - Psychic Amplification
+  restrictions:
+    - Only works while standing on one foot
+    - Only usable by non-violent characters
+
+events:
+  - name: High-stakes Astro-Poker
+    participants:
+      - Player
+      - Captain Blibnar
+      - Syrentinian Merchant
+      - Atlantean Princess
+    outcomes:
+      - Winning the Galactic Gavel of Gab
+      - Triggering a faction war
+      - Discovering a hidden treasure
+    location: Space Bar
+
+  - name: The Great Hunt
+    objectives:
+      - Hunt down the Void Kraken
+      - Collect its rare biomaterial
+    rewards:
+      - Advanced Biotech Upgrades
+      - Faction Reputation
+      - Unique Mount
+    consequences:
+      - Increased hostility with Kraken allies
+      - Potential ecological disaster
+    location: Serendipity
+
+  - name: The Transdimensional Heist
+    objectives:
+      - Steal the Atlantean Crystal
+      - Use it to power a transdimensional portal
+    rewards:
+      - Wealth beyond measure
+      - Access to hidden realms
+      - Unique technology
+    consequences:
+      - Increased hostility with Atlantean League
+      - Unleashing a transdimensional threat
+    location: Atlantean Crystal Bar
+
+quests:
+  - title: Cosmic Task Manager
+    objectives:
+      - Complete 7 Tasks
+    rewards:
+      - Whimsical Rewards
+      - Stat Upgrades
+      - Access to hidden quests
+    consequences:
+      - Missed Opportunities
+      - Faction Reputation
+    location: Various
+
+  - title: The Zorphian Dilemma
+    objectives:
+      - Investigate the Zorphian Confederacy's secret project
+      - Stop it from causing a cosmic disaster
+    rewards:
+      - Advanced Technology
+      - Faction Reputation
+      - Access to Zorphian Technology
+    consequences:
+      - Increased hostility with Zorphian Confederacy
+      - Potential political fallout
+    location: Zorphian Homeworld
+
+  - title: The Syrentinian Betrayal
+    objectives:
+      - Discover the true identity of the Syrentinian traitor
+      - Expose their plot to overthrow the Federation
+    rewards:
+      - Access to restricted technology
+      - Faction Reputation
+      - Unique Allies
+    consequences:
+      - Increased hostility with Syrentinian Empire
+      - Potential war with the Federation
+    location: Federation Headquarters
+
+class_system:
+  - name: Adventurer
+    abilities:
+      - Weapon Mastery
+      - Survival Skills
+    talent_tree:
+      - Combat
+      - Exploration
+      - Diplomacy
+    unique_quests:
+      - The Adventurer's Guild Trials
+      - The Legend of the Space Pirate
+
+  - name: Technomancer
+    abilities:
+      - Hacking
+      - Robotics
+      - Elemental Magic
+    talent_tree:
+      - Cybernetics
+      - Elemental Magic
+      - Technomancy
+    unique_quests:
+      - The Lost Laboratory
+      - The AI Uprising
+
+  - name: Mystic
+    abilities:
+      - Psychic Powers
+      - Elemental Magic
+      - Healing Magic
+    talent_tree:
+      - Elemental Magic
+      - Healing Magic
+      - Psychic Powers
+    unique_quests:
+      - The Great Spiritual Quest
+      - The Mystic's Journey
+
+  - name: Bounty Hunter
+    abilities:
+      - Tracking
+      - Marksmanship
+      - Close Combat
+   
+
+  talent_tree:
+      - Tracking
+      - Marksmanship
+      - Close Combat
+    unique_quests:
+      - The Hunted
+      - The Ultimate Bounty
+
+  - name: Diplomat
+    abilities:
+      - Negotiation
+      - Intimidation
+      - Telepathy
+    talent_tree:
+      - Negotiation
+      - Intimidation
+      - Telepathy
+    unique_quests:
+      - The Galactic Summit
+      - The Ambassador's Dilemma
+
+  - name: Scientist
+    abilities:
+      - Research
+      - Invention
+      - Biotechnology
+    talent_tree:
+      - Biotechnology
+      - Invention
+      - Research
+    unique_quests:
+      - The Search for the Ultimate Truth
+      - The Experiment Gone Wrong
+
+  - name: Sorcerer
+    abilities:
+      - Elemental Magic
+      - Necromancy
+      - Shapeshifting
+    talent_tree:
+      - Elemental Magic
+      - Necromancy
+      - Shapeshifting
+    unique_quests:
+      - The Forbidden Magic
+      - The Curse of the Undead
+
+narrative_foils:
+  - The Shadow: A mysterious figure who seeks to disrupt the player's progress and sabotage their efforts.
+  - The Mentor: A wise and experienced character who guides the player and teaches them valuable skills.
+  - The Traitor: A character who betrays the player's trust and works against them, often with hidden motives.
+  - The Enigma: A character who is shrouded in mystery and has a secret agenda, often with cosmic implications.
+  - The Guardian: A powerful entity who tests the player's skills and powers, often in the form of a boss battle.
+  - The Collector: A character who seeks rare and exotic items, and is willing to trade or even steal to get them.
+  - The Trickster: A character who delights in mischief and pranks, often causing confusion and chaos.
+
+surprise_musical_interludes:
+  - Space Bar Jukebox: A jukebox that plays various styles of space-themed music, from retro synthwave to intergalactic jazz.
+  - Alien Karaoke: A karaoke event where players can sing along to alien songs in different languages and styles.
+  - Cosmic Concert: A concert by a famous intergalactic band, featuring a mix of genres and instruments from across the universe.
+
+unexpected_narrative_twists:
+  - The Illusion: A major plot point or character is revealed to be an illusion or a hologram, and the player must uncover the truth.
+  - The Time Loop: The player finds themselves trapped in a time loop, repeating the same events over and over until they find a way to break free.
+  - The Betrayal: A trusted ally or faction turns against the player, forcing them to rethink their strategies and allegiances.
+  - The Revelation: A major secret or mystery is revealed, changing the player's understanding of the world and their place in it.
+  - The Corruption: The player discovers a dark and dangerous force that threatens to consume the universe, and must stop it at all costs.
+  - The Sacrifice: The player is faced with a difficult choice, where they must sacrifice something they hold dear to achieve their goals.
+  - The Twist Ending: The player's journey takes an unexpected turn, revealing a surprising conclusion that changes their perspective on everything.
+
+unexpected_secrets:
+  - The Hidden Room: A secret room in a familiar location, filled with rare items and valuable information.
+  - The Lost City: An ancient city hidden beneath the surface of a planet or moon, filled with mysterious technology and
+
+
+  valuable treasures.
+  - The Wormhole Network: A hidden network of wormholes that allows for fast travel across the universe, but only accessible by those with the right knowledge or technology.
+  - The Cosmic Library: A vast repository of knowledge and information, hidden away in a pocket dimension or a remote planet, guarded by powerful entities and ancient technology.
+  - The Quantum Realm: A mysterious realm of quantum energy, where reality is in constant flux and the laws of physics are constantly being rewritten.
+  - The Cosmic Forge: A powerful forge that allows for the creation of legendary weapons and artifacts, hidden away in a remote location guarded by powerful entities and deadly traps.
+  - The Infinity Well: A legendary source of infinite energy and power, hidden away in the depths of space, guarded by a powerful entity or a dangerous faction.
+
+recurring_characters:
+  - Captain Blibnar: A veteran space pirate with a heart of gold, who helps the player in their adventures and provides valuable information and resources.
+  - Commander Nova: A tough but fair Federation officer who assigns missions to the player and provides support and backup when needed.
+  - Professor Zalos: A brilliant scientist who specializes in biotechnology and genetics, and provides the player with unique upgrades and abilities.
+  - The Cosmic Bard: A mysterious bard who travels the universe, telling tales and singing songs of adventure and heroism, and providing valuable insights and advice to the player.
+  - The Collector: A shrewd and cunning collector of rare and exotic items, who seeks to trade with the player and provide them with valuable information and resources.
+  - The Guardian: A powerful entity who tests the player's skills and powers, often in the form of a boss battle, and provides valuable rewards and upgrades if defeated.
+
+mood:
+  - Epic: The player is immersed in an epic adventure of cosmic proportions, filled with heroic deeds, epic battles, and cosmic wonders.
+  - Whimsical: The player is transported to a whimsical and lighthearted universe, filled with colorful characters, silly puns, and unexpected surprises.
+  - Mystical: The player is drawn into a mystical and magical universe, filled with ancient lore, mysterious powers, and hidden secrets.
+  - Cosmic Horror: The player is plunged into a cosmic horror story, where they must confront the dark and eldritch forces that threaten to consume the universe.
+  - Cyberpunk: The player is thrust into a dystopian future, where technology and corruption rule the universe, and they must navigate a dangerous and gritty world of crime and intrigue.
+  - Space Western: The player is transported to a space western universe, filled with rugged cowboys, lawless frontiers, and epic gunfights.
+  - Steampunk: The player is immersed in a steampunk universe, filled with clockwork contraptions, steam-powered engines, and Victorian elegance.
