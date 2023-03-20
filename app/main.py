@@ -2,13 +2,13 @@
 
 import os
 from dotenv import load_dotenv
+
 # Load environment variables from the .env file
 load_dotenv()
 config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 
-from flask import Flask, render_template, request
-import uvicorn
-from asgiref.wsgi import WsgiToAsgi
+from flask import Flask, jsonify
+from flask_pymongo import PyMongo
 from app.routes.routes import api
 from app.interface.gradio import create_interface
 from .logging_config import logger
@@ -20,6 +20,9 @@ logger.info("Hello, world!")
 
 # Create a Flask application instance
 app = Flask(__name__)
+app.config["MONGO_URI"] = "mongodb://192.168.4.3:27017/serendipity?directConnection=true"
+mongo = PyMongo(app)
+
 # Register the routes blueprints
 app.register_blueprint(api)
 app.register_blueprint(livechat_bp, url_prefix='/livechat')
@@ -27,17 +30,39 @@ app.register_blueprint(chatbot_bp, url_prefix='/chatbot')
 
 socketio.init_app(app)
 
-# Create the Gradio interface for the chatbot
-interface = create_interface()
+def launch_gradio():
+    interface = create_interface()
+    interface.launch()
 
 # Define routes and view functions here
+@app.route('/test_mongo', methods=['GET'])
+def test_mongo():
+    try:
+        # Insert a sample document into the 'users' collection
+        user = {
+            "name": "Silas Knight",
+            "email": "silasfelinus@gmail.com",
+            "birthday": "09/08/1977"
+        }
+        inserted_id = mongo.db.users.insert_one(user).inserted_id
 
+        # Retrieve the document from the 'users' collection using the inserted_id
+        retrieved_user = mongo.db.users.find_one({"_id": inserted_id})
+
+        # Convert the ObjectId to str to make it JSON serializable
+        retrieved_user["_id"] = str(retrieved_user["_id"])
+
+        # Return the retrieved document as JSON
+        return jsonify(retrieved_user)
+
+    except Exception as e:
+        logger.error(f"Error in test_mongo: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+    
 if __name__ == "__main__":
-    # Get the port number from the environment variable or use the default value
     port = int(os.environ.get("PORT", 7860))
 
-    if os.environ.get("FLASK_ENV") == "development":
-        app.run(host="0.0.0.0", port=port)
-    else:
-        interface.launch()  # Launch the Gradio interface
-        uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
+    launch_gradio()
+
+    # Run the Flask app
+    app.run(host="0.0.0.0", port=port)

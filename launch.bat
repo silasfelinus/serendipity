@@ -2,4 +2,4 @@
 source venv/Scripts/activate
 pip install -r requirements.txt
 source ./.env
-python -m main.py
+python -m app.main
