@@ -21,7 +21,7 @@ logger.info("Hello, world!")
 
 # Create a Flask application instance
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://192.168.4.3:27017/serendipity"
+app.config["MONGO_URI"] = "mongodb://192.168.4.3:27017/serendipity?directConnection=true"
 mongo = PyMongo(app)
 
 # Register the routes blueprints
