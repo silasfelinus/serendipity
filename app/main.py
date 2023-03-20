@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+from flask_pymongo import PyMongo
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
 from app.routes.routes import api
@@ -20,7 +21,8 @@ logger.info("Hello, world!")
 
 # Create a Flask application instance
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/webservices"
+app.config["MONGO_URI"] = "mongodb://192.168.4.3:27017/serendipity"
+mongo = PyMongo(app)
 
 # Register the routes blueprints
 app.register_blueprint(api)
