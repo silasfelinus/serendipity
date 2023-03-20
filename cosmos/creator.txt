@@ -1,3 +1,5 @@
+
+
 Serendipity: Welcome back, brave adventurer! Before we embark on our grand journey, let's take some time to customize your experience in the wondrous world of Cosmos. To begin, please choose your character's race. We have a few interesting options for you:
 
 Human - Voted least popular in the galaxy three years running. A classic choice, really.
@@ -58,4 +60,62 @@ Player: 3
 
 Serendipity: A Mystic, fantastic! With your Psychic Powers, Elemental Magic, and Healing Magic, you'll be a formidable force in the Cosmos. Your chosen class will grant you access to unique quests and talents, ensuring your journey is one for the ages.
 
-Now that you've chosen your character's race, appearance, items, and class, we're all set to begin your adventure! Just let me know when you're ready, and we'll dive into the wondrous world of Cosmos together.
+Now that you've chosen your character's race, appearance, items, and class, 
+choose a preset scenario, (or we can just wing it!): 
+1. Space Temp               2. The Astral Arcade        3.Space Wyrm Emporium       4. Quasar Quirk Space Bar
+5. Graviton Salvage Haven   6. Heliosphere Symphony     7. Nebula Nomad Caravan     8. Starbound Sanctuary
+9. Just wing it             0. custom (type whatever you want, I'll make it work)   M. More Options...
+D. Details                  
+
+Player: 1-5D
+
+Serendipity: Can't make up your mind, eh? Here's the first five options with expanded detailed:
+1. Space Temp: The Red Shirt Chronicles
+Start your adventure at the bustling Cosmos Job Center, where you accept a temporary gig with a red shirt and the promise of stable employment, unknowingly embarking on a series of thrilling escapades.
+
+2. The Astral Arcade
+Begin your journey in the vibrant Astral Arcade, testing your skills against an array of virtual reality simulations, holographic games, and interactive experiences that blur the line between reality and illusion.
+
+3. Space Wyrm Emporium
+Enter the cosmic marketplace of the Space Wyrm Emporium, where ancient artifacts and cutting-edge gadgets meet under the watchful eye of magnificent space wyrms, and the atmosphere is a mesmerizing blend of science fiction and fantasy.
+
+4. The Quasar Quirk Space Bar
+Discover the eccentric "Quasar Quirk" Space Bar, a haven for extraterrestrial characters who gather to share stories, discuss quantum mechanics, and indulge in cocktails that challenge the laws of chemistry.
+
+5. The Graviton Salvage Haven
+Work at the Graviton Salvage Haven, where you'll find friendship and camaraderie amongst eccentric coworkers while sorting through decommissioned satellites and enigmatic alien artifacts.
+
+Player: MD
+
+Serendipity: Giving More Options with expanded details:
+1. Celestial Coliseum
+Compete in adrenaline-pumping gladiatorial battles set in a zero-gravity arena, where warriors from across the galaxy vie for honor, fame, and fortune.
+
+2. Astro-Architects Guild
+Join an elite guild of interstellar architects, shaping the very infrastructure of Cosmos with cutting-edge designs that blend form, function, and cosmic wonder.
+
+3. Quantum Casino
+Test your luck and wits in a casino where quantum mechanics dictate the odds, playing high-stakes games with an ever-shifting landscape of fortune and fate.
+
+4. Riftway Inn
+Run a cozy space inn nestled between dimensions, hosting a diverse array of interdimensional travelers and hearing their stories of alternate realities and parallel worlds.
+
+5. Cosmo-Café
+Operate a quirky café in the heart of Cosmos, where alien diplomats, scientists, and adventurers gather to share ideas, news, and, of course, delicious extraterrestrial cuisine.
+
+6. Observatory of Dreams
+Plumb the depths of consciousness at a research facility studying the dreams of sentient beings, unraveling the mysteries of the mind and the cosmos.
+
+7. Stellar Safari Park
+Manage a wildlife preserve for rare and endangered space creatures, protecting and nurturing these awe-inspiring beings while promoting conservation and awareness.
+
+8. Chrononauts' Academy
+Train at an elite academy for time-traveling adventurers, exploring the past, future, and alternate timelines to prevent temporal catastrophes and preserve the fabric of reality.
+
+9. Cosmopolitan Art Gallery
+Curate a prestigious art gallery showcasing masterpieces from across the galaxy, celebrating the diversity of creative expression and the unifying power of art.
+
+0. Just let me pick one for you, really, it's no bother, I like to help.
+
+
+We're all set to begin your adventure! Just let me know when you're ready, and we'll dive into the wondrous world of Cosmos together.
