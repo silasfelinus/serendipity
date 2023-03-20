@@ -1,251 +1,174 @@
 surprise_musical_interludes:
-  - name: "Cosmic Dreams"
-    artist: "The Andromedan Dreamers"
-    genre: "Space Pop"
-    race: "Andromedan"
-    event: "The player discovers a hidden recording of the song in an abandoned space station, left behind by a group of Andromedan dreamers who were forced to flee their home planet. As they listen, they hear a strange hum in the background that seems to harmonize with the melody."
-    fact: "Andromedans have a unique organ that allows them to produce a harmonic frequency that resonates with their emotions, and can be used to enhance their music."
-    lyrics: |
-      In the cosmos, there's a place,
-      Where the stars are filled with grace,
-      And the universe is our stage,
-      Where we can dance and engage.
-      
-      And as we spin beneath the skies,
-      We'll feel the music come alive,
-      And know that we're not alone,
-      With these cosmic dreams to call our own.
 
-  - name: "Galactic Drift"
-    artist: "The Celestial Nomads"
-    genre: "Ambient Space Music"
-    race: "Nebulans"
-    event: "The player stumbles upon a group of Nebulans drifting through space, playing music on a series of interconnected spheres that emit a soft glow. As they listen, they feel a sense of weightlessness and calmness wash over them."
-    fact: "Nebulans have a unique sensory organ that allows them to detect and interpret subtle changes in gravitational fields, and can be used to create music that evokes a sense of floating and drifting through space."
-    lyrics: |
-      In the vastness of the void,
-      Where the stars are unalloyed,
-      We'll float through the cosmic seas,
-      With the universe as our breeze.
-      
-      And as we drift through space and time,
-      We'll feel the rhythm of the divine,
-      And know that we're part of a greater whole,
-      With this galactic drift to soothe our soul.
+name: "Cosmic Dreams"
+artist: "The Andromedan Dreamers"
+genre: "Space Pop"
+race: "Andromedan"
+event: >
+The player discovers a hidden recording of the song in an abandoned space station, left behind by a group of Andromedan dreamers who were forced to flee their home planet. As they listen, they hear a strange hum in the background that seems to harmonize with the melody.
+fact: >
+Andromedans have a unique organ that allows them to produce a harmonic frequency that resonates with their emotions, and can be used to enhance their music.
+lyrics: |
+In the cosmos, there's a place,
+Where the stars are filled with grace,
+And the universe is our stage,
+Where we can dance and engage.
 
-  - name: "Interstellar Blues"
-    artist: "The Delta Quadrant Blues Band"
-    genre: "Space Blues"
-    race: "Human"
-    event: "The player walks into a seedy space bar and hears the mournful strains of the blues emanating from the stage. As they listen, they feel a sense of sadness and longing wash over them, and they notice a group of rough-looking humans nodding their heads in time to the music."
-    fact: "Humans have a unique emotional range that allows them to express a wide variety of feelings through music, and can use the blues as a way to channel their pain and sorrow."
-    lyrics: |
-      In the darkness of the void,
-      Where the stars are dimly deployed,
-      We'll sing the blues with all our might,
-      And try to make it through the night.
-      
-      And as we cry out to the void,
-      We'll feel the pain of those destroyed,
-      And know that we're all in this together,
-      With this interstellar blues to weather the weather.
+And as we spin beneath the skies,
+We'll feel the music come alive,
+And know that we're not alone,
+With these cosmic dreams to call our own.
 
-  - name: "Cosmic Groove"
-    artist: "The Space Funksters"
-    genre: "Funkadelic Space Music"
-    race: "Zorpthians"
-    event: "The player attends a Zorpthian party and hears the funky grooves of the Space Funksters blasting through the sound system. As they dance, they notice that the Zorpth
 
+name: "Galactic Drift"
+artist: "The Celestial Nomads"
+genre: "Ambient Space Music"
+race: "Nebulans"
+event: >
+The player stumbles upon a group of Nebulans drifting through space, playing music on a series of interconnected spheres that emit a soft glow. As they listen, they feel a sense of weightlessness and calmness wash over them.
+fact: >
+Nebulans have a unique sensory organ that allows them to detect and interpret subtle changes in gravitational fields, and can be used to create music that evokes a sense of floating and drifting through space.
+lyrics: |
+In the vastness of the void,
+Where the stars are unalloyed,
+We'll float through the cosmic seas,
+With the universe as our breeze.
+
+And as we drift through space and time,
+We'll feel the rhythm of the divine,
+And know that we're part of a greater whole,
+With this galactic drift to soothe our soul.
+
+
+name: "Interstellar Blues"
+artist: "The Delta Quadrant Blues Band"
+genre: "Space Blues"
+race: "Human"
+event: >
+The player walks into a seedy space bar and hears the mournful strains of the blues emanating from the stage. As they listen, they feel a sense of sadness and longing wash over them, and they notice a group of rough-looking humans nodding their heads in time to the music.
+fact: >
+Humans have a unique emotional range that allows them to express a wide variety of feelings through music, and can use the blues as a way to channel their pain and sorrow.
+lyrics: |
+In the darkness of the void,
+Where the stars are dimly deployed,
+We'll sing the blues with all our might,
+And try to make it through the night.
+
+And as we cry out to the void,
+We'll feel the pain of those destroyed,
+And know that we're all in this together,
+With this interstellar blues to weather the weather.
 surprise_musical_interludes:
-  - name: "Solar Samba"
-    artist: "The Solar Samba Band"
-    genre: "Latin Space Music"
-    race: "Sunnites"
-    event: "The player discovers a recording of a Sunnite band playing a lively samba rhythm, and they can't help but tap their feet to the beat. As they listen, they notice that the tempo seems to increase and decrease in time with the sun's solar flares."
-    fact: "Sunnites have a unique sensory organ that allows them to detect and interpret changes in solar radiation, and can use this to create music that reflects the energy of the sun."
-    lyrics: |
-      In the heart of the solar system,
-      Where the sun is our prism,
-      We'll dance the samba with all our might,
-      And shine like stars in the night.
-      
-      And as we move to the rhythm of the sun,
-      We'll feel the energy of the stars as one,
-      And know that we're all made of light,
-      With this solar samba to guide us through the night.
-
-  - name: "Galactic Opera"
-    artist: "The Andromedan Opera Company"
-    genre: "Space Opera"
-    race: "Andromedan"
-    event: "The player attends a performance of the Andromedan Opera Company and is transported to another world by the soaring vocals and dramatic melodies. As they listen, they notice that the music seems to be telling a story, with each note and phrase representing a different character or emotion."
-    fact: "Andromedans have a unique vocal range that allows them to hit notes that are beyond human hearing, and can use this to create music that is incredibly expressive and emotional."
-    lyrics: |
-      In the depths of the universe,
-      Where the stars are a symphony in verse,
-      We'll sing the story of our lives,
-      And feel the power of the galaxy thrive.
-      
-      And as we soar on the wings of song,
-      We'll know that we've been here all along,
-      And that our story is one of love and strife,
-      With this galactic opera as our guide through life.
-
-  - name: "Interdimensional Blues"
-    artist: "The Delta Dimension Blues Band"
-    genre: "Interdimensional Blues"
-    race: "Mystery Race"
-    event: "The player hears the haunting strains of the interdimensional blues while exploring an abandoned space station. As they listen, they notice that the music seems to be coming from a portal to another dimension, and they feel a sense of unease and curiosity."
-    fact: "The members of the Delta Dimension Blues Band are of an unknown race and origin, and their music seems to transcend space and time, resonating with beings from all across the universe."
-    lyrics: |
-      In the spaces between spaces,
-      Where the universe has different faces,
-      We'll sing the blues with all our soul,
-      And try to make sense of the whole.
-      
-      And as we reach out to the unknown,
-      We'll feel the power of the interdimensional drone,
-      And know that we're all connected in time,
-      With this interdimensional blues as our rhyme.
-
-  - name: "Cosmic Country"
-    artist: "The Stellar Outlaws"
-    genre: "Space Country"
-    race: "Human"
-    event: "The player hears the twangy melodies of the Stellar Outlaws while traveling through a remote corner of the galaxy. As they listen, they notice that the lyrics seem to be about exploring the
-
-
-surprise_musical_interludes:
-  - name: "Solar Samba"
-    artist: "The Solar Samba Band"
-    genre: "Latin Space Music"
-    race: "Sunnites"
-    event: "The player discovers a recording of a Sunnite band playing a lively samba rhythm, and they can't help but tap their feet to the beat. As they listen, they notice that the tempo seems to increase and decrease in time with the sun's solar flares."
-    fact: "Sunnites have a unique sensory organ that allows them to detect and interpret changes in solar radiation, and can use this to create music that reflects the energy of the sun."
-    lyrics: |
-      In the heart of the solar system,
-      Where the sun is our prism,
-      We'll dance the samba with all our might,
-      And shine like stars in the night.
-      
-      And as we move to the rhythm of the sun,
-      We'll feel the energy of the stars as one,
-      And know that we're all made of light,
-      With this solar samba to guide us through the night.
-
-  - name: "Galactic Opera"
-    artist: "The Andromedan Opera Company"
-    genre: "Space Opera"
-    race: "Andromedan"
-    event: "The player attends a performance of the Andromedan Opera Company and is transported to another world by the soaring vocals and dramatic melodies. As they listen, they notice that the music seems to be telling a story, with each note and phrase representing a different character or emotion."
-    fact: "Andromedans have a unique vocal range that allows them to hit notes that are beyond human hearing, and can use this to create music that is incredibly expressive and emotional."
-    lyrics: |
-      In the depths of the universe,
-      Where the stars are a symphony in verse,
-      We'll sing the story of our lives,
-      And feel the power of the galaxy thrive.
-      
-      And as we soar on the wings of song,
-      We'll know that we've been here all along,
-      And that our story is one of love and strife,
-      With this galactic opera as our guide through life.
-
-  - name: "Interdimensional Blues"
-    artist: "The Delta Dimension Blues Band"
-    genre: "Interdimensional Blues"
-    race: "Mystery Race"
-    event: "The player hears the haunting strains of the interdimensional blues while exploring an abandoned space station. As they listen, they notice that the music seems to be coming from a portal to another dimension, and they feel a sense of unease and curiosity."
-    fact: "The members of the Delta Dimension Blues Band are of an unknown race and origin, and their music seems to transcend space and time, resonating with beings from all across the universe."
-    lyrics: |
-      In the spaces between spaces,
-      Where the universe has different faces,
-      We'll sing the blues with all our soul,
-      And try to make sense of the whole.
-      
-      And as we reach out to the unknown,
-      We'll feel the power of the interdimensional drone,
-      And know that we're all connected in time,
-      With this interdimensional blues as our rhyme.
-
-  - name: "Cosmic Country"
-    artist: "The Stellar Outlaws"
-    genre: "Space Country"
-    race: "Human"
-    event: "The player hears the twangy melodies of the Stellar Outlaws while traveling through a remote corner of the galaxy. As they listen, they notice that the lyrics seem to be
-
-surprise_musical_interludes:
-  - name: "Solar Samba"
-    artist: "The Solar Samba Band"
-    genre: "Latin Space Music"
-    race: "Sunnites"
-    event: "The player discovers a recording of a Sunnite band playing a lively samba rhythm, and they can't help but tap their feet to the beat. As they listen, they notice that the tempo seems to increase and decrease in time with the sun's solar flares."
-    fact: "Sunnites have a unique sensory organ that allows them to detect and interpret changes in solar radiation, and can use this to create music that reflects the energy of the sun."
-    lyrics: |
-      In the heart of the solar system,
-      Where the sun is our prism,
-      We'll dance the samba with all our might,
-      And shine like stars in the night.
-      
-      And as we move to the rhythm of the sun,
-      We'll feel the energy of the stars as one,
-      And know that we're all made of light,
-      With this solar samba to guide us through the night.
-
-  - name: "Galactic Opera"
-    artist: "The Andromedan Opera Company"
-    genre: "Space Opera"
-    race: "Andromedan"
-    event: "The player attends a performance of the Andromedan Opera Company and is transported to another world by the soaring vocals and dramatic melodies. As they listen, they notice that the music seems to be telling a story, with each note and phrase representing a different character or emotion."
-    fact: "Andromedans have a unique vocal range that allows them to hit notes that are beyond human hearing, and can use this to create music that is incredibly expressive and emotional."
-    lyrics: |
-      In the depths of the universe,
-      Where the stars are a symphony in verse,
-      We'll sing the story of our lives,
-      And feel the power of the galaxy thrive.
-      
-      And as we soar on the wings of song,
-      We'll know that we've been here all along,
-      And that our story is one of love and strife,
-      With this galactic opera as our guide through life.
-
- - name: "Quantum Tango"
-    artist: "The Particle Dancers"
-    genre: "Electronica Space Tango"
-    race: "Quarkians"
+  - name: "Heartbeat of Rigel"
+    artist: "The Starborn Souls"
+    genre: "Rigelian Folk"
+    race: "Rigelians"
     event: >
-      The player enters a peculiar Quarkian dance hall, where they see couples dancing passionately to the rhythm of the Quantum Tango. As they listen, they notice that the music seems to have an unpredictable yet alluring beat, mirroring the fundamental uncertainty of the quantum realm.
+      The player visits a Rigelian marketplace bustling with life and energy, where they hear a lively folk tune performed by local musicians. As they listen, they feel their heart syncing with the beat of the song, reflecting the connectedness of the Rigelian culture.
     fact: >
-      Quarkians possess the unique ability to perceive the subatomic world, which they channel into their music, creating sounds that capture the essence of the quantum universe.
+      Rigelians have an innate ability to synchronize their heartbeats, which they use to strengthen communal bonds and create harmony in their music.
     lyrics: >
-      In the realm of the unseen,
-      Where reality is but a dream,
-      We'll dance the tango of the night,
-      And embrace the quantum twilight.
+      In the heart of Rigel's light,
+      Where the stars shine so bright,
+      We'll gather and dance, our spirits ignite,
+      As one, we'll embrace the night.
 
-      And as we step in and out of view,
-      We'll feel the world anew,
-      And know that we're part of something grand,
-      With this quantum tango in a mysterious land.
+      With our hearts beating in time,
+      United, we'll dance, we'll climb,
+      And know that we're one in the grand design,
+      In the heartbeat of Rigel, we'll shine.
 
-  - name: "Interdimensional Blues"
-    artist: "The Delta Dimension Blues Band"
-    genre: "Interdimensional Blues"
-    race: "Mystery Race"
-    event: "The player hears the haunting strains of the interdimensional blues while exploring an abandoned space station. As they listen, they notice that the music seems to be coming from a portal to another dimension, and they feel a sense of unease and curiosity."
-    fact: "The members of the Delta Dimension Blues Band are of an unknown race and origin, and their music seems to transcend space and time, resonating with beings from all across the universe."
-    lyrics: |
-      In the spaces between spaces,
-      Where the universe has different faces,
-      We'll sing the blues with all our soul,
-      And try to make sense of the whole.
-      
-      And as we reach out to the unknown,
-      We'll feel the power of the interdimensional drone,
-      And know that we're all connected in time,
-      With this interdimensional blues as our rhyme.
+  - name: "Solar Samba"
+    artist: "The Helios Players"
+    genre: "Sunspot Samba"
+    race: "Solarians"
+    event: >
+      The player attends a vibrant Solarian festival, where they are drawn to the pulsating rhythm of the Solar Samba. As they dance, they notice the music seems to mimic the energy of solar flares, capturing the essence of their race's connection to the sun.
+    fact: >
+      Solarians can harness solar energy and channel it into their music, creating powerful, rhythmic beats that celebrate their deep connection to the sun.
+    lyrics: >
+      In the sun's embrace, we dance,
+      With its fire, our hearts advance,
+      We'll sway to the Solar Samba's trance,
+      Igniting our souls in a solar romance.
 
-  - name: "Cosmic Country"
-    artist: "The Stellar Outlaws"
-    genre: "Space Country"
-    race: "Human"
-    event: "The player hears the twangy melodies of the Stellar Outlaws while traveling through a remote corner of the galaxy. As they listen, they notice that the lyrics seem to be about exploring the wild
+      With each beat, we'll feel the sun,
+      Its radiant energy, we'll become,
+      And know that we're one with the cosmic drum,
+      In the Solar Samba, our spirits run.
+
+  - name: "Celestial Aria"
+    artist: "The Galactic Divas"
+    genre: "Cosmic Opera"
+    race: "Astralarions"
+    event: >
+      The player is invited to an Astralarion opera house, where they witness a breathtaking performance of the Celestial Aria. The powerful voices of the singers seem to encapsulate the beauty and grandeur of the cosmos itself, leaving the audience in awe.
+    fact: >
+      Astralarions possess a vocal range that spans multiple octaves, allowing them to create mesmerizing harmonies and melodies that evoke the majesty of the universe.
+    lyrics: >
+      In the celestial theater we sing,
+      Our voices soaring, our hearts taking wing,
+      We'll share the stories of the stars,
+      In the Celestial Aria, we'll spar.
+
+      With each note, we'll reach the skies,
+      Our voices entwined, our spirits rise,
+      And know that our song is eternally wise,
+      In the Celestial Aria, our souls devise.
+
+  - name: "Elysian Rhapsody"
+    artist: "The Hymns of Hyperion"
+    genre: "Celestial Ballad"
+    race: "Hyperians"
+    event: >
+      The player visits a serene Hyperian garden filled with luminous flora, where they come across a group of musicians playing a captivating ballad. As they listen, they feel a deep sense of tranquility and connection to the ethereal beauty of the Hyperian world.
+    fact: >
+      Hyperians are able to communicate with their environment through a form of telepathic resonance, enabling them to create music that reflects the natural harmony of their surroundings.
+    lyrics: >
+      In Elysian fields, we find our grace,
+      A world of wonder, a sacred place,
+      We'll sing our rhapsody, our spirits embrace,
+      In this haven of beauty, we'll trace.
+
+      With the melody of the skies,
+      Our souls entwined, our spirits rise,
+      And know that our song is an eternal prize,
+      In Elysian Rhapsody, our hearts advise.
+
+  - name: "Quasar Quiver"
+    artist: "The Pulsar Pioneers"
+    genre: "Electro-Gravitational"
+    race: "Gravitons"
+    event: >
+      The player discovers an underground Graviton club pulsating with energy, where they experience an electrifying performance of the Quasar Quiver. As they dance, they feel the gravitational forces manipulated by the music, creating a unique and exhilarating sensation.
+    fact: >
+      Gravitons can control gravitational forces and incorporate them into their music, creating a unique electro-gravitational genre that leaves listeners both thrilled and disoriented.
+    lyrics: >
+      In the depths of the quasar's might,
+      We'll dance with the forces of night,
+      We'll quiver and shake, our spirits alight,
+      In the cosmic embrace, we'll take flight.
+
+      With the power of gravity's pull,
+      Our bodies entwined, our senses full,
+      And know that our dance is a force to unspool,
+      In the Quasar Quiver, our spirits will duel.
+
+  - name: "Nebula Nocturne"
+    artist: "The Stardust Serenaders"
+    genre: "Galactic Jazz"
+    race: "Cosmorians"
+    event: >
+      The player enters a dimly lit Cosmorian speakeasy, where they are mesmerized by the sultry sounds of the Nebula Nocturne. As they sway to the music, they feel a sense of unity with the cosmos, as if the notes were weaving a tapestry of stardust and dreams.
+    fact: >
+      Cosmorians can perceive the vibrations of celestial bodies and translate them into music, creating a unique form of jazz that captures the essence of the cosmos.
+    lyrics: >
+      In the shadows of the nebula's embrace,
+      We'll weave a melody, a nocturnal lace,
+      We'll play our nocturne, our hearts encased,
+      In the cosmic symphony, our dreams encased.
+
+      With the rhythm of the celestial dance,
+      Our souls entwined, our spirits enhance,
+      And know that our song is a cosmic chance,
+      In the Nebula Nocturne, our hearts will glance.
