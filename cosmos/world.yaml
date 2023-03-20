@@ -1,0 +1,69 @@
+world.yaml
+│
+├── universe
+│   ├── name: Cosmos
+│   ├── dimensions: 3
+│   ├── cosmic_phenomena: ["Wormholes", "Pulsars", "Nebulae"]
+│   └── celestial_bodies: ["Stars", "Planets", "Asteroids"]
+│
+├── planets
+│   ├── name: Serendipity
+│   ├── biomes: ["Space Bar"]
+│   │   ├── flora: ["Glowing Fungus", "Cosmic Ferns"]
+│   │   └── fauna: ["Space Bats", "Nebula Drakes"]
+│   ├── geography: ["Craters", "Mountains", "Canyons"]
+│   └── climate: ["Variable", "Extreme"]
+│
+├── civilizations
+│   ├── cultures: ["Zorphian", "Blibnarian"]
+│   ├── languages: ["Galactic Common", "Blibnarian"]
+│   ├── technologies: ["FTL Travel", "Teleportation", "Advanced Robotics"]
+│   ├── economies: ["Interstellar Trade", "Mining"]
+│   └── governments: ["Federation", "Autonomous Regions"]
+│
+├── factions
+│   ├── name: Intergalactic Adventurers Guild
+│   ├── goals: ["Exploration", "Profit"]
+│   ├── alliances: ["Federation"]
+│   └── rivalries: ["Rogue Pirates"]
+│
+├── characters
+│   ├── name: Serendipity
+│   ├── role: Celestial Questmistress
+│   ├── race: Celestial Being
+│   ├── abilities: ["Omniscience", "Quest-giving"]
+│   └── quirks: ["Fourth-wall breaking"]
+│
+├── locations
+│   ├── name: Space Bar
+│   ├── setting: Cosmic Space Saloon
+│   ├── landmarks: ["Zorphian Ale Booth"]
+│   └── points_of_interest: ["Astro-Poker Table"]
+│   ├── name: Cosmos Job Center
+│   ├── name: Astral Arcade
+│   ├── name: Space Wyrm Emporium
+│   ├── name: Quasar Quirk Space Bar
+│   ├── name: Graviton Salvage Haven
+│   ├── name: Heliosphere Symphony
+│   └── name: Starbound Sanctuary
+│
+├── items
+│   ├── name: Galactic Gavel of Gab
+│   ├── type: Mystical Hammer
+│   ├── effects: ["+5 Charisma"]
+│   └── restrictions: ["Only works while standing on one foot"]
+│
+├── events
+│   ├── name: High-stakes Astro-Poker
+│   ├── participants: ["Player", "Captain Blibnar"]
+│   └── outcomes: ["Winning the Galactic Gavel of Gab"]
+│
+└── quests
+    ├── title: Space Temp: The Red Shirt Chronicles
+    ├── objectives: ["Complete the temporary job"]
+    ├── rewards: ["Excitement", "Danger", "Interstellar Intrigue"]
+    ├── title: The Astral Arcade
+    ├── objectives: ["Compete in VR simulations", "Socialize with other players"]
+    ├── rewards: ["Immersive experiences", "Friendship"]
+    ├── title: Space Wyrm Emporium
+    ├── objectives: ["Explore the marketplace
