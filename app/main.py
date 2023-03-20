@@ -37,25 +37,30 @@ socketio.init_app(app)
 interface = create_interface()
 
 # Define routes and view functions here
-@app.route('/test_mongo', methods=['GET'])
+@app.route('/testmongo', methods=['GET'])
 def test_mongo():
-    # Insert a sample document into the 'users' collection
-    user = {
-        "name": "John Doe",
-        "email": "john@example.com",
-        "age": 30
-    }
-    inserted_id = mongo.db.users.insert_one(user).inserted_id
+    try:
+        # Insert a sample document into the 'users' collection
+        user = {
+            "name": "Silas Knight",
+            "email": "silasfelinus@gmail.com",
+            "birthday": "09/08/1977"
+        }
+        inserted_id = mongo.db.users.insert_one(user).inserted_id
 
-    # Retrieve the document from the 'users' collection using the inserted_id
-    retrieved_user = mongo.db.users.find_one({"_id": inserted_id})
+        # Retrieve the document from the 'users' collection using the inserted_id
+        retrieved_user = mongo.db.users.find_one({"_id": inserted_id})
 
-    # Convert the ObjectId to str to make it JSON serializable
-    retrieved_user["_id"] = str(retrieved_user["_id"])
+        # Convert the ObjectId to str to make it JSON serializable
+        retrieved_user["_id"] = str(retrieved_user["_id"])
 
-    # Return the retrieved document as JSON
-    return jsonify(retrieved_user)
+        # Return the retrieved document as JSON
+        return jsonify(retrieved_user)
 
+    except Exception as e:
+        logger.error(f"Error in test_mongo: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+    
 if __name__ == "__main__":
     # Get the port number from the environment variable or use the default value
     port = int(os.environ.get("PORT", 7860))
