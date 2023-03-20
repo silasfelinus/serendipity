@@ -208,6 +208,25 @@ surprise_musical_interludes:
       And that our story is one of love and strife,
       With this galactic opera as our guide through life.
 
+ - name: "Quantum Tango"
+    artist: "The Particle Dancers"
+    genre: "Electronica Space Tango"
+    race: "Quarkians"
+    event: >
+      The player enters a peculiar Quarkian dance hall, where they see couples dancing passionately to the rhythm of the Quantum Tango. As they listen, they notice that the music seems to have an unpredictable yet alluring beat, mirroring the fundamental uncertainty of the quantum realm.
+    fact: >
+      Quarkians possess the unique ability to perceive the subatomic world, which they channel into their music, creating sounds that capture the essence of the quantum universe.
+    lyrics: >
+      In the realm of the unseen,
+      Where reality is but a dream,
+      We'll dance the tango of the night,
+      And embrace the quantum twilight.
+
+      And as we step in and out of view,
+      We'll feel the world anew,
+      And know that we're part of something grand,
+      With this quantum tango in a mysterious land.
+
   - name: "Interdimensional Blues"
     artist: "The Delta Dimension Blues Band"
     genre: "Interdimensional Blues"
