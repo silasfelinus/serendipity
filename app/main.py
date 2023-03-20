@@ -2,14 +2,14 @@
 
 import os
 from dotenv import load_dotenv
+
 # Load environment variables from the .env file
 load_dotenv()
 config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 
 from flask import Flask, jsonify
 from flask_pymongo import PyMongo
-import uvicorn
-from asgiref.wsgi import WsgiToAsgi
+from threading import Thread
 from app.routes.routes import api
 from app.interface.gradio import create_interface
 from .logging_config import logger
@@ -24,8 +24,6 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://192.168.4.3:27017/serendipity"
 mongo = PyMongo(app)
 
-
-
 # Register the routes blueprints
 app.register_blueprint(api)
 app.register_blueprint(livechat_bp, url_prefix='/livechat')
@@ -33,8 +31,9 @@ app.register_blueprint(chatbot_bp, url_prefix='/chatbot')
 
 socketio.init_app(app)
 
-# Create the Gradio interface for the chatbot
-interface = create_interface()
+def launch_gradio():
+    interface = create_interface()
+    interface.launch()
 
 # Define routes and view functions here
 @app.route('/testmongo', methods=['GET'])
@@ -62,11 +61,11 @@ def test_mongo():
         return jsonify({"error": str(e)}), 500
     
 if __name__ == "__main__":
-    # Get the port number from the environment variable or use the default value
     port = int(os.environ.get("PORT", 7860))
 
-    if os.environ.get("FLASK_ENV") == "development":
-        app.run(host="0.0.0.0", port=port)
-    else:
-        interface.launch()  # Launch the Gradio interface
-        uvicorn.run(WsgiToAsgi(app), host="0.0.0.0", port=port, log_level="info")
+    # Launch the Gradio interface in a separate thread
+    gradio_thread = Thread(target=launch_gradio)
+    gradio_thread.start()
+
+    # Run the Flask app
+    app.run(host="0.0.0.0", port=port)
