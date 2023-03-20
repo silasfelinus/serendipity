@@ -1,0 +1,10 @@
+For design, It should be arranged like a wheel, 
+hub and spoke system [not specifically by design, 
+I'm talking layout and focus]: I want a center screen with a 
+special widget that controls the other screens around it, 
+and a hub of up to a 3x3 layout around it. each screen would host a Widget, 
+which will usually be populated by a Player Widget 
+(which could be as simple as a a chatgpt prompt) or an AI Widget, 
+which would be represented by an Avatar picture (that changes emotions), 
+and a set of configurable presets that would take, process, and send away data 
+based on its preset)
