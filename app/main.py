@@ -20,6 +20,8 @@ logger.info("Hello, world!")
 
 # Create a Flask application instance
 app = Flask(__name__)
+app.config["MONGO_URI"] = "mongodb://localhost:27017/webservices"
+
 # Register the routes blueprints
 app.register_blueprint(api)
 app.register_blueprint(livechat_bp, url_prefix='/livechat')
