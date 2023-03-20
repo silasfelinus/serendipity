@@ -7,4 +7,4 @@ which will usually be populated by a Player Widget
 (which could be as simple as a a chatgpt prompt) or an AI Widget, 
 which would be represented by an Avatar picture (that changes emotions), 
 and a set of configurable presets that would take, process, and send away data 
-based on its preset)
+based on its preset
