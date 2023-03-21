@@ -2,6 +2,7 @@
 pytest
 pytest-flask
 pytest-mock
+cssutils
 
 asgiref
 openai

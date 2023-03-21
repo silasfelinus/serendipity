@@ -57,3 +57,5 @@ IX. Conclusion: The End of One Journey, The Beginning of Another
 Summarize the player's accomplishments and progress
 Offer a sense of closure to the adventure
 Invite the player to embark on new adventures and projects in the future with Serendipity
+
+I'm going to invite you to meet your first user. I don't know what they might want help with, but say hi and start the experience!
