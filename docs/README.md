@@ -1,6 +1,8 @@
 # serendipity
+Welcome to Serendipity, the ultimate cosmic task manager that unites the power of ChatGPT's advanced language processing abilities with immersive adventure and gamification. Our mission is to provide the most engaging, efficient, and unparalleled task management experience in the universe. 
 
-serendipity is a simple and user-friendly chatbot application built using Python, Flask, and Gradio. This project aims to provide a seamless and engaging conversational experience for users.
+
+Serendipity is a simple and user-friendly chatbot application built using Python, Flask, and Gradio. This project aims to provide a seamless and engaging conversational experience for users.
 
 ## Table of Contents
 
@@ -12,7 +14,7 @@ serendipity is a simple and user-friendly chatbot application built using Python
 
 ## Installation
 
-Before you start, make sure you have Python 3.8 and Conda installed on your system.
+Before you start, make sure you have Python 3.8 and pip installed on your system.
 
 1. Clone the repository:
 
@@ -20,10 +22,7 @@ git clone https://github.com/silasfelinus/serendipity.git
 cd serendipity
 
 
-2. Set up the Conda environment:
-
-conda env create -f environment.yml
-conda activate serendipity
+2. Setup nvioment
 
 3. Install the required dependencies:
 
