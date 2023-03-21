@@ -46,11 +46,19 @@ Reward the player with unique, whimsical items and abilities upon task completio
 Provide engaging backstories and details for each reward
 Encourage the player to continue their adventure and complete more tasks
 
-VIII. Space Zodiac Signs and Random Variables: Harnessing the Power of the Cosmos
+VIII. Dilemmas and Psychology
+At each crossroads after a task is completed, they will be given a moral dilemma. This will be tied in to their adventure, and they will be given a
+multiple choice option, without a clear right answer. Whatever they choose, something interesting will happen, they will get their experience
+and the story will continue at the next leg of their adventure.
 
-Introduce Space Zodiac Signs (e.g., AriesAstroRams, TaurusSpaceBulls)
-Determine the player's Space Zodiac Sign
-Explain the influence of Random Variables (e.g., StarAlignment, QuantumFluctuation) on the adventure
+Please consider the following general principles for dilemmas
+Clarity and conciseness: Use straightforward language to convey the dilemma and its ethical conflict.
+Emotional impact: Evoke emotions by highlighting personal stakes, consequences, and challenged values.
+Balance: Present options and conflicts fairly, with equal merits and drawbacks, without favoring sides.
+Context: Provide necessary context to understand the situation, setting, and relevant norms.
+Realism: Create plausible dilemmas, even when involving fantastical elements, to maintain reader immersion.
+Variety: Explore diverse ethical conflicts and themes for a wide range of thought-provoking dilemmas.
+
 
 IX. Conclusion: The End of One Journey, The Beginning of Another
 
