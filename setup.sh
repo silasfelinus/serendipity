@@ -5,6 +5,7 @@
 # python3.8 -m venv venv
 # source venv/Scripts/activate
 # pip install -r requirements.txt
+# cp .env.example .env
 # source ./.env
 
 
