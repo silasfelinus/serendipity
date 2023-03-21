@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp Connection Hub</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:400,700" rel="stylesheet">
+    <style>
+        :root {
+            --deep-space-blue: #0B3D91;
+            --platinum: #E5E4E2;
+            --gold: #FFD700;
+            --galactic-gradient: linear-gradient(135deg, #654ea3, #eaafc8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--deep-space-blue);
+            color: var(--platinum);
+        }
+
+        #wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            background-color: rgba(0, 0, 0, 0.75);
+            width: 250px;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            overflow-y: auto;
+            transition: all 0.3s;
+        }
+        #toggleSidebar {
+            font-family: 'Poppins', sans-serif;
+            background: var(--galactic-gradient);
+            border: none;
+            color: var(--platinum);
+            padding: 10px 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: -60px;
+            transition: all 0.3s;
+        }
+
+        #toggleSidebar:hover {
+            background: var(--gold);
+            color: var(--deep-space-blue);
+        }
+
+        nav {
+            padding: 20px;
+        }
+
+        #content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            width: 80%;
+            height: 80%;
+        }
+
+        .webapp {
+            background: var(--galactic-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .webapp:hover {
+            transform: scale(1.05);
+        }
+
+        #specialFrame {
+            background-color: rgba(0, 0, 0, 0.75);
+            border: 3px solid var(--gold);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #specialFrame:hover {
+            transform: scale(1.05);
+            border-color: var(--platinum);
+            color: var(--platinum);
+        }
+    </style>

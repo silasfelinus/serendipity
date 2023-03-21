@@ -1,52 +1,34 @@
-{% extends "base.html" %}
-
-{% block content %}
 <!DOCTYPE html>
-
-
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serendipity - Digital AI Assistant</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Serendipity Portals</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Serendipity</h1>
-    <h2>Serendipity - Your personal digital AI assistant</h2>
-    <textarea id="user-input" rows="2" cols="50"></textarea><br>
-    <select id="chatbot-id">
-        <option value="serendipity-fairy">Serendipity Fairy</option>
-        <option value="serendipity-assistant">Serendipity Assistant</option>
-    </select><br>
-    <button onclick="submitMessage()">Submit</button>
-    <h2>Chatbot's response:</h2>
-    <textarea id="chatbot-response" rows="5" cols="50" readonly></textarea>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <script>
-        async function submitMessage() {
-            const userInput = document.getElementById('user-input').value;
-            const chatbotId = document.getElementById('chatbot-id').value;
+    <div id="wrapper">
+        <div id="sidebar">
+            <button id="toggleSidebar">Toggle Sidebar</button>
+            <nav>
+                <!-- Add your navigation links or content here -->
+            </nav>
+        </div>
+        <div id="content">
+            <div id="grid">
+                <div class="webapp" id="app1"><img class="avatar" src="default_avatar1.png" alt="Avatar 1"></div>
 
-            const response = await fetch('/chatbot', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    user_input: userInput,
-                    chatbot_id: chatbotId
-                })
-            });
-
-            const data = await response.json();
-            document.getElementById('chatbot-response').value = data.response;
-        }
-    </script>
+                <div class="webapp" id="app2"></div>
+                <div class="webapp" id="app3"></div>
+                <div class="webapp" id="app4"></div>
+                <div id="specialFrame"></div>
+                <div class="webapp" id="app5"></div>
+                <div class="webapp" id="app6"></div>
+                <div class="webapp" id="app7"></div>
+                <div class="webapp" id="app8"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Add your JS scripts here -->
 </body>
 </html>
-
-<!-- Add your main page content here -->
-{% endblock %}
