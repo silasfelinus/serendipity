@@ -2,9 +2,7 @@
 pytest
 pytest-flask
 pytest-mock
-cssutils
 
-asgiref
 openai
 Flask
 flask_socketio
@@ -14,3 +12,4 @@ gradio
 tensorflow
 python-dotenv
 pyyaml
+requests

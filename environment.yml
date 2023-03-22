@@ -1,3 +1,4 @@
+#./environment.yaml
 name: serendipity
 channels:
   - defaults

@@ -7,7 +7,7 @@ from app.chatbot.chatbot import Chatbot
 config_file_path = os.path.join(os.path.dirname(__file__), '..', '..', 'config.yaml')
 
 # Initialize the Chatbot instance with the config file
-chatbot = Chatbot(config_file_path)
+#chatbot = Chatbot(config_file_path)
 
 # Create a Blueprint object for route handling
 api = Blueprint("routes", __name__, url_prefix="/api")

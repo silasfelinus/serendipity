@@ -11,9 +11,9 @@ from flask import Flask, jsonify
 from flask_pymongo import PyMongo
 from app.routes.routes import api
 from app.interface.gradio import create_interface
-from .logging_config import logger
-from app.livechat import livechat_bp, socketio
-from app.chatbot.routes.chatbot_routes import chatbot_bp
+from .config.logging_config import logger
+#from app.livechat import livechat_bp, socketio
+#from app.chatbot.routes.chatbot_routes import chatbot_bp
 
 # Log an informational message
 logger.info("Hello, world!")

@@ -16,7 +16,7 @@ def test_main_route(client):
     assert b"Serendipity - Digital AI Assistant" in response.data
 
 def test_logger():
-    from app.logging_config import setup_logging
+    from app.config.logging_config import setup_logging
     logger = setup_logging()
     assert logger is not None
 
