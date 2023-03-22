@@ -200,5 +200,14 @@ Market: Fantasy lovers, science fans, mystery enthusiasts
 "Cinematic Conundrum" - Genre: Movie-World Crossover Adventure
 Market: Film buffs, fans of metafiction, gamers
 
-"Infernal Industries" - Genre: Demonic Corporate Satire
+Section V: "Infernal Industries"
+Genre: Demonic Corporate Satire
+Intro: "In a moment of desperation, you accept a suspiciously lucrative job offer from a mysterious corporation. Little do you know that you've just joined a company run entirely by demons, and now you must navigate the cutthroat world of corporate Hell."
+Premise: Outsmart your demonic colleagues, climb the infernal corporate ladder, and survive the supernatural challenges that await you in this darkly humorous, satirical adventure.
 Market: Dark humor fans, satire enthusiasts, social commentators
+Psychology: Users who enjoy witty banter, strategic thinking, and navigating complex social situations
+Inspirations: The Devil Wears Prada, Good Omens, Office Space
+Suggested framework: Networking, negotiation, time management, creative problem-solving
+
+"The Phantom Promotion"
+"Quick Scenario": "Your demonic boss calls you into their office to discuss a potential promotion. However, the promotion comes with a catch: you'll have to betray a coworker to secure the position. You'll need to weigh the consequences of your actions, consider the alliances you've formed, and decide whether the power and prestige are worth the potential fallout.
