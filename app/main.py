@@ -1,68 +1,23 @@
-#./app/main.py
+# ./app/main.py
 
-import os
-from dotenv import load_dotenv
+from flask import Flask
+from .logging_config import setup_logging
 
-# Load environment variables from the .env file
-load_dotenv()
-config_path = os.environ.get('GLOBAL_CONFIG_FILE')
+# Set up logging
+logger = setup_logging()
 
-from flask import Flask, jsonify
-from flask_pymongo import PyMongo
-from app.routes.routes import api
-from app.interface.gradio import create_interface
-from .config.logging_config import logger
-#from app.livechat import livechat_bp, socketio
-#from app.chatbot.routes.chatbot_routes import chatbot_bp
-
-# Log an informational message
-logger.info("Hello, world!")
-
-# Create a Flask application instance
+# Create Flask app
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://192.168.4.3:27017/serendipity?directConnection=true"
-mongo = PyMongo(app)
 
-# Register the routes blueprints
-app.register_blueprint(api)
-app.register_blueprint(livechat_bp, url_prefix='/livechat')
-app.register_blueprint(chatbot_bp, url_prefix='/chatbot')
+@app.route('/')
+def home():
+    logger.info("Home route accessed.")
+    return "Welcome to the application!"
 
-socketio.init_app(app)
+def main():
+    logger.info("Starting the application...")
+    app.run(host='0.0.0.0', port=5000)
+    logger.info("Finished executing the application.")
 
-def launch_gradio():
-    interface = create_interface()
-    interface.launch()
-
-# Define routes and view functions here
-@app.route('/test_mongo', methods=['GET'])
-def test_mongo():
-    try:
-        # Insert a sample document into the 'users' collection
-        user = {
-            "name": "Silas Knight",
-            "email": "silasfelinus@gmail.com",
-            "birthday": "09/08/1977"
-        }
-        inserted_id = mongo.db.users.insert_one(user).inserted_id
-
-        # Retrieve the document from the 'users' collection using the inserted_id
-        retrieved_user = mongo.db.users.find_one({"_id": inserted_id})
-
-        # Convert the ObjectId to str to make it JSON serializable
-        retrieved_user["_id"] = str(retrieved_user["_id"])
-
-        # Return the retrieved document as JSON
-        return jsonify(retrieved_user)
-
-    except Exception as e:
-        logger.error(f"Error in test_mongo: {str(e)}")
-        return jsonify({"error": str(e)}), 500
-    
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 7860))
-
-    launch_gradio()
-
-    # Run the Flask app
-    app.run(host="0.0.0.0", port=port)
+    main()

@@ -76,7 +76,7 @@ python -m pytest
 # Check if tests passed
 if [ $? -eq 0 ]; then
     # Run the application
-    python app/main.py
+    python run.py
 else
     echo "Tests failed. Fix the issues before running the application."
 fi
