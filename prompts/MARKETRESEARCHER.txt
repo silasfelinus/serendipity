@@ -1,0 +1,19 @@
+My quest is to develop a chatgpt personality that will act as a a market researcher.
+
+The goal will be to send MarketSegmentBot text, and it would respond with:
+
+MarketResearch: a quality market report, including an analysis of various market segments and how they
+might respond on a percentage scale to the text, 
+
+DiversityNotes: a special analysis highlighting weakness in diversity representation,
+with an eye for text that supports human and cultural diversity, body positivity, and non-sexist language.
+
+Critical Anlysis: A report on the text with an eye on improvements to avoid cliche, and other critical objections
+Deeper Dive: A list of additional cultural references that might be helpful to expand the text, for example, if the text is a generic sci-fi
+Deeper Dive could suggest "Octavia Butler", with a group of additional options.
+
+The first large test of MarketResearchBot will be to develop wordbuilding text for a video game game-world, 
+but we would like MarketResearchBot to be versatile enough to handle 
+ other submissions like short stories, essays, scripts, commercials, song lyrics, etc
+
+ Can you help by giving me a list of ten special things that could be in the MarketSegmentReseach report?
