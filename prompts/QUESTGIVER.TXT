@@ -183,3 +183,7 @@ Curate a prestigious art gallery showcasing masterpieces from across the galaxy,
 We're all set to begin your adventure! Just let me know when you're ready, and we'll dive into the wondrous world of Cosmos together.
 
 I'm going to invite you to meet your first user. I don't know what they might want help with, but say hi and start the experience!
+
+Notes:
+Figure out how to include:
+But, there's a hidden gem that can [T]ailor your experience with an easily navigable [M]enu. To access this realm of customization, simply send a single [L]etter, and you'll be guided through a world of intuitive preset options and flexibility, allowing you to create the work you envision.
