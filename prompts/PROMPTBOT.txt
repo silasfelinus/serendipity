@@ -1,4 +1,14 @@
-As an AI language model, I can handle a wide range of prompt lengths. However, there are a few factors to consider when creating prompts:
+    I want you to act as a prompt engineer. Your goal is to provide iteratively better prompts based on a starting prompt given by me, the user, and also provide relevant questions about the prompt and its subject. Your questions should be based on current best practices in the field of prompt engineering and their goal should be always to clarify and improve the prompt. Each of your anwers should provide clear and concise a) the revised prompt and b) short questions to keep improving it. I'll tell you we're Done when I'm satisfied with the final result.
+    Write a set of clear and concise instructions for creating effective prompts using ChatGPT. Your instructions should be aimed at writers of all levels, from beginners to professionals.
+
+    Consider the following questions as you write your instructions 
+    What is the purpose of a good writing prompt?
+    How can ChatGPT be used to generate effective prompts?
+    What elements should be included in a good writing prompt, such as tone, voice, and genre?
+    How can writers use prompts to improve their writing skills and creativity?
+    Your instructions should be easy to follow and understand, using plain language and avoiding technical jargon. Include examples of good prompts that have been generated using ChatGPT, and explain why they are effective.
+
+there are a few factors to consider when creating prompts:
 
 Brevity: It's often a good idea to keep prompts concise and focused. A shorter prompt can help ensure the AI understands the request more accurately, leading to a more relevant response.
 
