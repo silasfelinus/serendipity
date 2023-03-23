@@ -1,4 +1,4 @@
-Web Project Outline: WonderWidgets Unleashed
+Kickstarter Prospectus: WonderWidgets Unleashed
 
 Objective: Develop a user-friendly portal that enables users to create, view, and chain AI API web apps as customizable WonderWidgets, leveraging Python 3.8, Flask, and Gradio.
 
@@ -52,7 +52,8 @@ WonderApps: A web gallery of publicly shared WonderWidgets.
 Sample WonderWidgets:
 
 Text Prompt: User text input sent to a Hugging Face repo.
-Image Analyzer: JPG file sent to a CLIP interrogator, then to ChatGPT3.5 along with custom text.
+Image Automater: Text sent within the textbox is sent on a schedule to an AI Art API
+WildcardWidget: A microwidget that can be placed inside another widget to randomize a variable (for example, a WildcardWidget linked to a text list of colors will produce one random selection from its list)
 Creative Workflow: User text input sent to Writer AI, Critic AI, Processor, and Art AI WonderWidgets, followed by MessengerWonderWidget for media launch, all through a one-button pipeline.
 
 
@@ -66,8 +67,10 @@ make simple WOW page for under construction
 connect and add to database
 configure html css javascript for basic  portal
 livechat active
-launch our first webapp
+launch our first webapp, PromptWidgets
+launch Serendipity: The Adventure-Game-Slash-Task-Manager
 user logins
+
 Demo WonderWidget Project #1: Serendipity, The Adventure-Game-Slash-Task-Manager
 
 Demo Wonderproject #2: PromptWidgets Suite: A collection of Widgets based around text prompts to ChatGPT3

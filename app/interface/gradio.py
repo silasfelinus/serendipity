@@ -1,4 +1,5 @@
 import gradio as gr
+from gradio.components import Textbox
 
 def predict(text):
     # Your API function goes here
@@ -7,11 +8,11 @@ def predict(text):
     return prediction
 
 inputs = [
-    gr.inputs.Textbox(label="Input text", placeholder="Enter your name here")
+    Textbox(label="Input text", placeholder="Enter your name here")
 ]
 
 outputs = [
-    gr.outputs.Textbox(label="Output text")
+    Textbox(label="Output text")
 ]
 
-iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="My API Web Service")
+iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
