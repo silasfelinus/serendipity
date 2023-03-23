@@ -4,10 +4,7 @@ pytest-flask
 pytest-mock
 
 openai
-Flask
-flask_socketio
-Flask-PyMongo
-Flask-Bcrypt
+quart
 gradio
 tensorflow
 python-dotenv
