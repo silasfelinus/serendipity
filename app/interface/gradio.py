@@ -16,3 +16,4 @@ outputs = [
 ]
 
 iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
+

@@ -1,3 +1,9 @@
+# ./run.py
+import asyncio
+from app.main import main
+if __name__ == "__main__":
+    asyncio.run(main())
+
 # ./app/main.py
 
 from quart import Quart, render_template
@@ -13,9 +19,6 @@ logger = setup_logging()
 # Create Quart app
 app = Quart(__name__)
 
-async def start_quart_app():
-    await app.run_task(host='192.168.5.231', port=5200)
-    
 @app.route('/')
 async def home():
     logger.info("Home route accessed.")
@@ -49,3 +52,23 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+    
+    
+    import gradio as gr
+from gradio.components import Textbox
+
+def predict(text):
+    # Your API function goes here
+    # It should take a string input and return a prediction
+    prediction = "Hello, " + text + "!"
+    return prediction
+
+inputs = [
+    Textbox(label="Input text", placeholder="Enter your name here")
+]
+
+outputs = [
+    Textbox(label="Output text")
+]
+
+iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
