@@ -1,5 +1,3 @@
-# ./app/main.py
-
 from quart import Quart, render_template
 from .logging_config import setup_logging
 from app.interface.gradio import predict, inputs, outputs
@@ -13,9 +11,6 @@ logger = setup_logging()
 # Create Quart app
 app = Quart(__name__)
 
-async def start_quart_app():
-    await app.run_task(host='192.168.5.231', port=5200)
-    
 @app.route('/')
 async def home():
     logger.info("Home route accessed.")
@@ -29,11 +24,20 @@ async def api():
 async def wonderwidgets():
     return await render_template('wonderwidgets.html')
 
+@app.route('/gradio')
+async def gradio_route():
+    return await render_template('gradio.html')
+
 async def start_gradio_interface():
     iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
-    iface.launch() 
+    iface.launch(server_name='192.168.5.231', server_port=5101)
+
+
+async def start_quart_app():
+    await app.run_task(host='192.168.5.231', port=5100)
 
 async def main():
+
     logger.info("Freeing worker from trapped wonderwidget...")
 
     # Start Gradio interface
