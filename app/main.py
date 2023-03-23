@@ -37,12 +37,10 @@ async def start_quart_app():
     await app.run_task(host='192.168.5.231', port=5100)
 
 async def main():
-
     logger.info("Freeing worker from trapped wonderwidget...")
 
     # Start Gradio interface
-    loop = asyncio.get_event_loop()
-    gradio_task = loop.run_in_executor(None, start_gradio_interface)
+    gradio_task = asyncio.create_task(start_gradio_interface())
 
     # Start Quart app
     quart_task = asyncio.create_task(start_quart_app())
