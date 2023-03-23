@@ -32,7 +32,7 @@ async def start_gradio_interface():
 
 
 async def start_quart_app():
-    await app.run_task(host='0.0.0.0', port=5100)
+    await app.run_task(host='192.168.5.231', port=5100)
 
 async def main():
     logger.info("Freeing worker from trapped wonderwidget...")
