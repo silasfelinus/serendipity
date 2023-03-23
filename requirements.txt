@@ -1,7 +1,6 @@
 #testing
 pytest
-pytest-flask
-pytest-mock
+pytest-asyncio
 
 openai
 quart
