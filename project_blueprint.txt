@@ -1,55 +1,59 @@
-Web Project Outline: Wonderwidgets
+Web Project Outline: WonderWidgets Unleashed
 
-Objective: Create my user-friendly project portal to create, view, and chain AI API webapps as customizable Wonderwidgets, using python3.8, flask, and gradio
+Objective: Develop a user-friendly portal that enables users to create, view, and chain AI API web apps as customizable WonderWidgets, leveraging Python 3.8, Flask, and Gradio.
 
-Problem-siolved proposal: "Helping people with good ideas turn a pitch into a marketable webapp with a single click"
+Vision: Empower individuals with great ideas to transform their pitches into marketable web apps with a single click.
 
-Current Status: Backend infrastructure has been built up from scratch with an eye for modularily and consistent coding practices. 
-Github: https://github.com/silasfelinus/serendipity/tree/main
+Current Status:
 
-Python3.8, flask, pytest, logging, Github Actions CI testing has been set up
-
-We have a host of crafted prompts to be turned into Wonderwidgets, 
-and a plan for converting huggingface repos and civitai links into Wonderwidgets.
-Work has been done on branding and development tools.
-We have concept art to work with
-We have a self-hosted Mongo database, but it needs to be integrated.
-
+Backend infrastructure built from scratch with a focus on modularity and consistent coding practices.
+GitHub: https://github.com/silasfelinus/serendipity/tree/main
+Python 3.8, Flask, pytest, logging, and GitHub Actions CI testing are set up.
+A plethora of crafted prompts are ready to be transformed into WonderWidgets.
+Plans are in place for converting Hugging Face repos and CiviTAI links into WonderWidgets.
+Branding and development tools are in progress, with concept art available.
+Self-hosted MongoDB is set up, pending integration.
 Project Scope:
-A single page website experience for the end-user. Simplified interface, with themed rectangular Wonderwidgets.Modular design is very important. we are creating a playspace for API-webservices, so we need a drag-and-drop interface and we built have some fun javascript code to connect apis together. The interface design has customizable themed avatars to go with themed presets.
-Social elements are vital for this project. We'll need user logins, a livechat function, and a framework for customizable Wonderwidgets
-The intent is to create a one-page portal that can chain complex concepts in a simple, friendly interface, encouraging people to play, build, and share their ideas in an easy, fun format as a Wonderwidget.
 
-The interface should look and feel like a board game!!!
+An engaging single-page website experience for end-users with a simplified interface, featuring themed rectangular WonderWidgets.
+Emphasis on modularity, offering a playful API-web service environment with a drag-and-drop interface and exciting JavaScript code for connecting APIs.
+Customizable themed avatars accompany themed presets.
+Incorporate social elements, including user logins, live chat functionality, and a framework for customizable WonderWidgets.
+Ultimate Goal: Develop a one-page portal that simplifies complex concepts through an intuitive, friendly interface, encouraging users to play, build, and share their ideas as WonderWidgets.
 
+Interface Inspiration: Board games (e.g., Ticket to Ride or Robo Rally)
 
-a. Core Features:
-livechat
-drag and drop Wonderwidget-based interface
-user registration and login
-stylishly formatted database crud access
-a system that easily and conveniently allows chaining api calls backend and frontend
-flexible design (optional header, footer, sidebar, options for dropping onto 3x3 grid or more free-flowing graph-based layout)
-customizable Wonderwidgets screens
-Option to add, remove, and customize Wonderwidgets
-public Wonderwidgets repository
-option to register
-integration with huggingface
-integration with civitai
-smart text processor that can turn a prompt into a widget
-Versitile chat interface including api calls and openai chat
-user able to input openai key and whatever makes that secure and convenient
-a well documented, intuitive interface that allows easy modding
-Modern Board game feel with friendly interface (think Ticket to Rid or Robo Rally)
-Support for Wonderwidget webthemes (5 nice css designs to be switched around with js)
+Core Features:
 
+Live chat functionality
+Drag-and-drop WonderWidget-based interface
+User registration and login
+Stylishly formatted database CRUD access
+Backend and frontend API chaining system
+Flexible design (optional header, footer, sidebar; 3x3 grid or graph-based layout)
+Customizable WonderWidget screens
+Public WonderWidgets repository
+Integration with Hugging Face and CiviTAI
+Smart text processor for widget conversion
+Versatile chat interface, including API calls and OpenAI chat
+Secure and convenient user input for OpenAI keys
+Well-documented, intuitive interface for easy modding
+Modern board game feel with a friendly interface
+Support for WonderWidget web themes (5 interchangeable CSS designs)
+Scheduled WonderWidgets
+Integration with Rocket.Chat
 Primary Apps:
-Wonderwidgets Lab: The default experience, a 3x3 grid to build, edit, and share Wonderwidgets
-Wonderchat multi-room livechat interface, each app should have its own Wonderchat livechat room
-Wondergallery: visual library of art generated with Wonderwidgets
-Wonderlibrary: tasked with recording and retrieving data from the database, including text data sent to and from wonderwidgets
-Wonderapps: A webgallery of publicly-shared wonderwidgets
 
+WonderWidgets Lab: Default experience featuring a 3x3 grid for building, editing, and sharing WonderWidgets.
+WonderChat: Multi-room live chat interface, with each app having its own WonderChat room.
+WonderGallery: Visual library of art generated using WonderWidgets.
+WonderLibrary: Handles recording and retrieval of data from the database, including text data sent to and from WonderWidgets.
+WonderApps: A web gallery of publicly shared WonderWidgets.
+Sample WonderWidgets:
+
+Text Prompt: User text input sent to a Hugging Face repo.
+Image Analyzer: JPG file sent to a CLIP interrogator, then to ChatGPT3.5 along with custom text.
+Creative Workflow: User text input sent to Writer AI, Critic AI, Processor, and Art AI WonderWidgets, followed by MessengerWonderWidget for media launch, all through a one-button pipeline.
 
 
 Milestones Completed:
@@ -65,3 +69,8 @@ configure html css javascript for basic  portal
 livechat active
 launch our first webapp
 user logins
+Demo WonderWidget Project #1: Serendipity, The Adventure-Game-Slash-Task-Manager
+
+Demo Wonderproject #2: PromptWidgets Suite: A collection of Widgets based around text prompts to ChatGPT3
+
+Demo Wonderproject #3: Art Academy Showdown: up to 4-players (or AI Widgetbots) compete to write the best prompt. Cards Against Humanity meets Jackbox.
