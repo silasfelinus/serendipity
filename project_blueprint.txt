@@ -25,15 +25,22 @@ it should look and feel like a board game!!!
 
 
 a. Core Features:
+livechat
+drag and drop widget-based interface
 user registration and login
-database access
+stylishly formatted database crud access
 a system that easily and conveniently allows chaining api calls backend and frontend
-flexible design (optional header, footer, sidebar, 3x3 grid as base layout)
-"Widget" app for customizable widget screens
+flexible design (optional header, footer, sidebar, options for dropping onto 3x3 grid or more free-flowing graph-based layout)
+customizable widget screens
+Option to add, remove, and customize widgets
+public widget repository
+option to register
+integration with huggingface
+integration with civitai
 Versitile chat interface including api calls and openai chat
-user input openai key and whatever makes that secure and convenient
+user able to input openai key and whatever makes that secure and convenient
 a well documented, intuitive interface that allows easy modding
-Modern Board game feel with friendly interface (think Ticket to Rid or Robo Rally
+Modern Board game feel with friendly interface (think Ticket to Rid or Robo Rally)
 
 Milestones Completed:
 Rebuilt project through completed pytests and Github Actions Continuous Integration testing.
