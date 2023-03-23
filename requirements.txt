@@ -1,13 +1,9 @@
 #testing
 pytest
-pytest-flask
-pytest-mock
+pytest-asyncio
 
 openai
-Flask
-flask_socketio
-Flask-PyMongo
-Flask-Bcrypt
+quart
 gradio
 tensorflow
 python-dotenv
