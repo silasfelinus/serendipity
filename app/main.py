@@ -30,23 +30,23 @@ async def gradio_route():
 
 async def start_gradio_interface():
     iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
-    iface.launch(server_name='192.168.5.231', server_port=5101)
+    iface.launch(server_name='0.0.0.0', server_port=5101)
 
 
 async def start_quart_app():
-    await app.run_task(host='192.168.5.231', port=5100)
+    await app.run_task(host='0.0.0.0', port=5100)
 
 async def main():
     logger.info("Freeing worker from trapped wonderwidget...")
-
+    
     # Start Gradio interface
     gradio_task = asyncio.create_task(start_gradio_interface())
-
+    
     # Start Quart app
     quart_task = asyncio.create_task(start_quart_app())
 
     # Wait for tasks to complete
-    await asyncio.gather(gradio_task, quart_task)
+    await asyncio.gather(quart_task, gradio_task)
 
 
 if __name__ == "__main__":
