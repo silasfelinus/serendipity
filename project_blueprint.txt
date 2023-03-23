@@ -1,46 +1,56 @@
-Web Project Outline: Widget Webapp Superforge
+Web Project Outline: Wonderwidgets
 
-Objective: Create my user-friendly project portal to create, view, and chain AI API webapps, using python3.8, flask, and gradio
+Objective: Create my user-friendly project portal to create, view, and chain AI API webapps as customizable Wonderwidgets, using python3.8, flask, and gradio
 
-A solo coding project to launch my web-business, by Silas Knight & ChatGPT
-
-Problem-siolved proposal: Helping people with good ideas turn a pitch into a marketable webapp with a single click"
+Problem-siolved proposal: "Helping people with good ideas turn a pitch into a marketable webapp with a single click"
 
 Current Status: Backend infrastructure has been built up from scratch with an eye for modularily and consistent coding practices. 
 Github: https://github.com/silasfelinus/serendipity/tree/main
 
 Python3.8, flask, pytest, logging, Github Actions CI testing has been set up
 
-We have a host of crafted prompts to be turned into webapps, we have not yet stitched that together.
+We have a host of crafted prompts to be turned into Wonderwidgets, 
+and a plan for converting huggingface repos and civitai links into Wonderwidgets.
 Work has been done on branding and development tools.
 We have concept art to work with
-We have a self-hosted Mongo database, but haven't coded it into the app
+We have a self-hosted Mongo database, but it needs to be integrated.
 
 Project Scope:
-A single page website experience for the end-user. Simplified interface, with colorful rectangular Widgets that can be customized depending on the webapp. The Interface should be accessible as its own input/output widget. Modular design is very important. we are creating a playspace for API-webservices, so we need a drag-and-drop interface and have some fun javascript code to connect apis together. The interface design has customizable themed avatars to go with themed presets.
-Social elements are vital for this project. We'll need user logins, a livechat function, and customizable chatroom widgets that can connect to multiple channels and input/output streams.
-While the intent is to create a one-page portal that can chain complex concepts in a simple, friendly interface. 
+A single page website experience for the end-user. Simplified interface, with themed rectangular Wonderwidgets.Modular design is very important. we are creating a playspace for API-webservices, so we need a drag-and-drop interface and we built have some fun javascript code to connect apis together. The interface design has customizable themed avatars to go with themed presets.
+Social elements are vital for this project. We'll need user logins, a livechat function, and a framework for customizable Wonderwidgets
+The intent is to create a one-page portal that can chain complex concepts in a simple, friendly interface, encouraging people to play, build, and share their ideas in an easy, fun format as a Wonderwidget.
 
-it should look and feel like a board game!!!
+The interface should look and feel like a board game!!!
 
 
 a. Core Features:
 livechat
-drag and drop widget-based interface
+drag and drop Wonderwidget-based interface
 user registration and login
 stylishly formatted database crud access
 a system that easily and conveniently allows chaining api calls backend and frontend
 flexible design (optional header, footer, sidebar, options for dropping onto 3x3 grid or more free-flowing graph-based layout)
-customizable widget screens
-Option to add, remove, and customize widgets
-public widget repository
+customizable Wonderwidgets screens
+Option to add, remove, and customize Wonderwidgets
+public Wonderwidgets repository
 option to register
 integration with huggingface
 integration with civitai
+smart text processor that can turn a prompt into a widget
 Versitile chat interface including api calls and openai chat
 user able to input openai key and whatever makes that secure and convenient
 a well documented, intuitive interface that allows easy modding
 Modern Board game feel with friendly interface (think Ticket to Rid or Robo Rally)
+Support for Wonderwidget webthemes (5 nice css designs to be switched around with js)
+
+Primary Apps:
+Wonderwidgets Lab: The default experience, a 3x3 grid to build, edit, and share Wonderwidgets
+Wonderchat multi-room livechat interface, each app should have its own Wonderchat livechat room
+Wondergallery: visual library of art generated with Wonderwidgets
+Wonderlibrary: tasked with recording and retrieving data from the database, including text data sent to and from wonderwidgets
+Wonderapps: A webgallery of publicly-shared wonderwidgets
+
+
 
 Milestones Completed:
 Rebuilt project through completed pytests and Github Actions Continuous Integration testing.
