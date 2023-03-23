@@ -22,15 +22,20 @@ async def home():
 async def api():
     return await render_template('api.html')
 
+@app.route('/wonderwidgets')
+async def wonderwidgets():
+    return await render_template('wonderwidgets.html')
+
 async def start_gradio_interface():
-    iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="My API Web Service")
-    await iface.run()
+    iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
+    await iface.launch_async()
+
 
 async def start_quart_app():
-    await app.run_task(host='0.0.0.0', port=5000)
+    await app.run_task(host='0.0.0.0', port=5100)
 
 async def main():
-    logger.info("Starting the application...")
+    logger.info("Freeing worker from trapped wonderwidget...")
 
     # Start Gradio interface
     gradio_task = asyncio.create_task(start_gradio_interface())
