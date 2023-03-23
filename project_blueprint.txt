@@ -52,5 +52,6 @@ add gradio instance to tests and confirm working instance
 make simple WOW page for under construction
 connect and add to database
 configure html css javascript for basic  portal
+livechat active
 launch our first webapp
 user logins
