@@ -1,12 +1,19 @@
-from quart import Quart, render_template
+#./app/main.py
+
+# Set up logging and environment variables
 from .logging_config import setup_logging
-from app.interface.gradio import predict, inputs, outputs
-import gradio as gr
-from gradio.components import Textbox
+logger = setup_logging()
+from dotenv import load_dotenv
+load_dotenv() 
+import os
+
+
+import multiprocessing
+import quart
+from gradio import Interface
+from quart import Quart, render_template
 import asyncio
 
-# Set up logging
-logger = setup_logging()
 
 # Create Quart app
 app = Quart(__name__)
