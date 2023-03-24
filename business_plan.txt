@@ -37,76 +37,86 @@ Stylishly formatted database CRUD access
 Backend and frontend API chaining system
 Secure and convenient user input for OpenAI keys
 
-Core WonderWidgets:
-Wonderwidget - Our core function, a smartscreen that can act as an openai chat window, a text interface, a livechat, a smart gallery, or one chain in a web of api calls
-WonderWidgets Lab: Our friendly-gui featuring a 3x3 grid for building, editing, and sharing WonderWidgets. (and yes, the lab itself is, of course, a Wonderwidget)
-ChatWidgets: Wonderwidget as a Multi-room livechat interface with openai integration
-WidgetBots: custom widgets with friendly avatars that connect to external api calls, (usually Chatgpt instance, text or image model processor or hugging face repo)
-artWidgets: Custom art libraries generated with WonderWidgets.
-Textwidgets: Our tiniest wonderWidget, these are loveably text datasets that function as wildcard libraries to be used inside WonderWidget text prompts
-Widget Wonderporium: A web gallery and marketplace of publicly shared WonderWidgets.
-WonderPrompts: Our playful rerigerator magnet inspired gui interface for saving and sharing textWidgets
+Meet the Family:
+Wonderwidget - Our core function: a custom-interface that can act as an openai chat window, a text interface, a community livechat, a smart gallery, or one chain in a web of api calls
 
-Extended Core:
-PromptWidgets: a gui-based Smart text processor for making Wonderwidgets
-Serendipity, The Adventure-Game-Slash-Task-Manager: Our flagship superWidget (a combined set of Wonderwidgets)
+PromptWidget - Our default Wonderwidget: a configurable text packet to a natural-language api such as ChatGPT
+Textwidget: Our tiniest wonderWidget, these wildcard-supporting text datasets can be included inside PromptWidget's text calls
+ChatWidget: Wonderwidget as a Multi-room livechat interface with openai integration
+ArtWidget: Custom image display, slideshow, and webgallery generated with WonderWidgets.
+BotWidget: custom widgets with friendly avatars that connect to external api calls, a Chatgpt instance, text processor, model processor or hugging face repo
+
+
+
+Check Out the Neighborhood:
+LabWidget: Our friendly-gui featuring a 3x3 grid for building, editing, and sharing WonderWidgets. (and of course, the lab itself is a Wonderwidget)
+Widget Emporium: Our web gallery and marketplace of publicly-shared WonderWidgets.
+FridgePrompts: Our  rerigerator-magnet-inspired labWidget for saving and sharing PromptWidgets
 
 
 ----
 Pending Milestones:
-Under construction page
-LibrarianWidget summoned (database handshake)
-configure html css javascript for basic  portal
-user logins
+Under construction page>launch page
+Summon LibrarianWidget (more motivating than 'setup mysql database')
+LabWidget html & css framework
+Integrate web themes (5 interchangeable CSS designs)
+Wonderwidget and wonderlab art assets
+WonderWidget configuration screen to change css
+Wonderwidget user login screen
+Chatwidget livechat messaging
+Chatwidget database store and retrieval
+Chatwidget openai integration
+PromptWidget
+Promptwidget footer text scroll
+BotWidget
+Botwidget avatars
+PromptWidget -> BotWidget messages exchanged (*champagne emoji*)
+TextWidget - (Promptwidget with wildcard support)
+Textwidget js effect when entering and leaving PromptWidget
+image-based wonderwidgets (ArtWidget)
+launch first SuperWidget - Serendipity: The Adventure-Game-Slash-Task-Manager
 
-Chatwidget livechat
-Wonderwidget to WonderWidget handshake completed
 
-*finalize design amd marketing*
 
+Roadmap:
+wow-factor launch page with text scroll/art integration
+build testing suite
+WonderWidget screen design
 Librarianbot gui
-launch our first webapp, PromptWidgets
-Wonderwidgets can intermix text and images
-launch Serendipity: The Adventure-Game-Slash-Task-Manager
-
-monetize Widget Wonderporium through VIP Widgets
-retool web directories and overhaul gui
-overhauled testing suite
+Integration with Hugging Face repos
+cronWidget (widgets operating on a schedule)
+Integration with Rocket.Chat
+Botwidgets can send sms
+modding support
+Widget Emporium - public widget gallery
+video-based wonderwidgets (CinemaWidget)
+audio-based wonderwidgets (AudioWidget)
+integration with stable-diffusion-webui
+ios App
+Android App
 
 
 Marketing/Social:
+finalize logo, design and marketing plan
+creator-monetization through VIP Widgets
+Github branding
+social media accounts
 marketing focus/social media push
-donation page/monetization plan
-
-
-Demo Projects to be integrated with WonderWidgets:
-Superwidget #1: PromptWidgets: A collection of Widgets based around ChatGPT text prompts
-SuperWidget #2: Serendipity, The Adventure-Game-Slash-Task-Manager (a PromptWidget utilizing ChatWidget, ArtWidget, and LibrarianWidget)
-Superwidget #3: TextWidget Showdown: up to 4-players (or AI Widgetbots) compete to write the best prompt
-using a fun, couch co-op interface and drag-and-drop refrigerator magnet TextWord tiles.
-
-Extended Roadmap:
-Entertaining idle animations and text scrolls
-Versatile chat interface, including API calls and OpenAI chat
-Customizable WonderWidget screens
-Integration with Hugging Face and CiviTAI
-Support for WonderWidget web themes (5 interchangeable CSS designs)
-WonderWidgets activate on schedule
+donation link
 donation link
 Membership accounts
 digital currency
-Integration with Rocket.Chat
-Well-documented, intuitive modding support
-Public WonderWidgets repository
-WidgetForge (restyled gui-interface for making widgets)
-image-based wonderwidgets
-video-based wonderwidgets
-ios App
-Android App
 Kickstarter
 
 
+Projects in Development:
+PromptWidgets: A collection of Widgets based around ChatGPT text prompts
 
+Serendipity, The Adventure-Game-Slash-Task-Manager (a PromptWidget utilizing ChatWidget, ArtWidget, and LibrarianWidget)
+
+Proposed:
+Fridgeprompts Showdown: up to 4-players (or AI Widgetbots) compete to write the best prompt
+using a fun, couch co-op interface and drag-and-drop refrigerator magnet TextWord tiles.
 
 
 
