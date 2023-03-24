@@ -1,78 +1,135 @@
-Kickstarter Prospectus: WonderWidgets Unleashed
+Prospectus: WonderWidgets Unleashed 🚀
 
-Objective: Develop a user-friendly portal that enables users to create, view, and chain AI API web apps as customizable WonderWidgets, leveraging Python 3.8, Flask, and Gradio.
+Mission: Join our coding adventure to revolutionize AI API interactions by transforming them into customizable, shareable, and fun WonderWidgets!
 
-Vision: Empower individuals with great ideas to transform their pitches into marketable web apps with a single click.
+Core Stack: Python 3.8, Quart, and Gradio, running in multiprocess for the ultimate fusion of Gradio's simple API calls and Quart's limitless CSS and JS styling options.
 
-Current Status:
+Value Proposition: Got a cool idea? Let's team up and bring it to life as a market-ready web app with just a single click. It's coding magic!
 
-Backend infrastructure built from scratch with a focus on modularity and consistent coding practices.
-GitHub: https://github.com/silasfelinus/serendipity/tree/main
-Python 3.8, Flask, pytest, logging, and GitHub Actions CI testing are set up.
-A plethora of crafted prompts are ready to be transformed into WonderWidgets.
-Plans are in place for converting Hugging Face repos and CiviTAI links into WonderWidgets.
-Branding and development tools are in progress, with concept art available.
-Self-hosted MongoDB is set up, pending integration.
-Project Scope:
+Our Progress So Far:
 
-An engaging single-page website experience for end-users with a simplified interface, featuring themed rectangular WonderWidgets.
-Emphasis on modularity, offering a playful API-web service environment with a drag-and-drop interface and exciting JavaScript code for connecting APIs.
-Customizable themed avatars accompany themed presets.
-Incorporate social elements, including user logins, live chat functionality, and a framework for customizable WonderWidgets.
-Ultimate Goal: Develop a one-page portal that simplifies complex concepts through an intuitive, friendly interface, encouraging users to play, build, and share their ideas as WonderWidgets.
+Crafted a rock-solid backend infrastructure, with modularity, flexibility, and clean coding in mind.
+GitHub Repository: https://github.com/silasfelinus/serendipity/tree/main
+Python 3.8, Quart, and Gradio running smoothly in a multiprocess environment
+Pytest, logging, and GitHub Actions continuous-integration frameworks are curently passing meager initial tests.
+Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
+6 custom css packages for a modular interface that fits a multitude of visions.
 
-Interface Inspiration: Board games (e.g., Ticket to Ride or Robo Rally)
+
+The Dream:
+
+A mesmerizing single-page website experience, with an inviting interface showcasing our rectangular, themeable WonderWidgets.
+An API webservice playground featuring drag-and-drop functionality and dynamic JavaScript code for seamless API connections.
+Entertaining idle animations and text scrolls to keep people entertained while waiting for the next process.
+Jazz up the experience with personalized, themed avatars.
+Let's get social: user logins, live chat, and customizable ChatWidgets for one-of-a-kind conversations.
+The Ultimate Vision: An all-in-one portal that turns complex API interactions into child's play through an intuitive, user-friendly interface. Let's inspire fellow coders to explore, create, and share their WonderWidgets with the world!
+Hey, fellow coders! We're building something amazing over at GitHub and Hugging Face, and we want YOU to join us. Are you ready for a coding adventure of a lifetime? Let's unleash the power of WonderWidgets together! 🎉👩‍💻👨‍💻
+
+#Roadmap#
 
 Core Features:
-
-Live chat functionality
-Drag-and-drop WonderWidget-based interface
+Modern board game feel with a friendly interface
+Livechat
+Wonderwidgets - Drag-and-drop interface for chained api calls
 User registration and login
 Stylishly formatted database CRUD access
 Backend and frontend API chaining system
-Flexible design (optional header, footer, sidebar; 3x3 grid or graph-based layout)
-Customizable WonderWidget screens
-Public WonderWidgets repository
-Integration with Hugging Face and CiviTAI
-Smart text processor for widget conversion
-Versatile chat interface, including API calls and OpenAI chat
 Secure and convenient user input for OpenAI keys
-Well-documented, intuitive interface for easy modding
-Modern board game feel with a friendly interface
-Support for WonderWidget web themes (5 interchangeable CSS designs)
-Scheduled WonderWidgets
-Integration with Rocket.Chat
-Primary Apps:
 
-WonderWidgets Lab: Default experience featuring a 3x3 grid for building, editing, and sharing WonderWidgets.
-WonderChat: Multi-room live chat interface, with each app having its own WonderChat room.
-WonderGallery: Visual library of art generated using WonderWidgets.
-WonderLibrary: Handles recording and retrieval of data from the database, including text data sent to and from WonderWidgets.
-WonderApps: A web gallery of publicly shared WonderWidgets.
-Sample WonderWidgets:
+Core WonderWidgets:
+Wonderwidget - Our core function, a smartscreen that can act as an openai chat window, a text interface, a livechat, a smart gallery, or one chain in a web of api calls
+WonderWidgets Lab: Our friendly-gui featuring a 3x3 grid for building, editing, and sharing WonderWidgets. (and yes, the lab itself is, of course, a Wonderwidget)
+ChatWidgets: Wonderwidget as a Multi-room livechat interface with openai integration
+WidgetBots: custom widgets with friendly avatars that connect to external api calls, (usually Chatgpt instance, text or image model processor or hugging face repo)
+artWidgets: Custom art libraries generated with WonderWidgets.
+Textwidgets: Our tiniest wonderWidget, these are loveably text datasets that function as wildcard libraries to be used inside WonderWidget text prompts
+Widget Wonderporium: A web gallery and marketplace of publicly shared WonderWidgets.
+WonderPrompts: Our playful rerigerator magnet inspired gui interface for saving and sharing textWidgets
 
-Text Prompt: User text input sent to a Hugging Face repo.
-Image Automater: Text sent within the textbox is sent on a schedule to an AI Art API
-WildcardWidget: A microwidget that can be placed inside another widget to randomize a variable (for example, a WildcardWidget linked to a text list of colors will produce one random selection from its list)
-Creative Workflow: User text input sent to Writer AI, Critic AI, Processor, and Art AI WonderWidgets, followed by MessengerWonderWidget for media launch, all through a one-button pipeline.
+Extended Core:
+PromptWidgets: a gui-based Smart text processor for making Wonderwidgets
+Serendipity, The Adventure-Game-Slash-Task-Manager: Our flagship superWidget (a combined set of Wonderwidgets)
 
 
-Milestones Completed:
-Revamped project through successful pytests and Github Actions Continuous Integration testing.
-Considerable progress in planning and design.
-
+----
 Pending Milestones:
-add gradio instance to tests and confirm working instance
-make simple WOW page for under construction
-connect and add to database
+Under construction page
+LibrarianWidget summoned (database handshake)
 configure html css javascript for basic  portal
-livechat active
-launch our first webapp, PromptWidgets
-launch Serendipity: The Adventure-Game-Slash-Task-Manager
 user logins
 
-Demo WonderWidget Project #1: Serendipity, The Adventure-Game-Slash-Task-Manager
+Chatwidget livechat
+Wonderwidget to WonderWidget handshake completed
 
-Demo Wonderproject #2: PromptWidgets Suite: A collection of Widgets based around text prompts to ChatGPT3
+*finalize design amd marketing*
 
-Demo Wonderproject #3: Art Academy Showdown: up to 4-players (or AI Widgetbots) compete to write the best prompt. Cards Against Humanity meets Jackbox.
+Librarianbot gui
+launch our first webapp, PromptWidgets
+Wonderwidgets can intermix text and images
+launch Serendipity: The Adventure-Game-Slash-Task-Manager
+
+monetize Widget Wonderporium through VIP Widgets
+retool web directories and overhaul gui
+overhauled testing suite
+
+
+Marketing/Social:
+marketing focus/social media push
+donation page/monetization plan
+
+
+Demo Projects to be integrated with WonderWidgets:
+Superwidget #1: PromptWidgets: A collection of Widgets based around ChatGPT text prompts
+SuperWidget #2: Serendipity, The Adventure-Game-Slash-Task-Manager (a PromptWidget utilizing ChatWidget, ArtWidget, and LibrarianWidget)
+Superwidget #3: TextWidget Showdown: up to 4-players (or AI Widgetbots) compete to write the best prompt
+using a fun, couch co-op interface and drag-and-drop refrigerator magnet TextWord tiles.
+
+Extended Roadmap:
+Entertaining idle animations and text scrolls
+Versatile chat interface, including API calls and OpenAI chat
+Customizable WonderWidget screens
+Integration with Hugging Face and CiviTAI
+Support for WonderWidget web themes (5 interchangeable CSS designs)
+WonderWidgets activate on schedule
+donation link
+Membership accounts
+digital currency
+Integration with Rocket.Chat
+Well-documented, intuitive modding support
+Public WonderWidgets repository
+WidgetForge (restyled gui-interface for making widgets)
+image-based wonderwidgets
+video-based wonderwidgets
+ios App
+Android App
+Kickstarter
+
+
+
+
+
+
+🎨 Design Package: WonderWidgets Galaxy 🎨
+
+Interstellar Teal (#1E9BA4): as the primary background color, representing the depth and wonders of the universe.
+Supernova Gradient: a radiant gradient that transitions from vibrant greens and teals to the mesmerizing shades of a cosmic aurora.
+Accents: silver (#C0C0C0) and copper (#B87333) for buttons, links, and important highlights, signifying the valuable and innovative nature of the WonderWidgets service.
+Typography:
+Primary Typeface: Montserrat - A versatile, geometric sans-serif typeface that exudes elegance and modernity.
+Secondary Typeface: Roboto - A clean, sans-serif typeface that complements Montserrat in body text and smaller elements.
+
+CSS/JS:
+
+Aurora Particles: These enchanting particles will glide across the screen, providing an immersive and engaging experience for users. When hovered over or clicked, the particles will reveal useful information or options.
+Sophisticated Navigation Bar: A sleek navigation bar with a transparent background, featuring the WonderWidgets Galaxy logo and silver/copper accent colors for links and buttons.
+Iridescent Buttons: Eye-catching buttons with the Supernova Gradient and a glistening hover animation, encouraging user interaction.
+Responsive Layout: A mobile-friendly layout that seamlessly adjusts to different screen sizes and devices, ensuring a smooth experience for all users.
+With this captivating design package, WonderWidgets Galaxy will enthrall AI enthusiasts, blending technology and cosmic creativity while offering an intuitive, delightful experience that allows users to explore the wonders of the universe.
+
+
+Current goals:
+
+We have two nominees available for database available: MongoDB and Mariadb. We do not know which
+may be the best usecase for us, our biggest priority is data access reliability and speed.
+
