@@ -10,7 +10,7 @@ config_path = os.environ.get('GLOBAL_CONFIG_FILE')
 from flask import Flask, jsonify
 from flask_pymongo import PyMongo
 from app.routes.routes import api
-from app.interface.gradio import create_interface
+from app.gradio_app import create_interface
 from app.config.logging_config import logger
 
 # Set up logging

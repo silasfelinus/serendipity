@@ -1,14 +1,10 @@
-#./app/main.py
+# ./app/main.py
 
-# Set up logging and environment variables
 from .logging_config import setup_logging
-logger = setup_logging()
-
+from .gradio_app import run_gradio
 import multiprocessing
 import quart
-from gradio import Interface
 from quart import Quart, render_template
-import asyncio
 import socket
 import os
 from dotenv import load_dotenv
@@ -16,24 +12,25 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Set up logging
+logger = setup_logging()
+
 app = Quart(__name__)
 
-@app.route("/")
-async def home():
-    logger.info("Home route accessed.")
-    return await render_template("index.html")
+# Function to register HTML routes
+def register_html_routes(app, template_folder):
+    for html_file in glob.glob(os.path.join(template_folder, "*.html")):
+        route_name = os.path.splitext(os.path.basename(html_file))[0]
+        route_path = f'/{route_name}'
 
-@app.route('/livechat')
-async def api():
-    return await render_template('livechat.html')
+        async def _route():
+            return await render_template(html_file)
 
-@app.route('/wonderwidgets')
-async def wonderwidgets():
-    return await render_template('wonderwidgets.html')
+        app.add_url_rule(route_path, route_name, _route)
 
-@app.route('/gradio')
-async def gradio_route():
-    return await render_template('gradio.html')
+# Register HTML routes
+template_folder = os.path.join(os.path.dirname(__file__), "templates")
+register_html_routes(app, template_folder)
 
 def find_available_port(start_port: int = 5000):
     port = start_port
@@ -43,30 +40,12 @@ def find_available_port(start_port: int = 5000):
             if result != 0:  # Port is available
                 return port
             port += 1
-            
-# Define your Gradio interface
-def gradio_interface(x):
-    return x[::-1]
-
-def run_gradio():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-
-    iface = Interface(
-        fn=gradio_interface,
-        inputs="text",
-        outputs="text",
-        title="Gradio Interface",
-        description="Enter some text to reverse it!"
-    )
-    available_port = find_available_port(int(os.getenv("GRADIOPORT")))
-    iface.launch(server_name="0.0.0.0", share=True, server_port=available_port)
 
 def run_quart():
     app.run(host="0.0.0.0", port=int(os.getenv("QUARTPORT")))
 
 def main():
-    gradio_process = multiprocessing.Process(target=run_gradio)
+    gradio_process = multiprocessing.Process(target=run_gradio, args=(find_available_port, int(os.getenv("GRADIOPORT"))))
     quart_process = multiprocessing.Process(target=run_quart)
 
     gradio_process.start()
