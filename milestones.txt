@@ -1,0 +1,75 @@
+THE EXTENDED ROADMAP
+
+5️⃣ Implement Textwidget JS effect when entering and leaving PromptWidget.
+6️⃣ Start working on image-based Wonderwidgets (ArtWidget).
+
+📝 Day 7: Final Touches and Launch
+1️⃣ Complete image-based Wonderwidgets (ArtWidget).
+2️⃣ Launch the first SuperWidget - Serendipity: The Adventure-Game-Slash-Task-Manager (a PromptWidget utilizing ChatWidget, ArtWidget, and LibrarianWidget).
+3️⃣ Perform final testing and debugging to ensure all components are working correctly.
+-------
+
+Milestone 1: Enhancements and Integrations
+1. Create a wow-factor launch page with text scroll/art integration.
+Develop a testing suite.
+Improve WonderWidget screen design.
+Implement Librarianbot GUI for database CRUD operations.
+Integrate with Hugging Face repos.
+Develop cronWidget (widgets operating on a schedule).
+Integrate with Rocket.Chat.
+
+Milestone 2: Advanced Features and Widget Expansion
+8. Enable Botwidgets to send SMS.
+Add modding support.
+Launch Widget Emporium - public widget gallery.
+Develop video-based Wonderwidgets (CinemaWidget).
+Create audio-based Wonderwidgets (AudioWidget).
+Integrate with stable-diffusion-webui.
+
+
+Milestone 3: Mobile Apps and SuperWidgets
+14. Develop iOS App.
+Create Android App.
+Launch PromptWidgets: A collection of Widgets based around ChatGPT text prompts.
+Release Serendipity, The Adventure-Game-Slash-Task-Manager.
+Launch Fridgeprompts Showdown: Couch co-op game.
+Develop Cosmos: AI-guided text-based adventure game expanding the world of Serendipity to a full multiplayer universe.
+
+Milestone 4: Marketing and Monetization
+20. Finalize logo, design, and marketing plan.
+Implement creator-monetization through VIP Widgets.
+Enhance GitHub branding.
+Set up social media accounts.
+Launch marketing focus/social media push.
+Add a donation link.
+Implement membership accounts.
+Integrate digital currency options.
+Set up Patreon and Kickstarter campaigns.
+
+
+SuperWidgets:
+PromptWidgets: A collection of Widgets based around ChatGPT text prompts
+Serendipity, The Adventure-Game-Slash-Task-Manager
+Fridgeprompts Showdown: Couch co-op. up to 8-players (or AI Widgetbots) compete to write the best prompt using drag-and-drop refrigerator magnet TextWidgets
+Cosmos-AI-guided text-based adventure game expanding the world of Serendipity to a full multiplayer universe.
+
+
+
+----------------------
+Completed Milestones:
+python3.8-venv
+single-click launcher
+load_dotenv
+Quart
+Gradio
+logger
+pytest
+serendipity task-manager-slash-adventure-game
+Cosmos - Dilemmas
+Cosmos - Scenarios
+Cosmos - Art Assets
+BotWidgets - Avatar Art assets
+5 CSS Designs
+PromptWidget - Punchupbot
+PromptWidget - PunchUpCodebot
+Vision Plan - 3/23/2023
