@@ -9,6 +9,7 @@ import quart
 from gradio import Interface
 from quart import Quart, render_template
 import asyncio
+import socket
 import os
 from dotenv import load_dotenv
 
@@ -34,6 +35,15 @@ async def wonderwidgets():
 async def gradio_route():
     return await render_template('gradio.html')
 
+def find_available_port(start_port: int = 5000):
+    port = start_port
+    while True:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            result = sock.connect_ex(('localhost', port))
+            if result != 0:  # Port is available
+                return port
+            port += 1
+            
 # Define your Gradio interface
 def gradio_interface(x):
     return x[::-1]
@@ -49,10 +59,11 @@ def run_gradio():
         title="Gradio Interface",
         description="Enter some text to reverse it!"
     )
-    iface.launch(server_name="localhost", share=True, server_port=int(os.getenv("GRADIOPORT")))
+    available_port = find_available_port(int(os.getenv("GRADIOPORT")))
+    iface.launch(server_name="0.0.0.0", share=True, server_port=available_port)
 
 def run_quart():
-    app.run(host="localhost", port=int(os.getenv("QUARTPORT")))
+    app.run(host="0.0.0.0", port=int(os.getenv("QUARTPORT")))
 
 def main():
     gradio_process = multiprocessing.Process(target=run_gradio)

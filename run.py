@@ -1,7 +1,6 @@
 # ./run.py
 
-import asyncio
-from app.main3 import main
+from app.main import main
 
 if __name__ == "__main__":
     main()
