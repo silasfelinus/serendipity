@@ -1,0 +1,77 @@
+Completed Milestones:
+python3.8-venv
+single-click launcher
+load_dotenv
+Quart
+Gradio
+logger
+pytest
+serendipity task-manager-slash-adventure-game
+Cosmos - Dilemmas
+Cosmos - Scenarios
+Cosmos - Art Assets
+BotWidgets - Avatar Art assets
+5 CSS Designs
+PromptWidget - Punchupbot
+PromptWidget - PunchUpCodebot
+Vision Plan - 3/23/2023
+
+------------------------------
+Milestones Ahead:
+Wonderwidget drag-and-drop object
+OpenAI key input and secure storage
+Construction/launch page
+Summon LibrarianWidget to setup mysql database
+LabWidget - polish html & css framework
+Integrate web themes (5 interchangeable CSS designs)
+Wonderwidget and wonderlab art assets
+WonderWidget configuration screen to change css
+Wonderwidget user login screen
+Chatwidget livechat messaging
+Chatwidget database store and retrieve messages
+Chatwidget openai integration
+PromptWidget
+Promptwidget footer text scroll
+BotWidget
+Botwidget avatars
+PromptWidget -> BotWidget messages exchanged (*champagne emoji*)
+TextWidget - (Promptwidget with wildcard support)
+Textwidget js effect when entering and leaving PromptWidget
+image-based wonderwidgets (ArtWidget)
+launch first SuperWidget - Serendipity: The Adventure-Game-Slash-Task-Manager  (a PromptWidget utilizing ChatWidget, ArtWidget, and LibrarianWidget)
+
+SuperWidgets:
+PromptWidgets: A collection of Widgets based around ChatGPT text prompts
+Serendipity, The Adventure-Game-Slash-Task-Manager
+Fridgeprompts Showdown: Couch co-op. up to 8-players (or AI Widgetbots) compete to write the best prompt using drag-and-drop refrigerator magnet TextWidgets
+Cosmos-AI-guided text-based adventure game expanding the world of Serendipity to a full multiplayer universe.
+
+Roadmap:
+wow-factor launch page with text scroll/art integration
+Testing suite
+WonderWidget screen design
+Librarianbot gui database crud
+Integration with Hugging Face repos
+cronWidget (widgets operating on a schedule)
+Integration with Rocket.Chat
+Botwidgets can send sms
+modding support
+Widget Emporium - public widget gallery
+video-based wonderwidgets (CinemaWidget)
+audio-based wonderwidgets (AudioWidget)
+integration with stable-diffusion-webui
+ios App
+Android App
+
+Marketing/Social:
+finalize logo, design and marketing plan
+creator-monetization through VIP Widgets
+Github branding
+social media accounts
+marketing focus/social media push
+donation link
+donation link
+Membership accounts
+digital currency
+Patreon
+Kickstarter
