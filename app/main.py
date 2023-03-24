@@ -8,6 +8,7 @@ from quart import Quart, render_template
 import socket
 import os
 from dotenv import load_dotenv
+import glob
 
 # Load environment variables from .env file
 load_dotenv()
