@@ -3,25 +3,24 @@
 # Set up logging and environment variables
 from .logging_config import setup_logging
 logger = setup_logging()
-from dotenv import load_dotenv
-load_dotenv() 
-import os
-
 
 import multiprocessing
 import quart
 from gradio import Interface
 from quart import Quart, render_template
 import asyncio
+import os
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
-# Create Quart app
 app = Quart(__name__)
 
-@app.route('/')
+@app.route("/")
 async def home():
     logger.info("Home route accessed.")
-    return "Welcome to the application!"
+    return await render_template("index.html")
 
 @app.route('/livechat')
 async def api():
@@ -35,26 +34,35 @@ async def wonderwidgets():
 async def gradio_route():
     return await render_template('gradio.html')
 
-async def start_gradio_interface():
-    iface = gr.Interface(fn=predict, inputs=inputs, outputs=outputs, title="Wonderwidgets Unleashed!")
-    iface.launch(server_name='0.0.0.0', server_port=5101)
+# Define your Gradio interface
+def gradio_interface(x):
+    return x[::-1]
 
+def run_gradio():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
-async def start_quart_app():
-    await app.run_task(host='0.0.0.0', port=5100)
+    iface = Interface(
+        fn=gradio_interface,
+        inputs="text",
+        outputs="text",
+        title="Gradio Interface",
+        description="Enter some text to reverse it!"
+    )
+    iface.launch(server_name="localhost", share=True, server_port=int(os.getenv("GRADIOPORT")))
 
-async def main():
-    logger.info("Freeing worker from trapped wonderwidget...")
-    
-    # Start Gradio interface
-    gradio_task = asyncio.create_task(start_gradio_interface())
-    
-    # Start Quart app
-    quart_task = asyncio.create_task(start_quart_app())
+def run_quart():
+    app.run(host="localhost", port=int(os.getenv("QUARTPORT")))
 
-    # Wait for tasks to complete
-    await asyncio.gather(quart_task, gradio_task)
+def main():
+    gradio_process = multiprocessing.Process(target=run_gradio)
+    quart_process = multiprocessing.Process(target=run_quart)
 
+    gradio_process.start()
+    quart_process.start()
+
+    gradio_process.join()
+    quart_process.join()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
