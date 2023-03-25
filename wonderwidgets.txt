@@ -1,4 +1,5 @@
-Wonderwidget - handles communication between and transormation into the other widgets
+Wonderwidget - handles communication between and transformation into the other widgets
+
 LibrarianWidget - database crud: used for messaging storage and retrieval
 ChatWidget - messaging management and chat diplay
 PromptWidget - programmatic messages for api calls to ai language processors
