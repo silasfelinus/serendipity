@@ -11,7 +11,8 @@ Our Progress So Far:
 Consciously-crafted infrastructure built with modularity, flexibility, and clean coding in mind.
 GitHub Repository: https://github.com/silasfelinus/serendipity/tree/main
 Python 3.8, Quart, and Gradio running smoothly in a multiprocess environment
-Pytest, logging, and GitHub Actions continuous-integration frameworks are passing initial tests.
+Pytest, Logger, GitHub Actions continuous-integration
 Library of Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
 6 custom css packages for a modular interface that fits a multitude of visions, plus
 Various art assets waiting to be stitched in by the world's most awkward html designer.
+Beginning design of wonderwidgets lab in Vue.js
