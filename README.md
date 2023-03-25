@@ -1,6 +1,6 @@
-Prospectus: WonderWidgets Unleashed 🚀
+Vision Plan - WonderWidgets Unleashed 🚀
 
-Mission: Join our coding adventure to revolutionize AI API interactions by transforming them into customizable, shareable, and fun WonderWidgets!
+Join our coding adventure to revolutionize AI API interactions by transforming them into customizable, shareable, and fun WonderWidgets!
 
 Core Stack: Python 3.8, Quart, and Gradio, running in multiprocess for the ultimate fusion of Gradio's simple API calls and Quart's limitless CSS and JS styling options.
 
@@ -8,10 +8,10 @@ Value Proposition: Got a cool idea? Let's team up and bring it to life as a mark
 
 Our Progress So Far:
 
-Crafted a rock-solid backend infrastructure, with modularity, flexibility, and clean coding in mind.
+Consciously-crafted infrastructure built with modularity, flexibility, and clean coding in mind.
 GitHub Repository: https://github.com/silasfelinus/serendipity/tree/main
 Python 3.8, Quart, and Gradio running smoothly in a multiprocess environment
-Pytest, logging, and GitHub Actions continuous-integration frameworks are curently passing meager initial tests.
-Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
-6 custom css packages for a modular interface that fits a multitude of visions.
-
+Pytest, logging, and GitHub Actions continuous-integration frameworks are passing initial tests.
+Library of Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
+6 custom css packages for a modular interface that fits a multitude of visions, plus
+Various art assets waiting to be stitched in by the world's most awkward html designer.

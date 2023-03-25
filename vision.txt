@@ -6,29 +6,46 @@ Core Stack: Python 3.8, Quart, and Gradio, running in multiprocess for the ultim
 
 Value Proposition: Got a cool idea? Let's team up and bring it to life as a market-ready web app with just a single click. It's coding magic!
 
+The Dream:
+A playful single-page Wonderwidget lab showcasing programmable, themeable WonderWidgets.
+An API webservice playground featuring dynamic JavaScript and drag-and-drop functionality
+Entertaining idle animations and text scrolls to keep people entertained while waiting for the next process.
+Jazz up the experience with personalized, themed avatars.
+Let's get social: user logins, live chat, and customizable ChatWidgets for one-of-a-kind conversations.
+The Ultimate Vision: An all-in-one portal that turns complex API interactions into child's play through an intuitive, user-friendly interface. 
+Let's inspire fellow coders to explore, create, and share their WonderWidgets with the world!
+
 Our Progress So Far:
 
-Crafted a rock-solid backend infrastructure, with modularity, flexibility, and clean coding in mind.
+Consciously-crafted infrastructure built with modularity, flexibility, and clean coding in mind.
 GitHub Repository: https://github.com/silasfelinus/serendipity/tree/main
 Python 3.8, Quart, and Gradio running smoothly in a multiprocess environment
-Pytest, logging, and GitHub Actions continuous-integration frameworks are curently passing meager initial tests.
-Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
+Pytest, logging, and GitHub Actions continuous-integration frameworks are curently passing initial tests.
+Library of Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
 5 custom css packages for a modular interface that fits a multitude of visions.
+Various art assets that need to be stitched in by the world's most awkward html designer.
 
 
-Say hello to Wonderwidget, our core function! a custom-interface that can act as an openai chat window, a text interface, a community livechat, a smart gallery, or one chain in a web of api calls:
+Say hello to Wonderwidget, our core function! A custom-interface that can act as an ChatGPT chat window, text interface, community livechat, smart gallery, or one chain in a web of api calls.
 
-PromptWidget - Our default Wonderwidget: a configurable text packet to a natural-language api such as ChatGPT
-Textwidget: Our tiniest wonderWidget, these wildcard-supporting text datasets can be included inside PromptWidget's text calls
-ChatWidget: Wonderwidget as a Multi-room livechat interface with openai integration
-ArtWidget: Custom image display, slideshow, and webgallery generated with WonderWidgets.
-BotWidget: custom widgets with friendly avatars that connect to external api calls, a Chatgpt instance, text processor, model processor or hugging face repo
+PromptWidget - a configurable text packet intended for a natural-language api such as ChatGPT
+ChatWidget: a Multi-room livechat interface with openai integration
+ArtWidget: image display
+BotWidget: friendly avatars representing connections to language processor apis such as Chatgpt
+LibrarianWidget: CRUD database access to Mongo
 
+With help from: 
+TaskWidget, our helpful task-manager!
 
 Check Out the Neighborhood:
 LabWidget: Our friendly-gui featuring a 3x3 grid for building, editing, and sharing WonderWidgets. (and of course, the lab itself is a Wonderwidget)
-Widget Emporium: Our web gallery and marketplace of publicly-shared WonderWidgets.
-FridgePrompts: Our  rerigerator-magnet-inspired labWidget for saving and sharing PromptWidgets
+Widgetbar: collapsible header with artwidget icons
+sidebar: collapsible sidebar with navigation lines (and artwidget icons)
+trashwidget: draganddrop icon to trash widgets
+widgetshed: drag and drop icon to save/load widgets
+
+
+
 
 
 Meet the PromptWidgets:
@@ -41,12 +58,4 @@ TaskMaster - prototype for Serendipity, The World's Greatest Task-Manager-Slash-
 Weirdlandia - A storytelling bot modelled after r20 systems but set in a..much weirder setting
 Got a PromptWidget? Tell it to the librarianbot (coming soon)
 
-The Dream:
-
-A mesmerizing single-page website experience, with an inviting interface showcasing our rectangular, themeable WonderWidgets.
-An API webservice playground featuring drag-and-drop functionality and dynamic JavaScript code for seamless API connections.
-Entertaining idle animations and text scrolls to keep people entertained while waiting for the next process.
-Jazz up the experience with personalized, themed avatars.
-Let's get social: user logins, live chat, and customizable ChatWidgets for one-of-a-kind conversations.
-The Ultimate Vision: An all-in-one portal that turns complex API interactions into child's play through an intuitive, user-friendly interface. Let's inspire fellow coders to explore, create, and share their WonderWidgets with the world!
-Hey, fellow coders! We're building something amazing over at GitHub and Hugging Face, and we want YOU to join us. Are you ready for a coding adventure of a lifetime? Let's unleash the power of WonderWidgets together! 🎉👩‍💻👨‍💻
+Pitch: Hey, fellow coders! We're building something amazing over at GitHub and WonderWidgets, and we want YOU to join us. Are you ready for a coding adventure of a lifetime? Let's unleash the power of WonderWidgets together! 🎉👩‍💻👨‍💻

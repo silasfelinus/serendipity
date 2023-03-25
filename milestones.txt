@@ -53,7 +53,8 @@ Serendipity, The Adventure-Game-Slash-Task-Manager
 Fridgeprompts Showdown: Couch co-op. up to 8-players (or AI Widgetbots) compete to write the best prompt using drag-and-drop refrigerator magnet TextWidgets
 Cosmos-AI-guided text-based adventure game expanding the world of Serendipity to a full multiplayer universe.
 
-
+Widget Emporium: Our web gallery and marketplace of publicly-shared WonderWidgets.
+FridgePrompts: Our  rerigerator-magnet-inspired labWidget for saving and sharing PromptWidgets
 
 ----------------------
 Completed Milestones:
