@@ -5,6 +5,7 @@ from .gradio_app import run_gradio
 import multiprocessing
 import quart
 from quart import Quart, render_template
+import jsonify
 import socket
 import os
 from dotenv import load_dotenv
@@ -41,6 +42,12 @@ def find_available_port(start_port: int = 5000):
             if result != 0:  # Port is available
                 return port
             port += 1
+
+@app.route('/widgetdemo')
+async def widgetdemo():
+    wonderwidgets_data = {"name": "Wonderwidget 1", "description": "A fun and interactive widget!", "price": "$19.99"}
+    return jsonify(wonderwidgets_data)
+
 
 def run_quart():
     app.run(host="0.0.0.0", port=int(os.getenv("QUARTPORT")))
