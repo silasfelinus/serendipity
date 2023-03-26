@@ -1,3 +1,99 @@
+Wonderlab Design Document
+
+Overview
+The objective of this design document is to create a playful, sandbox-style interface with modern options for a single-page application. The design is inspired by old games like SimCity, and it will feature a whimsical and inviting color scheme based on sky blue and cloud white.
+
+Colors
+
+Primary colors:
+
+Sky Blue: #87ceeb
+Cloud White: #f0f8ff
+Secondary colors:
+
+Grass Green: #6db33f
+Sun Yellow: #f6c23e
+Tertiary colors (for accents and hover effects):
+
+Light Blue: #b0e0e6
+Light Green: #9ccc65
+Typography
+Primary font: 'Roboto', sans-serif
+Secondary font (for headings): 'Fredoka One', cursive
+
+Layout
+A. Header
+
+Collapsible
+Sky Blue background
+Cloud White text
+Logo and navigation items
+B. Sidebar
+
+Collapsible
+Sky Blue background
+Cloud White icons and text
+Navigation items and user profile
+C. Main Content
+
+Wonderwidget element in the center
+Toggles to hide different UI elements
+Responsive grid layout for additional content
+D. Footer
+
+Collapsible
+Sky Blue background
+Cloud White text
+Links and copyright information
+E. Live Chat Window
+
+Collapsible
+Sky Blue header
+Cloud White background for chat area
+Grass Green for chat bubbles
+Components
+A. Buttons
+
+Border-radius: 5px
+Background: Sky Blue
+Font: Roboto
+Text color: Cloud White
+Hover effect: Light Blue background
+B. Toggles
+
+Border-radius: 50%
+Background: Grass Green
+Knob color: Cloud White
+Active state: Sun Yellow background
+C. Input Fields
+
+Border-radius: 5px
+Background: Cloud White
+Border: 1px solid Sky Blue
+Font: Roboto
+Text color: Sky Blue
+D. Dropdowns
+
+Border-radius: 5px
+Background: Cloud White
+Font: Roboto
+Text color: Sky Blue
+E. Tooltips
+
+Border-radius: 5px
+Background: Light Blue
+Font: Roboto
+Text color: Cloud White
+CSS Naming Convention
+Use BEM (Block, Element, Modifier) naming convention for maintainability and readability.
+Example: block__element--modifier
+CSS Preprocessor
+Utilize SCSS for better organization, maintainability, and the ability to use variables, mixins, and nesting.
+Integration with Vue3 and TypeScript
+Use Vue3 scoped CSS to ensure styles are only applied to the relevant components.
+Leverage TypeScript to create a more robust and type-safe codebase.
+
+
 🎨 Main Design: WonderWidgets Galaxy 🎨
 
 Interstellar Teal (#1E9BA4): as the primary background color, representing the depth and wonders of the universe.
