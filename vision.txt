@@ -26,29 +26,66 @@ Library of Custom Prompts itching to be turned into awe-inspiring WonderWidgets.
 Various art assets that need to be stitched in by the world's most awkward html designer.
 
 
-Say hello to Wonderwidget, our core function! A custom-interface that can act as an ChatGPT chat window, text interface, community livechat, smart gallery, or one chain in a web of api calls.
+Vue the Neighborhood:
+LabWidget.vue: Our friendly-gui featuring a customizable grid for building, editing, and sharing WonderWidgets. (and of course, the lab itself is a Wonderwidget)
+HeaderWidget.vue: collapsible header with artwidget icons
+SideWidget.vue: collapsible sidebar with navigation lines (and artwidget icons)
+WidgetShed.vue: drag and drop icon to save/load widgets, or through into the TrashWidget
+
+And of course, Wonderwidget.vue, our core function! 
+
+WonderWidget: A custom control panel that can act as a supercharged chat window, data handler, or one chain in a web of api calls.
 
 PromptWidget - a configurable text packet intended for a natural-language api such as ChatGPT
 ChatWidget: a Multi-room livechat interface with openai integration
-ArtWidget: image display
 BotWidget: friendly avatars representing connections to language processor apis such as Chatgpt
-LibrarianWidget: CRUD database access to Mongo
+LibraryWidget: CRUD database access
+ArtWidget: image display
+DJWidget: send and receive audio data
 
-With help from: 
-TaskWidget, our helpful task-manager!
+------
+Base Functionality:
+PromptWidget.vue - text display
+    display editable textbox
+    send data in textbox to wonderwidget
+    display textdata output from select wonderwidget
 
-Check Out the Neighborhood:
-LabWidget: Our friendly-gui featuring a 3x3 grid for building, editing, and sharing WonderWidgets. (and of course, the lab itself is a Wonderwidget)
-Widgetbar: collapsible header with artwidget icons
-sidebar: collapsible sidebar with navigation lines (and artwidget icons)
-trashwidget: draganddrop icon to trash widgets
-widgetshed: drag and drop icon to save/load widgets
+App.vue:
+hide/display header, sidebar, and footer
+Instantiate WonderLab
+
+WonderLab.vue:
+save/load wonderlab state
+Create/Destroy WonderWidget
+chain a connection on a wonderwidget grommet to another wonderwidget
+destroy a connection
 
 
+WonderWidget.vue
+drag, drop, and resize wonderwidget
+Destroy self
+Step-based Save system
+Instantiate WonderWidget Subclasses
+ChatWidget.vue - Chat
+PromptWidget.vue - text display
+APIWidget.vue - API Call Handler
+Cloudwidget.vue - network database
+LibraryWidget.vue - local file retrieval
+ImageWidget.vue - image and gallery viewer
+SoundWidget.vue - audio management
 
+Additional Components:
+vuex
+quasar
+Axios 
+Vue-draggable 
+    
+ Promptwidget
+A PromptWidget is a wonderWidget with the ability to load custom prompts from local textfiles or network database. 
 
 
 Meet the PromptWidgets:
+http://github.com/silasfelinus/serendipity/prompts/bots
 PunchUpBot - Give punchup Bot text and get back an extensive report and wordcraft upgrade. Bonus points if you can get a half-smile from Curmudgeonbot
 PunchUpCodebot - Punchup bot for code. Curmudgeonbot's mirror Grumpbot is just as hard to please. Thank goodness you've got a panel of code experts on your side.
 PromptBot - Explain what you want chatgpt or another language modeler to do, and promptbot will figure out how to say it to them to maximize your investment
@@ -57,5 +94,5 @@ StableDiffusionBot - Give Stable Diffusion Bot an idea, and they'll format it in
 TaskMaster - prototype for Serendipity, The World's Greatest Task-Manager-Slash-Addventure-Game
 Weirdlandia - A storytelling bot modelled after r20 systems but set in a..much weirder setting
 Got a PromptWidget? Tell it to the librarianbot (coming soon)
-
+------
 Pitch: Hey, fellow coders! We're building something amazing over at GitHub and WonderWidgets, and we want YOU to join us. Are you ready for a coding adventure of a lifetime? Let's unleash the power of WonderWidgets together! 🎉👩‍💻👨‍💻
